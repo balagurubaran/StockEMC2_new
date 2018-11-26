@@ -1,0 +1,6 @@
+framework module Pods_StockEMC2_new {
+  umbrella header "Pods-StockEMC2_new-umbrella.h"
+
+  export *
+  module * { export * }
+}

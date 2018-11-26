@@ -1,24 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StockEMC2_new" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="OXJ-et-onr" kind="presentation" identifier="stockdetail" id="rqs-L6-DBY"/>
+                        <segue destination="Nac-Jg-C38" kind="presentation" identifier="subscribe" id="W7K-gM-Dyy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Stock Detail View Controller-->
+        <scene sceneID="9KT-hR-iwO">
+            <objects>
+                <viewController storyboardIdentifier="stockdetail" id="OXJ-et-onr" customClass="StockDetailViewController" customModule="StockEMC2_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WUk-a4-4pe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIU-9B-h1N">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-g4-sSS">
+                                        <rect key="frame" x="335" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="X01-aK-mbh"/>
+                                            <constraint firstAttribute="height" constant="30" id="sf2-7b-lmC"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="close"/>
+                                        <connections>
+                                            <action selector="closeStockDetailView:" destination="OXJ-et-onr" eventType="touchDown" id="H3L-Bj-h1y"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZP-SO-idF">
+                                        <rect key="frame" x="169.5" y="5" width="36" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STMicroelectronics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzQ-HY-3DJ">
+                                        <rect key="frame" x="47" y="29.5" width="281" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qZP-SO-idF" firstAttribute="top" secondItem="JIU-9B-h1N" secondAttribute="top" constant="5" id="5e0-dt-cu0"/>
+                                    <constraint firstAttribute="trailing" secondItem="m6T-g4-sSS" secondAttribute="trailing" constant="10" id="DV0-Q1-pv8"/>
+                                    <constraint firstItem="gzQ-HY-3DJ" firstAttribute="centerX" secondItem="JIU-9B-h1N" secondAttribute="centerX" id="ImR-xw-GRW"/>
+                                    <constraint firstItem="qZP-SO-idF" firstAttribute="centerX" secondItem="JIU-9B-h1N" secondAttribute="centerX" id="Mkh-yr-dJA"/>
+                                    <constraint firstAttribute="height" constant="50" id="Riy-TE-4z8"/>
+                                    <constraint firstItem="gzQ-HY-3DJ" firstAttribute="width" secondItem="JIU-9B-h1N" secondAttribute="width" multiplier="0.75" id="Tdm-pK-ode"/>
+                                    <constraint firstItem="gzQ-HY-3DJ" firstAttribute="top" secondItem="qZP-SO-idF" secondAttribute="bottom" constant="4" id="aSp-9I-ZtK"/>
+                                    <constraint firstItem="m6T-g4-sSS" firstAttribute="centerY" secondItem="JIU-9B-h1N" secondAttribute="centerY" id="n5r-XD-xI9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jxs-jz-Wj1" firstAttribute="trailing" secondItem="JIU-9B-h1N" secondAttribute="trailing" id="GV8-Qy-uAt"/>
+                            <constraint firstItem="JIU-9B-h1N" firstAttribute="leading" secondItem="Jxs-jz-Wj1" secondAttribute="leading" id="bqd-Qg-cS9"/>
+                            <constraint firstItem="JIU-9B-h1N" firstAttribute="top" secondItem="Jxs-jz-Wj1" secondAttribute="top" id="sV4-IX-wnb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jxs-jz-Wj1"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="companyName" destination="gzQ-HY-3DJ" id="Hp8-4f-1ZC"/>
+                        <outlet property="headerView" destination="JIU-9B-h1N" id="0my-SN-gIq"/>
+                        <outlet property="stockID" destination="qZP-SO-idF" id="xP0-VW-iUT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jD-i3-IYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1458" y="27"/>
+        </scene>
+        <!--Subscription View Controller-->
+        <scene sceneID="Cmq-SX-Z8y">
+            <objects>
+                <viewController storyboardIdentifier="inapppurchase" id="Nac-Jg-C38" customClass="SubscriptionViewController" customModule="stockemc2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tM3-l2-WVZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFP-1G-ukr">
+                                <rect key="frame" x="127.5" y="355.5" width="120" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="UU2-XV-ok4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Buy 2.99$">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
+                                </variation>
+                                <connections>
+                                    <action selector="paySubscrption:" destination="Nac-Jg-C38" eventType="touchDown" id="iN1-Rw-QBz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe and Support" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-DE-ex2">
+                                <rect key="frame" x="87.5" y="40" width="200.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o1Z-HS-CZX">
+                                <rect key="frame" x="9.5" y="66.5" width="356" height="269"/>
+                                <string key="text">Unlimited access - Monthly 
+	
+	App is using the in-app purchase to enable the chart and the financial information about the share (Company). This subscription  is valid for month and it will renew automatically.
+
+	Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal
+
+	Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</string>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-fL-pAY">
+                                <rect key="frame" x="127.5" y="409.5" width="120" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="idc-qF-7Og"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
+                                </variation>
+                                <connections>
+                                    <action selector="closeView:" destination="Nac-Jg-C38" eventType="touchDown" id="VSF-bb-NeJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beb-rZ-Hb5">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="23"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="28"/>
+                                </variation>
+                                <connections>
+                                    <action selector="restorePurchase:" destination="Nac-Jg-C38" eventType="touchUpInside" id="xZd-Dx-aPH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="203-Lb-3Qg" firstAttribute="bottom" secondItem="beb-rZ-Hb5" secondAttribute="bottom" id="3Jw-3B-sQz"/>
+                            <constraint firstItem="G5E-fL-pAY" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="4Za-ya-PXf"/>
+                            <constraint firstItem="beb-rZ-Hb5" firstAttribute="leading" secondItem="203-Lb-3Qg" secondAttribute="leading" id="547-Xe-41f"/>
+                            <constraint firstItem="beb-rZ-Hb5" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="8uY-tM-kll"/>
+                            <constraint firstItem="JFP-1G-ukr" firstAttribute="top" secondItem="o1Z-HS-CZX" secondAttribute="bottom" constant="20" id="BJE-AE-qbf"/>
+                            <constraint firstItem="Wd9-DE-ex2" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="GpF-PW-Fdm"/>
+                            <constraint firstItem="203-Lb-3Qg" firstAttribute="trailing" secondItem="beb-rZ-Hb5" secondAttribute="trailing" id="Ndl-NG-Jou"/>
+                            <constraint firstItem="o1Z-HS-CZX" firstAttribute="top" secondItem="Wd9-DE-ex2" secondAttribute="bottom" id="Ogm-HO-Tzg"/>
+                            <constraint firstItem="o1Z-HS-CZX" firstAttribute="top" secondItem="Wd9-DE-ex2" secondAttribute="bottom" id="eaj-mW-gpg"/>
+                            <constraint firstItem="G5E-fL-pAY" firstAttribute="top" secondItem="JFP-1G-ukr" secondAttribute="bottom" constant="20" id="fU7-BB-HmH"/>
+                            <constraint firstItem="JFP-1G-ukr" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="h4a-DO-74T"/>
+                            <constraint firstItem="beb-rZ-Hb5" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="kAP-EA-VQI"/>
+                            <constraint firstItem="o1Z-HS-CZX" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="m5r-PV-hPj"/>
+                            <constraint firstItem="o1Z-HS-CZX" firstAttribute="width" secondItem="tM3-l2-WVZ" secondAttribute="width" multiplier="0.95" id="tce-ii-ozB"/>
+                            <constraint firstItem="Wd9-DE-ex2" firstAttribute="top" secondItem="203-Lb-3Qg" secondAttribute="top" constant="20" id="xLN-co-nCB"/>
+                            <constraint firstItem="Wd9-DE-ex2" firstAttribute="height" secondItem="tM3-l2-WVZ" secondAttribute="height" multiplier="0.04" id="xr7-GD-Loq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="203-Lb-3Qg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vma-bc-O4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="694"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="close" width="170" height="170"/>
+    </resources>
 </document>

@@ -1,0 +1,11 @@
+framework module iAppsUtilities {
+  umbrella header "iAppsUtilities.h"
+
+  export *
+  module * { export * }
+}
+
+module iAppsUtilities.Swift {
+    header "iAppsUtilities-Swift.h"
+    requires objc
+}
