@@ -75,6 +75,7 @@
 		E9D8A69121A5883800BA0BBA /* TargetPriceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D8A69021A5883800BA0BBA /* TargetPriceView.xib */; };
 		E9D8A69321A5892A00BA0BBA /* TargetPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A69221A5892A00BA0BBA /* TargetPriceView.swift */; };
 		E9F3A17F21AE1B8F0043EB67 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F3A17E21AE1B8F0043EB67 /* StoreKit.framework */; };
+		E9F3A18321AE24230043EB67 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */; };
 		E9FBDAA2219D0EA500600091 /* iAppsUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; };
 		E9FBDAA3219D0EA500600091 /* iAppsUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9FBDAA4219D0EA500600091 /* SectorCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9F219D0C4000600091 /* SectorCard.framework */; };
@@ -171,6 +172,7 @@
 		E9D8A69021A5883800BA0BBA /* TargetPriceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TargetPriceView.xib; sourceTree = "<group>"; };
 		E9D8A69221A5892A00BA0BBA /* TargetPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPriceView.swift; sourceTree = "<group>"; };
 		E9F3A17E21AE1B8F0043EB67 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iAppsUtilities.framework; sourceTree = "<group>"; };
 		E9FBDA9F219D0C4000600091 /* SectorCard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SectorCard.framework; sourceTree = "<group>"; };
 		E9FBDAA8219D0F5000600091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainContentView.xib; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				E9BF1C9A21A0FA0A00FA30FE /* Constants.swift */,
 				E92782902199138A00F8F9E7 /* AppDelegate.swift */,
 				E92782922199138A00F8F9E7 /* ViewController.swift */,
+				E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */,
 				E9BF1CE821A1C18800FA30FE /* ViewControllerExt */,
 				E96565E9219F9FB100036116 /* StockListView.swift */,
 				E96565EB219F9FC300036116 /* StockListView.xib */,
@@ -623,6 +626,7 @@
 				E9D8A68021A42C1A00BA0BBA /* FinancialDataView.swift in Sources */,
 				E9BF1C9B21A0FA0A00FA30FE /* Constants.swift in Sources */,
 				E9D8A68721A4D15600BA0BBA /* StockInfo.swift in Sources */,
+				E9F3A18321AE24230043EB67 /* DisclaimerViewController.swift in Sources */,
 				E9D8A67D21A42C1A00BA0BBA /* ChartColorTemplates.swift in Sources */,
 				E9D8A68221A42C1A00BA0BBA /* DayAxisValueFormatter.swift in Sources */,
 				E9BF1CDD21A1006000FA30FE /* sharemodel.swift in Sources */,

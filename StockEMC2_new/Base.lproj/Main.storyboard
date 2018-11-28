@@ -10,8 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Lato-Bold.ttf">
-            <string>Lato-Bold</string>
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+        <array key="Lato-Medium.ttf">
+            <string>Lato-Medium</string>
         </array>
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
@@ -31,10 +34,12 @@
                     <connections>
                         <segue destination="OXJ-et-onr" kind="presentation" identifier="stockdetail" id="rqs-L6-DBY"/>
                         <segue destination="Nac-Jg-C38" kind="presentation" identifier="subscribe" id="W7K-gM-Dyy"/>
+                        <segue destination="zYi-CZ-WEg" kind="presentation" identifier="termsandconditon" id="Sq5-sx-K28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="175" y="27"/>
         </scene>
         <!--Stock Detail View Controller-->
         <scene sceneID="9KT-hR-iwO">
@@ -59,13 +64,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZP-SO-idF">
-                                        <rect key="frame" x="169.5" y="5" width="36" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <rect key="frame" x="169" y="5" width="37.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STMicroelectronics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzQ-HY-3DJ">
-                                        <rect key="frame" x="47" y="29.5" width="281" height="16.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <rect key="frame" x="47" y="31" width="281" height="17"/>
+                                        <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -100,12 +105,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jD-i3-IYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="27"/>
+            <point key="canvasLocation" x="1079" y="27"/>
         </scene>
         <!--Subscription View Controller-->
         <scene sceneID="Cmq-SX-Z8y">
             <objects>
-                <viewController storyboardIdentifier="inapppurchase" id="Nac-Jg-C38" customClass="SubscriptionViewController" customModule="stockemc2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inapppurchase" id="Nac-Jg-C38" customClass="SubscriptionViewController" customModule="StockEMC2_new" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tM3-l2-WVZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +121,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="UU2-XV-ok4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Buy 2.99$">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,18 +132,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="24"/>
                                 </variation>
                                 <connections>
                                     <action selector="paySubscrption:" destination="Nac-Jg-C38" eventType="touchDown" id="iN1-Rw-QBz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe and Support" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-DE-ex2">
-                                <rect key="frame" x="87.5" y="40" width="200.5" height="26.5"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                <rect key="frame" x="88.5" y="40" width="198.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="30"/>
+                                    <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="30"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o1Z-HS-CZX">
@@ -150,10 +155,10 @@
 	Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal
 
 	Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</string>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="20"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-fL-pAY">
@@ -162,7 +167,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="idc-qF-7Og"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -172,21 +177,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="24"/>
                                 </variation>
                                 <connections>
                                     <action selector="closeView:" destination="Nac-Jg-C38" eventType="touchDown" id="VSF-bb-NeJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beb-rZ-Hb5">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="628" width="375" height="39"/>
                                 <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="22"/>
                                 <state key="normal" title="Restore">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="28"/>
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="28"/>
                                 </variation>
                                 <connections>
                                     <action selector="restorePurchase:" destination="Nac-Jg-C38" eventType="touchUpInside" id="xZd-Dx-aPH"/>
@@ -217,7 +222,127 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vma-bc-O4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="694"/>
+            <point key="canvasLocation" x="727" y="794"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cay-Gj-iTF">
+            <objects>
+                <viewController id="9qx-9n-9e6" customClass="ViewController" customModule="StockEMC2_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jSB-he-YMP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="1vT-yz-SkA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0O-T0-IoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="27"/>
+        </scene>
+        <!--Disclaimer View Controller-->
+        <scene sceneID="sz5-LI-CIk">
+            <objects>
+                <viewController storyboardIdentifier="disclamier" id="zYi-CZ-WEg" customClass="DisclaimerViewController" customModule="StockEMC2_new" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MKZ-Tn-zip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhR-aq-Ezr">
+                                <rect key="frame" x="0.0" y="89.5" width="375" height="509.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">App  provides financial data and technical analysis on stocks. We shall not be held liable to and shall not accept any liability, obligation or responsibility whatsoever for any loss or damage for your finances or personal information.
+
+All users should consult with their financial advisor before buying or selling any shares. Users should not firmly base their final investment decision upon Application. By accessing our Application you agree and are held liable for your own investment decisions.
+
+Different types of investments involve varying degrees of risk, and there can be no assurances that any specific investments will either be suitable or profitable for the App user investment portfolio. No user should assume that any information presented and/or made available on this Apps serves as the receipt of, or a substitute for, personalized individual advice from the advisor or any other professional investor.
+
+ The information contained on this application is provided for informational purposes only and contains no investment advice or recommendations to buy or sell any specific shares. This is not an offer or solicitation for any particular trading strategy, or confirmation of any transaction.
+
+The owners of this Application are not liable for any errors, omissions or misstatements. Any performance data quoted represents past performance and that past performance is not a guarantee of future results. Investments always have a degree of risk, including the potential risk of the loss of the investor’s entire principal.
+
+There is no guarantee against any loss.             
+
+Thank you iextrading.com for the historical data</string>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="22"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpD-FU-VEY">
+                                <rect key="frame" x="64" y="613" width="70" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="24"/>
+                                </variation>
+                                <connections>
+                                    <action selector="closeDisclamier:" destination="zYi-CZ-WEg" eventType="touchDown" id="G9T-u0-INq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-hs-zkX">
+                                <rect key="frame" x="241" y="613" width="70" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="24"/>
+                                </variation>
+                                <connections>
+                                    <action selector="declineDisclamier:" destination="zYi-CZ-WEg" eventType="touchDown" id="TgZ-ND-ClB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclaimer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbM-7e-CbE">
+                                <rect key="frame" x="131.5" y="20" width="112.5" height="53.5"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="30"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GpD-FU-VEY" firstAttribute="top" secondItem="yhR-aq-Ezr" secondAttribute="bottom" constant="14" id="5Zv-dj-fjf"/>
+                            <constraint firstItem="MdZ-hs-zkX" firstAttribute="top" secondItem="yhR-aq-Ezr" secondAttribute="bottom" constant="14" id="BSh-iD-rL9"/>
+                            <constraint firstItem="vbM-7e-CbE" firstAttribute="width" secondItem="MKZ-Tn-zip" secondAttribute="width" multiplier="0.3" id="Dxw-Jv-OJV"/>
+                            <constraint firstItem="GpD-FU-VEY" firstAttribute="leading" secondItem="JLU-XZ-Pc6" secondAttribute="leading" constant="64" id="JBr-26-nKM"/>
+                            <constraint firstItem="vbM-7e-CbE" firstAttribute="top" secondItem="JLU-XZ-Pc6" secondAttribute="top" id="JOK-7m-PQ8"/>
+                            <constraint firstItem="vbM-7e-CbE" firstAttribute="centerX" secondItem="MKZ-Tn-zip" secondAttribute="centerX" id="NRZ-hR-MPp"/>
+                            <constraint firstItem="yhR-aq-Ezr" firstAttribute="top" secondItem="vbM-7e-CbE" secondAttribute="bottom" constant="16" id="Q8F-nB-1mB"/>
+                            <constraint firstItem="yhR-aq-Ezr" firstAttribute="trailing" secondItem="JLU-XZ-Pc6" secondAttribute="trailing" id="QM7-69-ru8"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GpD-FU-VEY" secondAttribute="trailing" constant="20" symbolic="YES" id="aHb-8Z-SnX"/>
+                            <constraint firstItem="JLU-XZ-Pc6" firstAttribute="bottom" secondItem="GpD-FU-VEY" secondAttribute="bottom" constant="20" id="bzy-wa-ne7"/>
+                            <constraint firstItem="yhR-aq-Ezr" firstAttribute="centerX" secondItem="MKZ-Tn-zip" secondAttribute="centerX" id="dP8-OC-f3U"/>
+                            <constraint firstItem="JLU-XZ-Pc6" firstAttribute="trailing" secondItem="MdZ-hs-zkX" secondAttribute="trailing" constant="64" id="gA0-gi-4NR"/>
+                            <constraint firstItem="yhR-aq-Ezr" firstAttribute="leading" secondItem="JLU-XZ-Pc6" secondAttribute="leading" id="ofr-mM-iKP"/>
+                            <constraint firstItem="JLU-XZ-Pc6" firstAttribute="bottom" secondItem="MdZ-hs-zkX" secondAttribute="bottom" constant="20" id="orV-ag-33h"/>
+                            <constraint firstItem="vbM-7e-CbE" firstAttribute="height" secondItem="MKZ-Tn-zip" secondAttribute="height" multiplier="0.08" id="v6D-Jz-9nc"/>
+                            <constraint firstItem="MdZ-hs-zkX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MKZ-Tn-zip" secondAttribute="leading" constant="20" symbolic="YES" id="wr8-9S-TQ9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JLU-XZ-Pc6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7s-eu-gqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="794"/>
         </scene>
     </scenes>
     <resources>

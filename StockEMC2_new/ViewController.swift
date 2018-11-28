@@ -19,40 +19,51 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
     var utility:Utility = Utility()
     let secondaryFilter = UIButton.init()
     let secondaryFilterDropDown = DropDown()
-    
+    let notificationCenter = NotificationCenter.default
     var subscriptionButton:CustomButton? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        notificationCenter.addObserver(self, selector: #selector(renderView), name: NSNotification.Name(rawValue: "renderView"), object: nil)
         utility.initloadView()
-        
-        let dispatchGroup = DispatchGroup()
-        dispatchGroup.enter()
-        NetworkHandler.loadTheStats(dispatch: dispatchGroup)
-        
-        dispatchGroup.enter()
-        NetworkHandler.loadTheStockBasicInfo(dispatch: dispatchGroup)
-        
-        dispatchGroup.enter()
-        HandleSubscription.shared.loadReceipt(completion: { (status) in
-            isValidPurchase = status
-            dispatchGroup.leave()
-        })
-        
-        self.utility.showLoadingView(view: self.view)
-        dispatchGroup.notify(queue: .main) {
-            DataHandler.setAllSectorDetails()
-            self.loadTheMenuContentView()
-            self.loadMainContentView()
-            self.utility.removeLoading(view: self.view)
-            let notificationCenter = NotificationCenter.default
-            notificationCenter.addObserver(self, selector: #selector(self.addsubscriptionButton), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func renderView(){
+        DispatchQueue.main.async {
+            self.utility.showLoadingView(view: self.view)
+            let dispatchGroup = DispatchGroup()
+            dispatchGroup.enter()
+            NetworkHandler.loadTheStats(dispatch: dispatchGroup)
+            
+            dispatchGroup.enter()
+            NetworkHandler.loadTheStockBasicInfo(dispatch: dispatchGroup)
+            
+            dispatchGroup.enter()
+            HandleSubscription.shared.loadReceipt(completion: { (status) in
+                isValidPurchase = status
+                dispatchGroup.leave()
+            })
+            
+            self.utility.showLoadingView(view: self.view)
+            dispatchGroup.notify(queue: .main) {
+                DataHandler.setAllSectorDetails()
+                self.loadTheMenuContentView()
+                self.loadMainContentView()
+                self.utility.removeLoading(view: self.view)
+                
+                self.notificationCenter.addObserver(self, selector: #selector(self.addsubscriptionButton), name: UIApplication.willEnterForegroundNotification, object: nil)
+            }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        if !userDefaults.bool(forKey: "termsandconditon") {
+            self.performSegue(withIdentifier: "termsandconditon", sender: nil)
+            return
+        }else{
+            renderView()
+        }
     }
     
     func loadMainContentView(){
@@ -92,7 +103,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             padding.trailingAnchor = -10
             padding.leadingAnchor = 10
             padding.topAnchor = 10
-            padding.heightAnchor = 50
+            padding.heightAnchor = 45
             mainContentView.addView(view: stockNode, padding: padding)
             if index % 2 == 0 {
                 eachStock.backGroundColor = UIColor.init(red: 0.0/255, green: 0.0/255, blue: 0.0/255,alpha:0.05)
@@ -142,12 +153,6 @@ extension ViewController:SearchBarDelegate {
     }
     
     func searchBarClosed() {
-//        if(isWatchList){
-//            tabBar.selectedItem = tabBar.items?[1]
-//        }else{
-//            tabBar.selectedItem = tabBar.items?[0]
-//        }
-        //removeFadeOut()
         SearchBar.isSearchBarLifeTime = false
         
     }
@@ -191,11 +196,11 @@ class MainContentView:UIView {
     }
     func removeAllView() {
         previouslyAddedView = nil
-        contentViewHeightConstaint.constant = 0.0
-        mainScrollview.setContentOffset(CGPoint.zero, animated: true)
         for eachView in contentView.subviews {
             eachView.removeFromSuperview()
         }
+        //mainScrollview.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
+        contentViewHeightConstaint.constant = 0.0
     }
     func addTitle(title:String){
         let label = UILabel.init()

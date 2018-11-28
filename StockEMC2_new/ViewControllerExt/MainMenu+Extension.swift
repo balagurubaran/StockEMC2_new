@@ -34,7 +34,7 @@ extension ViewController {
         var padding = Padding.init()
         padding.leadingAnchor = 10
         padding.trailingAnchor = -10
-        padding.heightAnchor = 50
+        padding.heightAnchor = 48
         
         menuContentView.addView(view: titleWithLeftButton(labelText: "Stocks", buttonTitle: "Latest"), padding: padding)
         menuContentView.layoutIfNeeded()
