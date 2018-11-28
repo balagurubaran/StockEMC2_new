@@ -25,13 +25,13 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        notificationCenter.addObserver(self, selector: #selector(renderView), name: NSNotification.Name(rawValue: "renderView"), object: nil)
+        Utility.checkFreePeriod()
         utility.initloadView()
+        notificationCenter.addObserver(self, selector: #selector(renderView), name: NSNotification.Name(rawValue: "renderView"), object: nil)
     }
     
     @objc func renderView(){
         DispatchQueue.main.async {
-            self.utility.showLoadingView(view: self.view)
             let dispatchGroup = DispatchGroup()
             dispatchGroup.enter()
             NetworkHandler.loadTheStats(dispatch: dispatchGroup)
@@ -39,12 +39,14 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             dispatchGroup.enter()
             NetworkHandler.loadTheStockBasicInfo(dispatch: dispatchGroup)
             
-            dispatchGroup.enter()
-            HandleSubscription.shared.loadReceipt(completion: { (status) in
-                isValidPurchase = status
-                dispatchGroup.leave()
-            })
             
+            dispatchGroup.enter()
+            if !isFreeSubcription {
+                HandleSubscription.shared.loadReceipt(completion: { (status) in
+                    isValidPurchase = status
+                    dispatchGroup.leave()
+                })
+            }
             self.utility.showLoadingView(view: self.view)
             dispatchGroup.notify(queue: .main) {
                 DataHandler.setAllSectorDetails()
@@ -102,8 +104,8 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             var padding = Padding.init()
             padding.trailingAnchor = -10
             padding.leadingAnchor = 10
-            padding.topAnchor = 10
-            padding.heightAnchor = 45
+            padding.topAnchor = 0
+            padding.heightAnchor = 55
             mainContentView.addView(view: stockNode, padding: padding)
             if index % 2 == 0 {
                 eachStock.backGroundColor = UIColor.init(red: 0.0/255, green: 0.0/255, blue: 0.0/255,alpha:0.05)

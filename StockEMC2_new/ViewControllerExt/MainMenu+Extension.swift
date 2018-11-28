@@ -151,7 +151,7 @@ extension ViewController: MagneticDelegate {
     func titleWithLeftButton(labelText text:String,buttonTitle title:String)->UIView{
         let baseSize = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
         let labelSize = CGRect.init(x: 0, y: 10, width: self.view.frame.size.width - 100, height: 40)
-        let buttonSize = CGRect.init(x: labelSize.width - 20, y: 0, width: 100, height: 40)
+        let buttonSize = CGRect.init(x: labelSize.width - 20, y: 0, width: 100, height: 38)
        
         let baseView = UIView.init(frame: baseSize)
         baseView.translatesAutoresizingMaskIntoConstraints = false
@@ -194,17 +194,19 @@ extension ViewController: MagneticDelegate {
     }
     
     @objc func addsubscriptionButton(){
-        if isValidPurchase == true{
-            return
-        }
+        
         if let currentViewController = UIApplication.shared.topMostViewController() {
             if subscriptionButton == nil {
                 subscriptionButton = CustomButton.init(frame: CGRect.zero)
                 subscriptionButton?.buttonProperty(title: "Subscribe")
                 subscriptionButton?.addTarget(self, action:#selector(showSubscribe), for: .touchUpInside)
+                subscriptionButton?.isHidden = true
                 currentViewController.view.addSubview(subscriptionButton!)
             }else{
                 subscriptionButton?.hide()
+            }
+            if isValidPurchase == true{
+                return
             }
             subscriptionButton?.show()
         }
@@ -228,7 +230,11 @@ class CustomButton:UIButton {
     }
     
     func show(){
+        if !self.isHidden {
+            return
+        }
         if let currentViewController = UIApplication.shared.topMostViewController() {
+            self.isHidden = false
             let size = currentViewController.view.frame.size
             UIView.animate(withDuration: 1) {
                 self.frame.origin.y = size.height - 55
@@ -242,8 +248,10 @@ class CustomButton:UIButton {
     func hide(){
         if let currentViewController = UIApplication.shared.topMostViewController() {
             let size = currentViewController.view.frame.size
-            UIView.animate(withDuration: 1) {
+            UIView.animate(withDuration: 1, animations: {
                 self.frame.origin.y = size.height + 50
+            }) { (completed) in
+                self.isHidden = true
             }
         }
     }

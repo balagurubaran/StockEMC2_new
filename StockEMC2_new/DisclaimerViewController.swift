@@ -8,9 +8,19 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 class DisclaimerViewController: UIViewController {
     
+    @IBOutlet weak var webView: WKWebView!
+    
+    override func viewDidLoad() {
+        if webView != nil{
+            
+           let content = "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style> { font-size: 20px; } </style></head> <body>" + tc + "</body></html>"
+            webView.loadHTMLString(content, baseURL: nil)
+        }
+    }
     
     @IBAction func declineDisclamier(_ sender: Any) {
         let alert = UIAlertController(title: "Information", message: "Are you want decline", preferredStyle: .actionSheet)
@@ -28,8 +38,6 @@ class DisclaimerViewController: UIViewController {
         UIView.transition(with: self.view, duration: 1.0, options: .transitionCrossDissolve, animations: {
             userDefaults.set(true, forKey: "termsandconditon")
             userDefaults.synchronize()
-            
-           
             self.dismiss(animated: true, completion: {
                 DispatchQueue.main.async {
                     let notificationCenter = NotificationCenter.default

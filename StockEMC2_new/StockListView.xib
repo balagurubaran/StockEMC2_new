@@ -53,11 +53,17 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XD8-wL-OcQ" secondAttribute="bottom" constant="8" id="aL7-Xd-4zq"/>
                 <constraint firstItem="dtx-6s-opQ" firstAttribute="leading" secondItem="1hi-Nt-H5r" secondAttribute="leading" id="cQx-nB-oOD"/>
                 <constraint firstItem="XD8-wL-OcQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="dD9-5B-itk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dtx-6s-opQ" secondAttribute="bottom" constant="6" id="ddB-g8-yrQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XD8-wL-OcQ" secondAttribute="trailing" constant="8" id="rcb-Md-I7o"/>
                 <constraint firstItem="dtx-6s-opQ" firstAttribute="top" secondItem="1hi-Nt-H5r" secondAttribute="bottom" id="wKu-ex-txT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="companyName" destination="dtx-6s-opQ" id="fn2-tG-IgZ"/>
                 <outlet property="marketPrice" destination="XD8-wL-OcQ" id="d8V-lG-M2d"/>

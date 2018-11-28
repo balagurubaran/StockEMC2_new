@@ -73,23 +73,25 @@ class Utility{
             isValidPurchase = true
             isFreeSubcription = true
             
-            let currentDate = Date().addMonth(n: 1)
+            let currentDate = Date().addDay(n: 2)
             let date = formatter.string(from: currentDate)
     
             keychain.set(String(describing: date), forKey: "timeperiod")
-            showMessage(message: "One month free subscription activated")
+            showMessage(message: "Two day free subscription activated")
     
         }else{
             let date =  keychain.get("timeperiod")
             // convert your string to date
-            let savedDate = formatter.date(from: date!)
-            
-            if(Date() < savedDate!){
-                isValidPurchase = true
-                isFreeSubcription = true
-            }else{
-                isValidPurchase = false
+        
+            if let savedDate = date?.StringToDate(){
+                if(Date() < savedDate){
+                    isValidPurchase = true
+                    isFreeSubcription = true
+                }else{
+                    isValidPurchase = false
+                }
             }
+            
         }
         
     }
