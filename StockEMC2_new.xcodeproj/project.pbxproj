@@ -74,6 +74,7 @@
 		E9D8A68F21A4D7D100BA0BBA /* StockInfoDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A68E21A4D7D100BA0BBA /* StockInfoDataHandler.swift */; };
 		E9D8A69121A5883800BA0BBA /* TargetPriceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D8A69021A5883800BA0BBA /* TargetPriceView.xib */; };
 		E9D8A69321A5892A00BA0BBA /* TargetPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A69221A5892A00BA0BBA /* TargetPriceView.swift */; };
+		E9F3A17F21AE1B8F0043EB67 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F3A17E21AE1B8F0043EB67 /* StoreKit.framework */; };
 		E9FBDAA2219D0EA500600091 /* iAppsUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; };
 		E9FBDAA3219D0EA500600091 /* iAppsUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9FBDAA4219D0EA500600091 /* SectorCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9F219D0C4000600091 /* SectorCard.framework */; };
@@ -100,6 +101,7 @@
 		22A0934AD3A1CD70BE13E620 /* Pods-StockEMC2_new.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockEMC2_new.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockEMC2_new/Pods-StockEMC2_new.release.xcconfig"; sourceTree = "<group>"; };
 		55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockEMC2_new.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCAE9A0177F6C7CC24AE3DC /* Pods-StockEMC2_new.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockEMC2_new.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockEMC2_new/Pods-StockEMC2_new.debug.xcconfig"; sourceTree = "<group>"; };
+		E908261D21AE1B5400EE52DD /* StockEMC2_new.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockEMC2_new.entitlements; sourceTree = "<group>"; };
 		E91679A121A3A74A0081628C /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		E927828D2199138A00F8F9E7 /* StockEMC2_new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockEMC2_new.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92782902199138A00F8F9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		E9D8A68E21A4D7D100BA0BBA /* StockInfoDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfoDataHandler.swift; sourceTree = "<group>"; };
 		E9D8A69021A5883800BA0BBA /* TargetPriceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TargetPriceView.xib; sourceTree = "<group>"; };
 		E9D8A69221A5892A00BA0BBA /* TargetPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPriceView.swift; sourceTree = "<group>"; };
+		E9F3A17E21AE1B8F0043EB67 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iAppsUtilities.framework; sourceTree = "<group>"; };
 		E9FBDA9F219D0C4000600091 /* SectorCard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SectorCard.framework; sourceTree = "<group>"; };
 		E9FBDAA8219D0F5000600091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainContentView.xib; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 				C00F345E59CA2FED32F23BE4 /* Pods_StockEMC2_new.framework in Frameworks */,
 				E9FBDAA2219D0EA500600091 /* iAppsUtilities.framework in Frameworks */,
 				E9FBDAA4219D0EA500600091 /* SectorCard.framework in Frameworks */,
+				E9F3A17F21AE1B8F0043EB67 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +194,7 @@
 		9CD2D9AE9AB22EE6AFCC341C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9F3A17E21AE1B8F0043EB67 /* StoreKit.framework */,
 				55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */,
 			);
 			name = Frameworks;
@@ -235,6 +240,7 @@
 		E927828F2199138A00F8F9E7 /* StockEMC2_new */ = {
 			isa = PBXGroup;
 			children = (
+				E908261D21AE1B5400EE52DD /* StockEMC2_new.entitlements */,
 				E92740FF21AB4F24007E1530 /* Subscription */,
 				E94BB7AE21AB069800D40544 /* Google */,
 				E9D8A67121A42C1A00BA0BBA /* Chart */,
@@ -438,6 +444,20 @@
 				TargetAttributes = {
 					E927828C2199138A00F8F9E7 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -515,6 +535,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Magnetic/Magnetic.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RSLoadingView/RSLoadingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -529,6 +550,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnetic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSLoadingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -758,6 +780,7 @@
 			baseConfigurationReference = 5FCAE9A0177F6C7CC24AE3DC /* Pods-StockEMC2_new.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StockEMC2_new/StockEMC2_new.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = USLGQG74CE;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -782,6 +805,7 @@
 			baseConfigurationReference = 22A0934AD3A1CD70BE13E620 /* Pods-StockEMC2_new.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StockEMC2_new/StockEMC2_new.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = USLGQG74CE;
 				FRAMEWORK_SEARCH_PATHS = (

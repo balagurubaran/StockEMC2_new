@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA9B64B38EB0B683EEE8D669DFDCE767"
+               BlueprintIdentifier = "D5CAB6147B88DAEA8E651E964F58602A"
                BlueprintName = "RSLoadingView"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "RSLoadingView.framework">

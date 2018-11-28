@@ -36,7 +36,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
         
         dispatchGroup.enter()
         HandleSubscription.shared.loadReceipt(completion: { (status) in
-            isValidPurchase = true
+            isValidPurchase = status
             dispatchGroup.leave()
         })
         
@@ -96,6 +96,8 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             mainContentView.addView(view: stockNode, padding: padding)
             if index % 2 == 0 {
                 eachStock.backGroundColor = UIColor.init(red: 0.0/255, green: 0.0/255, blue: 0.0/255,alpha:0.05)
+            }else{
+                eachStock.backGroundColor = .white
             }
             stockNode.loadTheData(stockBasicInfo: eachStock)
         }
@@ -190,6 +192,7 @@ class MainContentView:UIView {
     func removeAllView() {
         previouslyAddedView = nil
         contentViewHeightConstaint.constant = 0.0
+        mainScrollview.setContentOffset(CGPoint.zero, animated: true)
         for eachView in contentView.subviews {
             eachView.removeFromSuperview()
         }

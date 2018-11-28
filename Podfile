@@ -10,6 +10,7 @@ target 'StockEMC2_new' do
     pod 'RSLoadingView'
     pod 'KeychainSwift'
     pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
     pod 'Magnetic'
     pod 'DropDown'
   # Pods for StockEMC2_new
