@@ -24,6 +24,8 @@ class StockDetailViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.utility.initloadView()
+        
+        DataHandler.resetDetaViewDataHandler()
     }
     
     @IBAction func closeStockDetailView(_ sender: Any) {
@@ -39,6 +41,7 @@ class StockDetailViewController:UIViewController{
         
         self.loadTargetMainView()
         self.loadMainContentView()
+        mainContentView.removeAllView()
         self.utility.showLoadingView(view: mainContentView)
         if let shareName = selectedStockInfo?.shareName {
             let dispatchGroup = DispatchGroup()
@@ -144,8 +147,8 @@ class StockDetailViewController:UIViewController{
     
     func renderTheBasicStats(){
         var padding = Padding.init()
-        if let local = statsBasic{
-            for (index,eachInfo) in local.enumerated() {
+        if statsBasic.count > 0{
+            for (index,eachInfo) in statsBasic.enumerated() {
                 let stockinfo = StockInfoBaseView.init()
                 
                 padding.trailingAnchor = -10

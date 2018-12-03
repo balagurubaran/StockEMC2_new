@@ -20,6 +20,7 @@ class Network{
             if error == nil {
                 completion(data!);
             }else{
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alertError"), object: nil, userInfo: nil)
                 print("Error",error.debugDescription);
             }
         })

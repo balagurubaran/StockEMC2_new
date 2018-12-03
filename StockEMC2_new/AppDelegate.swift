@@ -11,7 +11,6 @@ import Firebase
 import UserNotifications
 import FirebaseMessaging
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -30,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         UIApplication.shared.applicationIconBadgeNumber = 0
         
-        testDevice()
+        //testDevice()
         return true
     }
     

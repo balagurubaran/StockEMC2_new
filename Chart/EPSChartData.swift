@@ -34,8 +34,11 @@ class EPSChartData:NSObject {
         chartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
         
         let entries = EPSData.map { (eps) -> PieChartDataEntry in
-            let displayText = eps.actual >= 0 ? eps.year.description : ("-" +  eps.year.description)
-            return PieChartDataEntry(value: abs(eps.actual), label: displayText)
+            if let actual = eps.actual{
+                let displayText = actual >= 0.0 ? eps.year.description : ("-" +  eps.year.description)
+                return PieChartDataEntry(value: abs(actual), label: displayText)
+            }
+            return PieChartDataEntry(value: 0.0, label: "N/A")
         }
         
         let set = PieChartDataSet(values: entries, label: "")
@@ -75,10 +78,10 @@ class EPSChartData:NSObject {
         barCharSettings(chartView:chartView)
         
         let actualEPSEntry = EPSData.map { (eps) -> BarChartDataEntry in
-            return BarChartDataEntry(x:Double(eps.index), y:  eps.actual)
+            return BarChartDataEntry(x:Double(eps.index), y:  eps.actual!)
         }
         let estimatedEPSEntry = EPSData.map { (eps) -> BarChartDataEntry in
-            return BarChartDataEntry(x:Double(eps.index), y:  eps.estimated)
+            return BarChartDataEntry(x:Double(eps.index), y:  eps.estimated!)
         }
         
         let actualEPSBarColor = estimatedEPSEntry.map { (entry) -> NSUIColor in
@@ -143,13 +146,17 @@ class EPSChartData:NSObject {
         xAxis.axisMinimum = 0
         
         let minEstimated = EPSData.min(by: { (a, b) -> Bool in
-            
-            return (a.estimated < b.estimated)
+            if let a1 = a.estimated, let b1 = b.estimated {
+                return (a1 < b1)
+            }
+            return false
         })
         
         let minActual = EPSData.min(by: { (a, b) -> Bool in
-            
-            return (a.actual < b.actual)
+            if let a1 = a.actual, let b1 = b.actual {
+                return (a1 < b1)
+            }
+            return false
         })
         
 //        let maxEstimated = EPSData.max(by: { (a, b) -> Bool in

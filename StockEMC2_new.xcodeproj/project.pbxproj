@@ -18,6 +18,8 @@
 		E94BB7B221AB3AC300D40544 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94BB7B121AB3AC300D40544 /* UIViewController+Helper.swift */; };
 		E96565EA219F9FB100036116 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96565E9219F9FB100036116 /* StockListView.swift */; };
 		E96565EC219F9FC300036116 /* StockListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96565EB219F9FC300036116 /* StockListView.xib */; };
+		E98922A221B2C27100A7B062 /* TimeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98922A121B2C27000A7B062 /* TimeOut.swift */; };
+		E98922A421B2C83B00A7B062 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98922A321B2C83A00A7B062 /* main.swift */; };
 		E99C82A921AB509C00BDFBDF /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C82A621AB509B00BDFBDF /* Subscription.swift */; };
 		E99C82AA21AB509C00BDFBDF /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C82A721AB509C00BDFBDF /* SubscriptionViewController.swift */; };
 		E99C82AB21AB509C00BDFBDF /* HandleSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C82A821AB509C00BDFBDF /* HandleSubscription.swift */; };
@@ -115,6 +117,8 @@
 		E94BB7B121AB3AC300D40544 /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		E96565E9219F9FB100036116 /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 		E96565EB219F9FC300036116 /* StockListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockListView.xib; sourceTree = "<group>"; };
+		E98922A121B2C27000A7B062 /* TimeOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOut.swift; sourceTree = "<group>"; };
+		E98922A321B2C83A00A7B062 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E99C82A621AB509B00BDFBDF /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		E99C82A721AB509C00BDFBDF /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		E99C82A821AB509C00BDFBDF /* HandleSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandleSubscription.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */,
 				E9BF1CE821A1C18800FA30FE /* ViewControllerExt */,
 				E96565E9219F9FB100036116 /* StockListView.swift */,
+				E98922A121B2C27000A7B062 /* TimeOut.swift */,
 				E96565EB219F9FC300036116 /* StockListView.xib */,
 				E9FBDAA7219D0F5000600091 /* MainContentView.xib */,
 				E92782942199138A00F8F9E7 /* Main.storyboard */,
@@ -268,6 +273,7 @@
 				E9BF1CE421A1018800FA30FE /* String+helper.swift */,
 				E9BF1CE621A101E700FA30FE /* UIView+Helper.swift */,
 				E94BB7B121AB3AC300D40544 /* UIViewController+Helper.swift */,
+				E98922A321B2C83A00A7B062 /* main.swift */,
 			);
 			path = StockEMC2_new;
 			sourceTree = "<group>";
@@ -607,9 +613,11 @@
 				E9BF1CE721A101E700FA30FE /* UIView+Helper.swift in Sources */,
 				E96565EA219F9FB100036116 /* StockListView.swift in Sources */,
 				E9BF1CDB21A1006000FA30FE /* DataHandler.swift in Sources */,
+				E98922A421B2C83B00A7B062 /* main.swift in Sources */,
 				E9BF1CEA21A1C1B000FA30FE /* MainMenu+Extension.swift in Sources */,
 				E9D8A67E21A42C1A00BA0BBA /* EPSChartData.swift in Sources */,
 				E99C82AB21AB509C00BDFBDF /* HandleSubscription.swift in Sources */,
+				E98922A221B2C27100A7B062 /* TimeOut.swift in Sources */,
 				E9BF1CE221A1015100FA30FE /* SearchBar.swift in Sources */,
 				E92782932199138A00F8F9E7 /* ViewController.swift in Sources */,
 				E9BF1CDA21A1006000FA30FE /* AppStatsModel.swift in Sources */,

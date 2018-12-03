@@ -150,8 +150,8 @@ extension ViewController: MagneticDelegate {
     
     func titleWithLeftButton(labelText text:String,buttonTitle title:String)->UIView{
         let baseSize = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
-        let labelSize = CGRect.init(x: 0, y: 10, width: self.view.frame.size.width - 100, height: 40)
-        let buttonSize = CGRect.init(x: labelSize.width - 20, y: 0, width: 100, height: 38)
+        let labelSize = CGRect.init(x: 0, y: 0, width: 100, height: 40)
+        let buttonSize = CGRect.init(x: self.view.frame.size.width - 125, y: 0, width: 100, height: 38)
        
         let baseView = UIView.init(frame: baseSize)
         baseView.translatesAutoresizingMaskIntoConstraints = false
@@ -160,7 +160,7 @@ extension ViewController: MagneticDelegate {
         let label = UILabel.init(frame: labelSize)
         label.text = text
         label.font = UIFont.systemFont(ofSize: 18)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        //label.translatesAutoresizingMaskIntoConstraints = false
         label.makeOutLine(oulineColor: UIColor.black, foregroundColor: baseColor)
         baseView.addSubview(label)
         

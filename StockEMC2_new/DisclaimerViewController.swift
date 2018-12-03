@@ -23,7 +23,7 @@ class DisclaimerViewController: UIViewController {
     }
     
     @IBAction func declineDisclamier(_ sender: Any) {
-        let alert = UIAlertController(title: "Information", message: "Are you want decline", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Information", message: "Are you want decline", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default) { action in
             // perhaps use action.title here
             exit(0)
@@ -41,7 +41,7 @@ class DisclaimerViewController: UIViewController {
             self.dismiss(animated: true, completion: {
                 DispatchQueue.main.async {
                     let notificationCenter = NotificationCenter.default
-                    notificationCenter.post(name: NSNotification.Name(rawValue: "renderView"), object: nil)
+                   // notificationCenter.post(name: NSNotification.Name(rawValue: "renderView"), object: nil)
                 }
             })
             //self.showWalkthrough()

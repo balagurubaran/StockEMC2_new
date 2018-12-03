@@ -29,17 +29,18 @@ class Financial{
     var year:String = String()
 }
 
-class KeyState{
-    var marketcap:String?
-    var dividendyield = ""
-    var beta = ""
-    var shortratio = ""
-    var priceToBook = ""
-    var ebitda = ""
-    var roic = ""
-    var roa = ""
-    var grossprofit = ""
-    var profitmargin = ""
+class KeyState:Codable{
+    var marketcap:Double?
+    var dividendyield:Double?
+    var beta:Double?
+    var shortratio:Double?
+    var priceToBook:Double?
+    var ebitda:Double?
+    var ROC:Double?
+    var ROA:Double?
+    var grossprofit:Double?
+    var netprofitmargin:Double?
+    var debt:Double?
 }
 
 class dividends{
@@ -116,8 +117,8 @@ class EarningCall{
 
 class EPS {
     var year: String = ""
-    var actual: Double = 0.0
-    var estimated: Double = 0.0
+    var actual: Double?
+    var estimated: Double?
     var Q:String = "Q1"
     var index = 0
     var fiscalEndDate:String = ""

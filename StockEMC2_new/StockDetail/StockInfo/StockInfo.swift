@@ -44,14 +44,30 @@ class StockInfoBaseView:UIView {
             stockInfo.view1.backgroundColor = UIColor.init(red: 0.0/255, green: 0.0/255, blue: 0.0/255,alpha:0.05)
             stockInfo.view2.backgroundColor = UIColor.white
         }
-        if let key = info.key , let value = info.value {
+        if let key = info.label1.key , let value = info.label1.value {
             stockInfo.view1Label1.text = key
             stockInfo.view1Label2.text = "\(value)"
+            if let symbol = info.label1.symbol {
+                stockInfo.view1Label2.text = "\(value)" + symbol
+            }
+            if let convertedVlaue = Double(value){
+                if convertedVlaue < 0.0 {
+                    stockInfo.view1Label2.textColor = UIColor.stockEmc2Red
+                }
+            }
         }
         
-        if let key = info.key1 , let value = info.value1 {
+        if let key = info.label2.key , let value = info.label2.value {
             stockInfo.view2Label1.text = key
             stockInfo.view2Label2.text = "\(value)"
+            if let symbol = info.label2.symbol {
+                stockInfo.view2Label2.text = "\(value)" + symbol
+            }
+            if let convertedVlaue = Double(value){
+                if convertedVlaue < 0.0 {
+                    stockInfo.view2Label2.textColor = UIColor.stockEmc2Red
+                }
+            }
         }
     }
 }

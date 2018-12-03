@@ -12,7 +12,7 @@ import UIKit
 var selectedStockInfo:shareBasicInfo?
 let baseColor = UIColor.white
 var stockInfoElement_live:[StockInfoDataModel]?
-var statsBasic:[StockInfoDataModel]?
+var statsBasic:[StockInfoDataModel] = [StockInfoDataModel]()
 var statsBasic1:[StockInfoDataModel]?
 
 enum MenuListEnum:String {

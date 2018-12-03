@@ -46,7 +46,7 @@ class StockListViewBase:UIView,StockCardDelegate{
             stockListView.companyName.text = companyName
             stockListView.marketPrice.text = currentPrice.dollarString
             stockListView.backgroundColor = stockBasicInfo.backGroundColor
-            stockListView.marketPrice.textColor = priceDifference > 0 ? UIColor.colors[3] : UIColor.colors[4]
+            stockListView.marketPrice.textColor = priceDifference >= 0 ? UIColor.colors[3] : UIColor.colors[4]
         }  
     }
     

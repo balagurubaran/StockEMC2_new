@@ -24,7 +24,7 @@ var EPSData:[EPS] = [EPS]()
 
 var founderInvestment:Float = 0
 var foundedProfitORLoss:Float = 0
-let keyState = KeyState.init()
+private var keyState:KeyState?
 var watchList:Array = [String]()
 
 var selectedIndex = 0;
@@ -153,7 +153,7 @@ class DataHandler{
         case .dividend:
             stockBasicInfo = nonFilterStockBasicInfo.filter{ $0.sharePriceInfo?.dividendsPrice != nil &&  ($0.sharePriceInfo?.dividendsPrice)! > value}
         case .profit:
-            stockBasicInfo = nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! > value}
+            stockBasicInfo = nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! >= value}
         case .loss:
             stockBasicInfo = nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! < value}
         case .search:
@@ -277,25 +277,27 @@ class DataHandler{
     
     //Stock's KeyState start
     
-    class func getTheSelectedStockInfoForView2()->KeyState{
+    class func getTheSelectedStockInfoForView2()->KeyState?{
         return keyState
     }
     
     class func parseKeyState(data:Data){
         
         do{
-            let AllKeyState = try JSON(data: data)
-            keyState.beta = AllKeyState["beta"].stringValue
-            keyState.priceToBook = AllKeyState["priceToBook"].stringValue
-            keyState.dividendyield = AllKeyState["dividendyield"].stringValue
-            keyState.shortratio = AllKeyState["shortratio"].stringValue
-            keyState.ebitda = AllKeyState["ebitda"].stringValue
-            keyState.roic = AllKeyState["ROIC"].stringValue
-            keyState.roa = AllKeyState["ROA"].stringValue
-            keyState.grossprofit = AllKeyState["grossprofit"].stringValue
-            keyState.profitmargin = AllKeyState["netprofitmargin"].stringValue
-            keyState.marketcap = AllKeyState["marketcap"].stringValue
+//            let AllKeyState = try JSON(data: data)
+//            keyState.beta = AllKeyState["beta"].stringValue
+//            keyState.priceToBook = AllKeyState["priceToBook"].stringValue
+//            keyState.dividendyield = AllKeyState["dividendyield"].stringValue
+//            keyState.shortratio = AllKeyState["shortratio"].stringValue
+//            keyState.ebitda = AllKeyState["ebitda"].double
+//            keyState.roc = AllKeyState["ROC"].double
+//            keyState.roa = AllKeyState["ROA"].double
+//            keyState.grossprofit = AllKeyState["grossprofit"].double
+//            keyState.profitmargin = AllKeyState["netprofitmargin"].double
+//            keyState.marketcap = AllKeyState["marketcap"].double
+//            keyState.debt = AllKeyState["debt"].double
             
+            keyState = try JSONDecoder.init().decode(KeyState.self, from: data)
         }catch let error{
             print(error.localizedDescription)
         }
@@ -566,6 +568,14 @@ class DataHandler{
         return(all,profit,loss)
     }
     // Sector profit , loss , all stock list End
+    
+    // Reset TehDetaiview all DataModel
+    
+    class func resetDetaViewDataHandler(){
+        keyState = nil
+        statsBasic.removeAll()
+        statsBasic1?.removeAll()
+    }
 }
 
 extension Array {

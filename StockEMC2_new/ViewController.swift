@@ -21,6 +21,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
     let secondaryFilterDropDown = DropDown()
     let notificationCenter = NotificationCenter.default
     var subscriptionButton:CustomButton? = nil
+    var alert:UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,44 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
         Utility.checkFreePeriod()
         utility.initloadView()
         notificationCenter.addObserver(self, selector: #selector(renderView), name: NSNotification.Name(rawValue: "renderView"), object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refreshApplication),
+                                               name: .appTimeout,
+                                               object: nil)
+        
+        self.notificationCenter.addObserver(self, selector: #selector(self.alertError), name: NSNotification.Name(rawValue: "alertError"), object: nil)
+    }
+    
+    @objc func refreshApplication(isProfitlLossService:Bool = false){
+        DispatchQueue.main.async {
+            self.renderView()
+        }
+    }
+    
+    @objc func alertError(){
+        if (alert != nil){
+            return
+        }
+        alert = UIAlertController(title: "Error", message: "Can you please try again some time later", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Retry", style: .default) { (UIAlertAction) in
+            self.alert = nil
+            self.renderView()
+        }
+        alert?.addAction(action)
+        self.present(alert!, animated: true, completion: nil)
+    }
+    
+    func resetViewControllerView(){
+        self.mainContentView.removeAllView()
+        self.mainContentView.removeFromSuperview()
+        
+        self.menuContentView.removeAllView()
+        self.menuContentView.removeFromSuperview()
     }
     
     @objc func renderView(){
+        self.resetViewControllerView()
         DispatchQueue.main.async {
             let dispatchGroup = DispatchGroup()
             dispatchGroup.enter()
@@ -38,10 +74,9 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             
             dispatchGroup.enter()
             NetworkHandler.loadTheStockBasicInfo(dispatch: dispatchGroup)
-            
-            
-            dispatchGroup.enter()
+        
             if !isFreeSubcription {
+                dispatchGroup.enter()
                 HandleSubscription.shared.loadReceipt(completion: { (status) in
                     isValidPurchase = status
                     dispatchGroup.leave()
@@ -55,6 +90,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
                 self.utility.removeLoading(view: self.view)
                 
                 self.notificationCenter.addObserver(self, selector: #selector(self.addsubscriptionButton), name: UIApplication.willEnterForegroundNotification, object: nil)
+                self.alert = nil
             }
         }
     }
@@ -63,7 +99,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
         if !userDefaults.bool(forKey: "termsandconditon") {
             self.performSegue(withIdentifier: "termsandconditon", sender: nil)
             return
-        }else{
+        }else if DataHandler.getTheMainStockDetail().count <= 0{
             renderView()
         }
     }

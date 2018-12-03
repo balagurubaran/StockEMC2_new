@@ -58,7 +58,7 @@ class Utility{
         
         let roundedNum:Double = round(10 * num / pow(1000.0,Double(exp))) / 10;
         
-        return "\(sign)\(roundedNum)\(units[exp-1])" ;
+        return "\(sign)\(roundedNum) \(units[exp-1])" ;
     }
     
     class func checkFreePeriod(){
@@ -68,7 +68,7 @@ class Utility{
         formatter.dateFormat = "yyyy-MM-dd"
         
         isFreeSubcription = false
-        if(keychain.get("timeperiod") == nil){
+        if(keychain.get("timeperiod1") == nil){
         
             isValidPurchase = true
             isFreeSubcription = true
@@ -76,11 +76,11 @@ class Utility{
             let currentDate = Date().addDay(n: 2)
             let date = formatter.string(from: currentDate)
     
-            keychain.set(String(describing: date), forKey: "timeperiod")
+            keychain.set(String(describing: date), forKey: "timeperiod1")
             showMessage(message: "Two day free subscription activated")
     
         }else{
-            let date =  keychain.get("timeperiod")
+            let date =  keychain.get("timeperiod1")
             // convert your string to date
         
             if let savedDate = date?.StringToDate(){

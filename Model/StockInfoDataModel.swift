@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct StockInfoDataModel: Codable {
+struct StockInfoDataModel {
+    var label1:labelValue = labelValue()
+    var label2:labelValue = labelValue()
+    var index:Int = 0
+}
+
+struct labelValue {
     var key: String?
     var value: String?
-    var key1: String?
-    var value1: String?
-    var index:Int = 0
+    var symbol:String?
 }
