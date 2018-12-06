@@ -151,7 +151,7 @@ class DataHandler{
         case .all:
                 stockBasicInfo = nonFilterStockBasicInfo
         case .dividend:
-            stockBasicInfo = nonFilterStockBasicInfo.filter{ $0.sharePriceInfo?.dividendsPrice != nil &&  ($0.sharePriceInfo?.dividendsPrice)! > value}
+            stockBasicInfo = nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.dividendsPrice != nil &&  ($0.sharePriceInfo?.dividendsPrice)! > value}
         case .profit:
             stockBasicInfo = nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! >= value}
         case .loss:
@@ -564,7 +564,6 @@ class DataHandler{
         let profit:String = String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.shareSector == sectorName && $0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! >= value}.count)
         let loss:String = String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.shareSector == sectorName && $0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! < value}.count)
         
-        
         return(all,profit,loss)
     }
     // Sector profit , loss , all stock list End
@@ -575,6 +574,16 @@ class DataHandler{
         keyState = nil
         statsBasic.removeAll()
         statsBasic1?.removeAll()
+    }
+    
+    // getThe PRofit loass and dividend count
+    
+    class func setThePLDCount(){
+        let value:Float = 0.0
+        appStatsModel.profit_count =  String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! >= value}.count)
+        appStatsModel.loss_count =  String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! < value}.count)
+        appStatsModel.dividend_count = String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.dividendsPrice != nil &&  ($0.sharePriceInfo?.dividendsPrice)! > value}.count)
+        print(appStatsModel.profit_count)
     }
 }
 

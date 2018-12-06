@@ -68,7 +68,7 @@ class Utility{
         formatter.dateFormat = "yyyy-MM-dd"
         
         isFreeSubcription = false
-        if(keychain.get("timeperiod1") == nil){
+        if(keychain.get("timeperiod") == nil){
         
             isValidPurchase = true
             isFreeSubcription = true
@@ -76,11 +76,11 @@ class Utility{
             let currentDate = Date().addDay(n: 2)
             let date = formatter.string(from: currentDate)
     
-            keychain.set(String(describing: date), forKey: "timeperiod1")
+            keychain.set(String(describing: date), forKey: "timeperiod")
             showMessage(message: "Two day free subscription activated")
     
         }else{
-            let date =  keychain.get("timeperiod1")
+            let date =  keychain.get("timeperiod")
             // convert your string to date
         
             if let savedDate = date?.StringToDate(){

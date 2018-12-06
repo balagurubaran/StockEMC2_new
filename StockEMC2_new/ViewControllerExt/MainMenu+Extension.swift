@@ -57,7 +57,6 @@ extension ViewController {
         padding.trailingAnchor = -10
         padding.heightAnchor = 95
         menuContentView.addView(view: magneticView, padding: padding)
-        let appStats = DataHandler.getTheStats()
         for (index,menu) in mainMenuItems.enumerated() {
             let color = UIColor.colors[index]
             let enumValue:MenuListEnum? = MenuListEnum(rawValue: menu)
@@ -66,11 +65,11 @@ extension ViewController {
             case .all?:
                 eachMenuStockCount = "\(DataHandler.getTheMainStockDetail().count)"
             case .loss?:
-                eachMenuStockCount = appStats.loss_count ?? ""
+                eachMenuStockCount = appStatsModel.loss_count ?? ""
             case .profit?:
-                eachMenuStockCount = appStats.profit_count ?? ""
+                eachMenuStockCount = appStatsModel.profit_count ?? ""
             case .dividend?:
-                eachMenuStockCount = appStats.dividend_count ?? ""
+                eachMenuStockCount = appStatsModel.dividend_count ?? ""
             default:
                 break
             }
@@ -206,6 +205,7 @@ extension ViewController: MagneticDelegate {
                 subscriptionButton?.hide()
             }
             if isValidPurchase == true{
+                subscriptionButton?.hide()
                 return
             }
             subscriptionButton?.show()

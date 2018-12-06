@@ -35,6 +35,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
                                                name: .appTimeout,
                                                object: nil)
         
+    
         self.notificationCenter.addObserver(self, selector: #selector(self.alertError), name: NSNotification.Name(rawValue: "alertError"), object: nil)
     }
     
@@ -43,7 +44,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             self.renderView()
         }
     }
-    
+
     @objc func alertError(){
         if (alert != nil){
             return
@@ -69,8 +70,8 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
         self.resetViewControllerView()
         DispatchQueue.main.async {
             let dispatchGroup = DispatchGroup()
-            dispatchGroup.enter()
-            NetworkHandler.loadTheStats(dispatch: dispatchGroup)
+            //dispatchGroup.enter()
+            //NetworkHandler.loadTheStats(dispatch: dispatchGroup)
             
             dispatchGroup.enter()
             NetworkHandler.loadTheStockBasicInfo(dispatch: dispatchGroup)
@@ -84,6 +85,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             }
             self.utility.showLoadingView(view: self.view)
             dispatchGroup.notify(queue: .main) {
+                DataHandler.setThePLDCount()
                 DataHandler.setAllSectorDetails()
                 self.loadTheMenuContentView()
                 self.loadMainContentView()
