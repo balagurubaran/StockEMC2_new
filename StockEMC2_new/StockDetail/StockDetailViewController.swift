@@ -66,6 +66,7 @@ class StockDetailViewController:UIViewController{
                 
                 self.mainContentView.addTitle(title: "Price")
                 self.renderTheLivePriceInfo()
+               // self.mainContentView.addTitle(title: "Why?")
                 self.mainContentView.addTitle(title: "Stats")
                 self.renderTheBasicStats()
                 self.mainContentView.addTitle(title: "Day Trade")

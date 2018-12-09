@@ -11,6 +11,10 @@ import UIKit
 
 class SubscriptionViewController:UIViewController {
     
+    override func awakeFromNib() {
+         NotificationCenter.default.addObserver(self, selector: #selector(closeView), name: NSNotification.Name(rawValue: "closeView"), object: nil)
+    }
+    
     @IBAction func paySubscrption(_ sender: Any) {
         if(!isValidPurchase){
             HandleSubscription.shared.purchase()
@@ -22,7 +26,7 @@ class SubscriptionViewController:UIViewController {
     }
     @IBAction func restorePurchase(_ sender: Any) {
         if(!isValidPurchase){
-            HandleSubscription.shared.purchase()
+            HandleSubscription.shared.restorePurchases()
         }
     }
 }

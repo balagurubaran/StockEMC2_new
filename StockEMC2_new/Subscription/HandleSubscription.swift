@@ -99,7 +99,9 @@ extension HandleSubscription {
         loadReceipt { (status) in
             isValidPurchase = status
             Utility.showMessage(message: "Your subscription is active")
-           // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshApplication"), object: nil, userInfo: nil)
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "closeView"), object: nil, userInfo: nil)
+            }
         }
         queue.finishTransaction(transaction)
         
@@ -109,14 +111,11 @@ extension HandleSubscription {
         print("Purchase restored for product id: \(transaction.payment.productIdentifier)")
         loadReceipt { (status) in
             isValidPurchase = status
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "closeView"), object: nil, userInfo: nil)
+            }
             Utility.showMessage(message: "Your subscription is active")
         }
-        //        queue.finishTransaction(transaction)
-        //        SubscriptionService.shared.uploadReceipt { (success) in
-        //            DispatchQueue.main.async {
-        //                NotificationCenter.default.post(name: SubscriptionService.restoreSuccessfulNotification, object: nil)
-        //            }
-        //        }
     }
     
     func handleFailedState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
