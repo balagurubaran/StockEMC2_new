@@ -115,7 +115,8 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             mainContentView.topAnchor.constraint(equalTo: previouslyAddedView.bottomAnchor, constant: 0).isActive = true
             mainContentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
             mainContentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-            mainContentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+            let bottom = view.window?.safeAreaInsets.bottom ?? 0.0
+            mainContentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant:-bottom).isActive = true
             self.view.layoutIfNeeded()
         }
         loadTheStockList(selectedMenuItem:"All")
@@ -225,6 +226,8 @@ class MainContentView:UIView {
         }
         if padding.heightAnchor > 0.0 {
             view.heightAnchor.constraint(equalToConstant: padding.heightAnchor).isActive = true
+        }else{
+            view.heightAnchor.constraint(equalToConstant: view.frame.size.height).isActive = true
         }
         previouslyAddedView = view
         contentView.layoutIfNeeded()
@@ -245,6 +248,7 @@ class MainContentView:UIView {
     func addTitle(title:String){
         let label = UILabel.init()
         label.text = title
+        label.backgroundColor = UIColor.clear
         label.font = UIFont.systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.makeOutLine(oulineColor: UIColor.black, foregroundColor: baseColor)

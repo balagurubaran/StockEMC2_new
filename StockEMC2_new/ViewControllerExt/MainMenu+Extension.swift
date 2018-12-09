@@ -20,7 +20,7 @@ extension ViewController {
         menuContentView.backgroundColor = baseColor
         menuContentView.translatesAutoresizingMaskIntoConstraints = false
         
-        menuContentView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        menuContentView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: view.window?.safeAreaInsets.top ?? 0.0).isActive = true
         menuContentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
         menuContentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         let heightAnchor = menuContentView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height)
@@ -34,14 +34,13 @@ extension ViewController {
         var padding = Padding.init()
         padding.leadingAnchor = 10
         padding.trailingAnchor = -10
-        padding.heightAnchor = 48
+        padding.heightAnchor = 0.0
         
         menuContentView.addView(view: titleWithLeftButton(labelText: "Stocks", buttonTitle: "Latest"), padding: padding)
-        menuContentView.layoutIfNeeded()
         if let previouslyAddedView = menuContentView.contentView.subviews.last {
-            let height = previouslyAddedView.frame.size.height + previouslyAddedView.frame.origin.y
-            heightAnchor.constant = height + 15
+            heightAnchor.constant = previouslyAddedView.frame.size.height + previouslyAddedView.frame.origin.y
         }
+        menuContentView.backgroundColor = .red
         menuContentView.layoutIfNeeded()
     }
     
