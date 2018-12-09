@@ -38,9 +38,8 @@ extension ViewController {
         
         menuContentView.addView(view: titleWithLeftButton(labelText: "Stocks", buttonTitle: "Latest"), padding: padding)
         if let previouslyAddedView = menuContentView.contentView.subviews.last {
-            heightAnchor.constant = previouslyAddedView.frame.size.height + previouslyAddedView.frame.origin.y
+            heightAnchor.constant = previouslyAddedView.frame.size.height + previouslyAddedView.frame.origin.y + (UIDevice.current.userInterfaceIdiom == .pad ? 10 : 0)
         }
-        menuContentView.backgroundColor = .red
         menuContentView.layoutIfNeeded()
     }
     
