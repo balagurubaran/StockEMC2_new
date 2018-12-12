@@ -63,7 +63,7 @@ class SearchBar: UIView,UISearchBarDelegate {
         currentCOntroller?.view.addSubview(xibView)
         
         UIView.animate(withDuration: 1) {
-            xibView.frame.origin.y = xibView.frame.size.height - xibView.frame.size.height + 20
+            xibView.frame.origin.y = xibView.frame.size.height - xibView.frame.size.height + 20 + (UIDevice.current.userInterfaceIdiom == .pad ? 10 : 0)
             xibView.layoutIfNeeded()
         }
 //

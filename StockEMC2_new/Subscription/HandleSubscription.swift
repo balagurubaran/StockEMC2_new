@@ -35,6 +35,7 @@ class HandleSubscription:NSObject,SKProductsRequestDelegate,SKPaymentTransaction
             return
         }
         let payment = SKPayment(product: subscription.product)
+        SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(payment)
     }
     
@@ -44,6 +45,7 @@ class HandleSubscription:NSObject,SKProductsRequestDelegate,SKPaymentTransaction
             return
         }
         let payment = SKPayment(product: subscription.product)
+        SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(payment)
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
@@ -80,6 +82,10 @@ extension HandleSubscription {
                 handleDeferredState(for: transaction, in: queue)
             }
         }
+    }
+    
+    public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        print("paymentQueueRestoreCompletedTransactionsFinished")
     }
     
     public func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {

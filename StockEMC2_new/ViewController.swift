@@ -76,13 +76,11 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             dispatchGroup.enter()
             NetworkHandler.loadTheStockBasicInfo(dispatch: dispatchGroup)
         
-            if !isFreeSubcription {
-                dispatchGroup.enter()
-                HandleSubscription.shared.loadReceipt(completion: { (status) in
-                    isValidPurchase = status
-                    dispatchGroup.leave()
-                })
-            }
+            dispatchGroup.enter()
+            HandleSubscription.shared.loadReceipt(completion: { (status) in
+                isValidPurchase = status
+                dispatchGroup.leave()
+            })
             self.utility.showLoadingView(view: self.view)
             dispatchGroup.notify(queue: .main) {
                 DataHandler.setThePLDCount()
