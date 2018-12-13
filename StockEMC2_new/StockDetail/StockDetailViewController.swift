@@ -105,7 +105,7 @@ class StockDetailViewController:UIViewController{
             mainContentView.topAnchor.constraint(equalTo: previouslyAddedView.bottomAnchor, constant: 0).isActive = true
             mainContentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
             mainContentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-            mainContentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+            mainContentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: (UIDevice.current.userInterfaceIdiom == .pad ? 20 : 0)).isActive = true
             self.view.layoutIfNeeded()
         }
     }
