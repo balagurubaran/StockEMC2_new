@@ -60,12 +60,15 @@ class StockDetailViewController:UIViewController{
             
             dispatchGroup.notify(queue: .main) {
                 StockInfoDataHandler.setTheLivePriceInfo()
+                StockInfoDataHandler.setTheDayPriceInfo()
                 StockInfoDataHandler.setTheStats()
                 StockInfoDataHandler.setTheStats1()
                 
                 
-                self.mainContentView.addTitle(title: "Price")
+                self.mainContentView.addTitle(title: "Live")
                 self.renderTheLivePriceInfo()
+                //self.mainContentView.addTitle(title: "Day")
+                //self.renderTheDayPriceInfo()
                // self.mainContentView.addTitle(title: "Why?")
                 self.mainContentView.addTitle(title: "Stats")
                 self.renderTheBasicStats()
@@ -131,6 +134,23 @@ class StockDetailViewController:UIViewController{
     
     func renderTheLivePriceInfo(){
         if let local = stockInfoElement_live{
+            for (index,eachInfo) in local.enumerated() {
+                let stockinfo = StockInfoBaseView.init()
+                var padding = Padding.init()
+                padding.trailingAnchor = -10
+                padding.leadingAnchor = 10
+                padding.topAnchor = 0
+                padding.heightAnchor = 35
+                mainContentView.addView(view: stockinfo, padding: padding)
+                stockinfo.loadTheData(info: eachInfo,index:index)
+            }
+        }
+    }
+
+    // Render the Day price info
+    
+    func renderTheDayPriceInfo(){
+        if let local = stockInfoElement_Day{
             for (index,eachInfo) in local.enumerated() {
                 let stockinfo = StockInfoBaseView.init()
                 var padding = Padding.init()

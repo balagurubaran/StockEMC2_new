@@ -10,10 +10,10 @@ import Foundation
 
 class NetworkHandler{
     
-    class func loadTheStats( dispatch:DispatchGroup){
+    class func loadTheKeyState(dispatch:DispatchGroup,shareName:String){
         let service = Service()
-        service.getTheStats { (data) in
-            DataHandler.parseTheApplicationStats(data: data)
+        service.getKeyState(shareName: shareName) { (data) in
+            DataHandler.parseKeyState(data: data)
             dispatch.leave()
         }
     }
@@ -22,23 +22,6 @@ class NetworkHandler{
         let service = Service()
         service.getshareBasicDetail { (data) in
             DataHandler.parseTheStockBasicDetail(data: data)
-            
-            dispatch.leave()
-        }
-    }
-    
-    class func loadTheStockBasicInfo_profit_loss(isProfitList:Bool, dispatch:DispatchGroup){
-        let service = Service()
-        service.getshareBasicDetail_profit_loss(isProfitList: isProfitList) { (data) in
-            DataHandler.parseTheStockBasicDetail(data: data)
-            dispatch.leave()
-        }
-    }
-
-    class func loadTheKeyState(dispatch:DispatchGroup,shareName:String){
-        let service = Service()
-        service.getKeyState(shareName: shareName) { (data) in
-            DataHandler.parseKeyState(data: data)
             dispatch.leave()
         }
     }
@@ -53,14 +36,30 @@ class NetworkHandler{
         }
     }
     
+    class func loadTheNewsFeed(dispatch:DispatchGroup,shareName:String = "All"){
+        let url = "https://rgbtohex.in/pennystock/Version3/newsfeed/getallnews.php"
+        Network.init().getData(url) { (data) in
+            DataHandler.parseTheMarketNews(data: data)
+            dispatch.leave()
+        }
+    }
+    
+    class func loadTheRevenueGraph(dispatch:DispatchGroup,shareName:String){
+        let service = Service()
+        let url = "https://stockrow.com/api/companies/\(shareName)/financials.json?dimension=MRY&section=Income%20Statement"
+        service.getTheFinancialData(url: url) { (data) in
+            DataHandler.parseTheRevenueData(data: data)
+            dispatch.leave()
+        }
+    }
+    
     class func load30DaysData(dispatch:DispatchGroup,shareName:String){
         let service = Service()
-        
         let dateFormate = DateFormatter()
         dateFormate.dateFormat = "yyyy/MM/dd"
         let date = Date()
         var stringOfDate = dateFormate.string(from: date)
-
+        
         let dateComponents = Calendar.current.dateComponents([.weekday,.hour], from: date)
         if(dateComponents.weekday! == 1){
             stringOfDate = dateFormate.string(from: date.addDay(n: -2))
@@ -76,22 +75,6 @@ class NetworkHandler{
         
         service.getTheFinancialData(url: url) { (data) in
             DataHandler.parseThe30Data(data: data)
-            dispatch.leave()
-        }
-    }
-    
-    class func updateTheWatchListCoount(shareName:String,isRemove:Bool){
-        let url = "https://rgbtohex.in/pennystock/updateWatchList.php?shareName=\(shareName)&isRemove=\(isRemove)"
-        Network.init().getData(url) { (data) in
-                print(String(data: data, encoding: .utf8)!)
-        }
-    }
-    
-    class func loadTheRevenueGraph(dispatch:DispatchGroup,shareName:String){
-        let service = Service()
-        let url = "https://stockrow.com/api/companies/\(shareName)/financials.json?dimension=MRY&section=Income%20Statement"
-        service.getTheFinancialData(url: url) { (data) in
-            DataHandler.parseTheRevenueData(data: data)
             dispatch.leave()
         }
     }

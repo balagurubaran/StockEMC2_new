@@ -20,11 +20,11 @@ class WidgetService{
     func widgetServiceCall(){
         widgetDetail.removeAll()
         
-        self.watchList = service.gettheWatchList()
-        
-        service.getWatchListValue(watchList: self.watchList) { (data) in
-            self.loadTheShareDataNormal(data:data)
-        }
+//        self.watchList = service.gettheWatchList()
+//
+//        service.getWatchListValue(watchList: self.watchList) { (data) in
+//            self.loadTheShareDataNormal(data:data)
+//        }
     }
     
     func loadTheShareDataNormal(data:Data){

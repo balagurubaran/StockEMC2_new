@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import SectorCard
 
 fileprivate var stockBasicInfo:[shareBasicInfo] = [shareBasicInfo]()
 fileprivate var nonFilterStockBasicInfo:[shareBasicInfo] = [shareBasicInfo]()
@@ -29,6 +30,9 @@ var watchList:Array = [String]()
 
 var selectedIndex = 0;
 var searchString = ""
+
+// NewsFeed
+var allNewsFeed = [NewsCardDataModel]()
 
 struct Sector{
     var sectorName:String?
@@ -189,6 +193,9 @@ class DataHandler{
             var eachShare = priceInfo
             let localLive = eachShare["live"].dictionaryValue
             shareDetail.live = parseHistory(value: localLive)
+            
+            let localDay = eachShare["day"].dictionaryValue
+            shareDetail.day = parseHistory(value: localDay)
             
             if let currentPrice  = shareDetail.live?.price {
                 shareDetail.currentPrice = currentPrice
@@ -583,7 +590,17 @@ class DataHandler{
         appStatsModel.profit_count =  String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! >= value}.count)
         appStatsModel.loss_count =  String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.live?.priceDifference != nil && ($0.sharePriceInfo?.live?.priceDifference)! < value}.count)
         appStatsModel.dividend_count = String(nonFilterStockBasicInfo.filter{$0.sharePriceInfo?.dividendsPrice != nil &&  ($0.sharePriceInfo?.dividendsPrice)! > value}.count)
-        print(appStatsModel.profit_count)
+    }
+    
+    // News Feed
+    
+    class func parseTheMarketNews(data:Data){
+        do {
+            let decoder = JSONDecoder()
+            allNewsFeed = try decoder.decode([NewsCardDataModel].self, from: data)
+        }catch let error{
+            print("error")
+        }
     }
 }
 

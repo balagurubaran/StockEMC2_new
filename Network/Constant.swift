@@ -10,6 +10,7 @@ import Foundation
 
 
 let baseURL = "https://rgbtohex.in/pennystock"
+//let baseURL = "http://localhost:8888/pennystock/"
 var isFreeSubcription = false
 var userDefaults:UserDefaults = UserDefaults.init(suiteName: "group.com.iappscrazy.bricksbreak2048")!
 var checkSum = "12346"

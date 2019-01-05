@@ -55,6 +55,7 @@ class StockInfoBaseView:UIView {
                     stockInfo.view1Label2.textColor = UIColor.stockEmc2Red
                 }
             }
+            stockInfo.view1Label2.textColor = info.label2.color
         }
         
         if let key = info.label2.key , let value = info.label2.value {

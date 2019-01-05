@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Model/StockInfoDataHandler.swift"
-            timestampString = "565487874.734668"
+            filePath = "StockEMC2_new/Subscription/InAppManager.swift"
+            timestampString = "566183905.148649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "setTheStats1()"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "paymentQueue(_:updatedTransactions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Model/StockInfoDataHandler.swift"
-            timestampString = "565487874.73478"
+            filePath = "StockEMC2_new/Subscription/InAppManager.swift"
+            timestampString = "566184059.5488631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "setTheStats1()"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "paymentQueueRestoreCompletedTransactionsFinished(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Model/StockInfoDataHandler.swift"
-            timestampString = "565487874.734866"
+            filePath = "StockEMC2_new/Subscription/InAppManager.swift"
+            timestampString = "566184200.154536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "setTheStats1()"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "updateSubscriptionStatus()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StockEMC2_new/StockDetail/StockDetailViewController.swift"
+            timestampString = "567726082.9461091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "renderTheDayPriceInfo()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

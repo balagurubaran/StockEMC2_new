@@ -24,7 +24,6 @@ class Network{
                 print("Error",error.debugDescription);
             }
         })
-        
         task.resume()
     }
 }

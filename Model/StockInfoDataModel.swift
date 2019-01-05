@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct StockInfoDataModel {
     var label1:labelValue = labelValue()
@@ -18,4 +19,5 @@ struct labelValue {
     var key: String?
     var value: String?
     var symbol:String?
+    var color:UIColor = .black
 }

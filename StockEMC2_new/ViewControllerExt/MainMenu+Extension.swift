@@ -30,6 +30,7 @@ extension ViewController {
         loadTheMainMenu()
         menuContentView.addTitle(title: "Sector")
         loadSectorView()
+        renderTheNewsFeed()
         
         var padding = Padding.init()
         padding.leadingAnchor = 10
@@ -41,10 +42,11 @@ extension ViewController {
             heightAnchor.constant = previouslyAddedView.frame.size.height + previouslyAddedView.frame.origin.y + (UIDevice.current.userInterfaceIdiom == .pad ? 10 : 0)
         }
         menuContentView.layoutIfNeeded()
+        
     }
     
     func loadTheMainMenu(){
-        let rect = CGRect(x: 0, y: 40, width: self.view.bounds.width, height: 95)
+        let rect = CGRect(x: 0, y: 40, width: self.view.bounds.width, height: 85)
         let magneticView = MagneticView.init(frame: rect)
         magneticView.backgroundColor = baseColor
         magneticView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +55,7 @@ extension ViewController {
         var padding = Padding.init()
         padding.leadingAnchor = 10
         padding.trailingAnchor = -10
-        padding.heightAnchor = 95
+        padding.heightAnchor = 85
         menuContentView.addView(view: magneticView, padding: padding)
         for (index,menu) in mainMenuItems.enumerated() {
             let color = UIColor.colors[index]

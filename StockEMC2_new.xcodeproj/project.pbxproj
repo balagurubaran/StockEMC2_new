@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C00F345E59CA2FED32F23BE4 /* Pods_StockEMC2_new.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */; };
+		E9126A2021D2A2FC000CF649 /* ViewController+NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9126A1F21D2A2FC000CF649 /* ViewController+NewsFeed.swift */; };
 		E91679A221A3A74A0081628C /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91679A121A3A74A0081628C /* StockDetailViewController.swift */; };
 		E92782912199138A00F8F9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92782902199138A00F8F9E7 /* AppDelegate.swift */; };
 		E92782932199138A00F8F9E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92782922199138A00F8F9E7 /* ViewController.swift */; };
@@ -15,7 +16,6 @@
 		E92782982199139A00F8F9E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92782972199139A00F8F9E7 /* Assets.xcassets */; };
 		E927829B2199139A00F8F9E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92782992199139A00F8F9E7 /* LaunchScreen.storyboard */; };
 		E94BB7B021AB06AC00D40544 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E94BB7AF21AB06AB00D40544 /* GoogleService-Info.plist */; };
-		E94BB7B221AB3AC300D40544 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94BB7B121AB3AC300D40544 /* UIViewController+Helper.swift */; };
 		E96565EA219F9FB100036116 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96565E9219F9FB100036116 /* StockListView.swift */; };
 		E96565EC219F9FC300036116 /* StockListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96565EB219F9FC300036116 /* StockListView.xib */; };
 		E98922A221B2C27100A7B062 /* TimeOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98922A121B2C27000A7B062 /* TimeOut.swift */; };
@@ -105,6 +105,7 @@
 		55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockEMC2_new.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCAE9A0177F6C7CC24AE3DC /* Pods-StockEMC2_new.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockEMC2_new.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockEMC2_new/Pods-StockEMC2_new.debug.xcconfig"; sourceTree = "<group>"; };
 		E908261D21AE1B5400EE52DD /* StockEMC2_new.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockEMC2_new.entitlements; sourceTree = "<group>"; };
+		E9126A1F21D2A2FC000CF649 /* ViewController+NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NewsFeed.swift"; sourceTree = "<group>"; };
 		E91679A121A3A74A0081628C /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		E927828D2199138A00F8F9E7 /* StockEMC2_new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockEMC2_new.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92782902199138A00F8F9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		E927829A2199139A00F8F9E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E927829C2199139A00F8F9E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E94BB7AF21AB06AB00D40544 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E94BB7B121AB3AC300D40544 /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		E96565E9219F9FB100036116 /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 		E96565EB219F9FC300036116 /* StockListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockListView.xib; sourceTree = "<group>"; };
 		E98922A121B2C27000A7B062 /* TimeOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOut.swift; sourceTree = "<group>"; };
@@ -260,6 +260,7 @@
 				E9BF1C9A21A0FA0A00FA30FE /* Constants.swift */,
 				E92782902199138A00F8F9E7 /* AppDelegate.swift */,
 				E92782922199138A00F8F9E7 /* ViewController.swift */,
+				E9126A1F21D2A2FC000CF649 /* ViewController+NewsFeed.swift */,
 				E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */,
 				E9BF1CE821A1C18800FA30FE /* ViewControllerExt */,
 				E96565E9219F9FB100036116 /* StockListView.swift */,
@@ -272,7 +273,6 @@
 				E927829C2199139A00F8F9E7 /* Info.plist */,
 				E9BF1CE421A1018800FA30FE /* String+helper.swift */,
 				E9BF1CE621A101E700FA30FE /* UIView+Helper.swift */,
-				E94BB7B121AB3AC300D40544 /* UIViewController+Helper.swift */,
 				E98922A321B2C83A00A7B062 /* main.swift */,
 			);
 			path = StockEMC2_new;
@@ -610,6 +610,7 @@
 				E9BF1CC221A1006000FA30FE /* Service.swift in Sources */,
 				E9D8A68D21A4D74800BA0BBA /* StockInfoDataModel.swift in Sources */,
 				E9BF1CE521A1018800FA30FE /* String+helper.swift in Sources */,
+				E9126A2021D2A2FC000CF649 /* ViewController+NewsFeed.swift in Sources */,
 				E9BF1CE721A101E700FA30FE /* UIView+Helper.swift in Sources */,
 				E96565EA219F9FB100036116 /* StockListView.swift in Sources */,
 				E9BF1CDB21A1006000FA30FE /* DataHandler.swift in Sources */,
@@ -626,7 +627,6 @@
 				E92782912199138A00F8F9E7 /* AppDelegate.swift in Sources */,
 				E9D8A68121A42C1A00BA0BBA /* DateValueFormatter.swift in Sources */,
 				E9BF1CC521A1006000FA30FE /* WidgetService.swift in Sources */,
-				E94BB7B221AB3AC300D40544 /* UIViewController+Helper.swift in Sources */,
 				E9BF1CC121A1006000FA30FE /* Network.swift in Sources */,
 				E9D8A68421A42C1A00BA0BBA /* LargeValueFormatter.swift in Sources */,
 				E9BF1CDC21A1006000FA30FE /* NetWorkHandler.swift in Sources */,

@@ -26,7 +26,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        Utility.checkFreePeriod()
+        //Utility.checkFreePeriod()
         utility.initloadView()
         notificationCenter.addObserver(self, selector: #selector(renderView), name: NSNotification.Name(rawValue: "renderView"), object: nil)
         
@@ -79,8 +79,14 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             dispatchGroup.enter()
             HandleSubscription.shared.loadReceipt(completion: { (status) in
                 isValidPurchase = status
+                #if DEBUG
+                    isValidPurchase = true
+                #endif
                 dispatchGroup.leave()
             })
+            //dispatchGroup.enter()
+            //NetworkHandler.loadTheNewsFeed(dispatch: dispatchGroup)
+            
             self.utility.showLoadingView(view: self.view)
             dispatchGroup.notify(queue: .main) {
                 DataHandler.setThePLDCount()
@@ -88,7 +94,6 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
                 self.loadTheMenuContentView()
                 self.loadMainContentView()
                 self.utility.removeLoading(view: self.view)
-                
                 self.notificationCenter.addObserver(self, selector: #selector(self.addsubscriptionButton), name: UIApplication.willEnterForegroundNotification, object: nil)
                 self.alert = nil
             }
@@ -138,6 +143,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
         for (index,eachStock) in DataHandler.getTheMainStockDetail().enumerated() {
             let stockNode = StockListViewBase.init()
             stockNode.delegate = self
+            
             var padding = Padding.init()
             padding.trailingAnchor = -10
             padding.leadingAnchor = 10
@@ -255,7 +261,7 @@ class MainContentView:UIView {
         padding.leadingAnchor = 10
         padding.trailingAnchor = -10
         padding.topAnchor = 0
-        padding.heightAnchor = 45
+        padding.heightAnchor = 40
         self.addView(view: label, padding: padding)
     }
 }
