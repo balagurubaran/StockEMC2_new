@@ -31,15 +31,15 @@ class Financial{
 
 class KeyState:Codable{
     var marketcap:Double?
-    var dividendyield:Double?
-    var beta:Double?
-    var shortratio:Double?
-    var priceToBook:Double?
+    var dividendyield:Float?
+    var beta:Float?
+    var shortratio:Float?
+    var priceToBook:Float?
     var ebitda:Double?
-    var ROC:Double?
-    var ROA:Double?
+    var ROC:Float?
+    var ROA:Float?
     var grossprofit:Double?
-    var netprofitmargin:Double?
+    var netprofitmargin:Float?
     var debt:Double?
 }
 

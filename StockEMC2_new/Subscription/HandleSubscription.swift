@@ -23,7 +23,7 @@ class HandleSubscription:NSObject,SKProductsRequestDelegate,SKPaymentTransaction
         let productID = "stockemc"
         let productIDs = Set([productID])
         
-        // let option = Subscription.init(product: SKProduct)
+        //let option = Subscription.init(product: SKProduct)
         let request = SKProductsRequest(productIdentifiers: productIDs)
         request.delegate = self
         request.start()

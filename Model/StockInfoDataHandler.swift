@@ -129,7 +129,7 @@ class StockInfoDataHandler{
         
         view4.label2.key = "Profit margin"
         if let netprofitmargin = keyState.netprofitmargin {
-            view4.label2.value = "\(Utility.convertIntToDollar(number: netprofitmargin))"
+            view4.label2.value = "\(netprofitmargin)"
         }else{
             view4.label2.value = "N/A"
         }

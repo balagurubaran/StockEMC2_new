@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFP-1G-ukr">
-                                <rect key="frame" x="127.66666666666669" y="458.33333333333331" width="120" height="34"/>
+                                <rect key="frame" x="127.66666666666669" y="432.33333333333331" width="120" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="UU2-XV-ok4"/>
@@ -141,8 +141,8 @@
                                     <action selector="paySubscrption:" destination="Nac-Jg-C38" eventType="touchDown" id="iN1-Rw-QBz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe and Support" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-DE-ex2">
-                                <rect key="frame" x="88.333333333333329" y="64" width="198.33333333333337" height="32.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need support" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-DE-ex2">
+                                <rect key="frame" x="127" y="64" width="121" height="32.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -150,16 +150,12 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o1Z-HS-CZX">
-                                <rect key="frame" x="9.3333333333333428" y="96.333333333333314" width="356.33333333333326" height="342"/>
-                                <mutableString key="text">App is using the in-app purchase to enable the chart and the financial information about the share (Company). This subscription  is valid for month and it will renew automatically.
+                                <rect key="frame" x="9.3333333333333428" y="116.33333333333331" width="356.33333333333326" height="216"/>
+                                <string key="text">App is using the in-app purchase to enable the chart and the financial information about the share (Company). This subscription is valid for month and it will renew automatically.
 
-	Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal
+Account will be charged for renewal within 24-hours prior to the end of the current period, and identify the cost of the renewal
 
-	Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period
-
-	Payment will be charged to iTunes Account at confirmation of purchase
-
-	 Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase</mutableString>
+Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period</string>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -167,7 +163,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5E-fL-pAY">
-                                <rect key="frame" x="127.66666666666669" y="512.33333333333337" width="120" height="34"/>
+                                <rect key="frame" x="127.66666666666669" y="486.33333333333331" width="120" height="33.999999999999943"/>
                                 <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="idc-qF-7Og"/>
@@ -222,12 +218,11 @@ Privacy policy - http://rgbtohex.in/pennystock/terms-condition-app/</string>
                             <constraint firstItem="G5E-fL-pAY" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="4Za-ya-PXf"/>
                             <constraint firstItem="beb-rZ-Hb5" firstAttribute="leading" secondItem="203-Lb-3Qg" secondAttribute="leading" id="547-Xe-41f"/>
                             <constraint firstItem="beb-rZ-Hb5" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="8uY-tM-kll"/>
-                            <constraint firstItem="JFP-1G-ukr" firstAttribute="top" secondItem="o1Z-HS-CZX" secondAttribute="bottom" constant="20" id="BJE-AE-qbf"/>
+                            <constraint firstItem="JFP-1G-ukr" firstAttribute="top" secondItem="o1Z-HS-CZX" secondAttribute="bottom" constant="100" id="BJE-AE-qbf"/>
                             <constraint firstItem="203-Lb-3Qg" firstAttribute="trailing" secondItem="kex-gP-ai2" secondAttribute="trailing" id="Dia-cL-ylv"/>
                             <constraint firstItem="Wd9-DE-ex2" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="GpF-PW-Fdm"/>
                             <constraint firstItem="203-Lb-3Qg" firstAttribute="trailing" secondItem="beb-rZ-Hb5" secondAttribute="trailing" id="Ndl-NG-Jou"/>
-                            <constraint firstItem="o1Z-HS-CZX" firstAttribute="top" secondItem="Wd9-DE-ex2" secondAttribute="bottom" id="Ogm-HO-Tzg"/>
-                            <constraint firstItem="o1Z-HS-CZX" firstAttribute="top" secondItem="Wd9-DE-ex2" secondAttribute="bottom" id="eaj-mW-gpg"/>
+                            <constraint firstItem="o1Z-HS-CZX" firstAttribute="top" secondItem="Wd9-DE-ex2" secondAttribute="bottom" constant="20" id="eaj-mW-gpg"/>
                             <constraint firstItem="G5E-fL-pAY" firstAttribute="top" secondItem="JFP-1G-ukr" secondAttribute="bottom" constant="20" id="fU7-BB-HmH"/>
                             <constraint firstItem="JFP-1G-ukr" firstAttribute="centerX" secondItem="tM3-l2-WVZ" secondAttribute="centerX" id="h4a-DO-74T"/>
                             <constraint firstItem="beb-rZ-Hb5" firstAttribute="top" secondItem="kex-gP-ai2" secondAttribute="bottom" constant="10" id="iIy-TF-fdZ"/>
