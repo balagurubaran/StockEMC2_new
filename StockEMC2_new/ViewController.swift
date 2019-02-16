@@ -96,6 +96,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
                 self.utility.removeLoading(view: self.view)
                 self.notificationCenter.addObserver(self, selector: #selector(self.addsubscriptionButton), name: UIApplication.willEnterForegroundNotification, object: nil)
                 self.alert = nil
+                
             }
         }
     }

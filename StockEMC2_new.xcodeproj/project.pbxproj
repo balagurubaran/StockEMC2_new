@@ -61,6 +61,7 @@
 		E9BF1CE721A101E700FA30FE /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BF1CE621A101E700FA30FE /* UIView+Helper.swift */; };
 		E9BF1CEA21A1C1B000FA30FE /* MainMenu+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BF1CE921A1C1B000FA30FE /* MainMenu+Extension.swift */; };
 		E9BF1CED21A1CA9A00FA30FE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BF1CEC21A1CA9900FA30FE /* Utility.swift */; };
+		E9C7F65E221851F60063FCE5 /* Admob.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C7F65D221851F60063FCE5 /* Admob.swift */; };
 		E9D8A67C21A42C1A00BA0BBA /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67221A42C1A00BA0BBA /* BarView.swift */; };
 		E9D8A67D21A42C1A00BA0BBA /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67321A42C1A00BA0BBA /* ChartColorTemplates.swift */; };
 		E9D8A67E21A42C1A00BA0BBA /* EPSChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67421A42C1A00BA0BBA /* EPSChartData.swift */; };
@@ -160,6 +161,7 @@
 		E9BF1CE621A101E700FA30FE /* UIView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
 		E9BF1CE921A1C1B000FA30FE /* MainMenu+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainMenu+Extension.swift"; sourceTree = "<group>"; };
 		E9BF1CEC21A1CA9900FA30FE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		E9C7F65D221851F60063FCE5 /* Admob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admob.swift; sourceTree = "<group>"; };
 		E9D8A67221A42C1A00BA0BBA /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		E9D8A67321A42C1A00BA0BBA /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		E9D8A67421A42C1A00BA0BBA /* EPSChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPSChartData.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				E94BB7AF21AB06AB00D40544 /* GoogleService-Info.plist */,
+				E9C7F65D221851F60063FCE5 /* Admob.swift */,
 			);
 			path = Google;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99C82A921AB509C00BDFBDF /* Subscription.swift in Sources */,
+				E9C7F65E221851F60063FCE5 /* Admob.swift in Sources */,
 				E99C82AA21AB509C00BDFBDF /* SubscriptionViewController.swift in Sources */,
 				E9D8A67C21A42C1A00BA0BBA /* BarView.swift in Sources */,
 				E91679A221A3A74A0081628C /* StockDetailViewController.swift in Sources */,

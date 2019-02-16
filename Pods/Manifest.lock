@@ -3,6 +3,9 @@ PODS:
     - Charts/Core (= 3.2.1)
   - Charts/Core (3.2.1)
   - DropDown (2.3.12)
+  - Firebase/AdMob (5.13.0):
+    - Firebase/Core
+    - Google-Mobile-Ads-SDK (~> 7.35)
   - Firebase/Core (5.13.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.3.0)
@@ -34,6 +37,7 @@ PODS:
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/Reachability (~> 5.2)
     - Protobuf (~> 3.1)
+  - Google-Mobile-Ads-SDK (7.39.0)
   - GoogleAppMeasurement (5.3.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -75,6 +79,7 @@ PODS:
 DEPENDENCIES:
   - Charts
   - DropDown
+  - Firebase/AdMob
   - Firebase/Core
   - Firebase/Messaging
   - KeychainSwift
@@ -93,6 +98,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - FirebaseMessaging
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
     - KeychainSwift
@@ -112,6 +118,7 @@ SPEC CHECKSUMS:
   FirebaseCore: fba2bfaa691c49028309b92e4dd37cc4b5512fbe
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   FirebaseMessaging: 0f14a264b0d7f867e8eff5d3556bc5d0d4e57888
+  Google-Mobile-Ads-SDK: d0f10a7c4d7015db23075ff316602350d12049db
   GoogleAppMeasurement: 5029d78f2b438bd30ffb44e6c558b57c21622727
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
@@ -122,6 +129,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 42ed7b6e1f2f1ead9ee667dc61a0ae87e4f49570
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: ff8017512773dc5c6624cee5a158a2fd547a919c
+PODFILE CHECKSUM: 0dc8ce4d139afc4b5a99340de87fd427d76c1235
 
 COCOAPODS: 1.5.3

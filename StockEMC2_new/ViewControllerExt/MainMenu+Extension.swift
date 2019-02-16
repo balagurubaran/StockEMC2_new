@@ -12,6 +12,8 @@ import Magnetic
 import iAppsUtilities
 import SectorCard
 import DropDown
+import GoogleMobileAds
+
 
 extension ViewController {
 
@@ -36,7 +38,12 @@ extension ViewController {
         padding.leadingAnchor = 10
         padding.trailingAnchor = -10
         padding.heightAnchor = 0.0
+        padding.topAnchor = 10
         
+        let bannerView = Admob.init().createAds(rootViewController: self)
+        self.menuContentView.addView(view: bannerView, padding: padding)
+        
+    
         menuContentView.addView(view: titleWithLeftButton(labelText: "Stocks", buttonTitle: "Latest"), padding: padding)
         if let previouslyAddedView = menuContentView.contentView.subviews.last {
             heightAnchor.constant = previouslyAddedView.frame.size.height + previouslyAddedView.frame.origin.y + (UIDevice.current.userInterfaceIdiom == .pad ? 10 : 0)
@@ -103,6 +110,42 @@ extension ViewController {
             sectorBaseView.LoadTheDataToScroll(sectorDataModel: allSectorData)
         }
     }
+}
+//Mark : - Admob delegates
+extension ViewController:GADBannerViewDelegate {
+    /// Tells the delegate an ad request loaded an ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("adViewDidReceiveAd")
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
+    }
+
 }
 
 // MARK: - MagneticDelegate

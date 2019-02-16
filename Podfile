@@ -13,6 +13,7 @@ target 'StockEMC2_new' do
     pod 'Firebase/Messaging'
     pod 'Magnetic'
     pod 'DropDown'
+    pod 'Firebase/AdMob'
   # Pods for StockEMC2_new
 
 end
