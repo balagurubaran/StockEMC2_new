@@ -10,7 +10,7 @@ import Foundation
 
 class Service{
     func getKeyState(shareName:String, completion:@escaping (_ Data:Data) -> Void){
-        Network.init().getData( baseURL + "/Version3/getstats.php?stockid=\(shareName)") { (data) in
+        Network.init().getData( newURL + "/getstats.php?stockid=\(shareName)") { (data) in
             completion(data)
         }
     }

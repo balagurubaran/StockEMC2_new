@@ -31,6 +31,7 @@ var watchList:Array = [String]()
 var selectedIndex = 0;
 var searchString = ""
 
+
 // NewsFeed
 var allNewsFeed = [NewsCardDataModel]()
 
@@ -47,6 +48,7 @@ struct revenue_earning{
 
 class DataHandler{
     
+    static var yearDividend:Version1YearDiv?
     // mainMenuStickInfo Start
     class func parseTheStockBasicDetail(data:Data){
         stockBasicInfo.removeAll()
@@ -288,22 +290,30 @@ class DataHandler{
         return keyState
     }
     
-    class func parseKeyState(data:Data){
-        
+    class func parseStats(data:Data){
         do{
-//            let AllKeyState = try JSON(data: data)
-//            keyState.beta = AllKeyState["beta"].stringValue
-//            keyState.priceToBook = AllKeyState["priceToBook"].stringValue
-//            keyState.dividendyield = AllKeyState["dividendyield"].stringValue
-//            keyState.shortratio = AllKeyState["shortratio"].stringValue
-//            keyState.ebitda = AllKeyState["ebitda"].double
-//            keyState.roc = AllKeyState["ROC"].double
-//            keyState.roa = AllKeyState["ROA"].double
-//            keyState.grossprofit = AllKeyState["grossprofit"].double
-//            keyState.profitmargin = AllKeyState["netprofitmargin"].double
-//            keyState.marketcap = AllKeyState["marketcap"].double
-//            keyState.debt = AllKeyState["debt"].double
+            let states:version1Stats = try JSONDecoder.init().decode(version1Stats.self, from: data)
+            if let keyStats = states.keystats{
+                let data = Data(keyStats.utf8)
+                parseKeyState(data: data)
+            }
             
+            if let eps = states.eps {
+                let data = Data(eps.utf8)
+                parseTheEPSData(data: data)
+            }
+            
+            if let yeardiv = states.yeardiv {
+                let data = Data(yeardiv.utf8)
+                parserYearDividend(data: data)
+            }
+        }catch let error{
+            print(error.localizedDescription)
+        }
+    }
+    
+    class func parseKeyState(data:Data){
+        do{
             keyState = try JSONDecoder.init().decode(KeyState.self, from: data)
         }catch let error{
             print(error.localizedDescription)
@@ -311,6 +321,16 @@ class DataHandler{
         
     }
     //Stock's keystate End
+    
+    // Year dividend Start
+    class func parserYearDividend(data:Data){
+        do{
+            yearDividend = try JSONDecoder.init().decode(Version1YearDiv.self, from: data)
+        }catch let error{
+            print(error.localizedDescription)
+        }
+    }
+    // year Divdend End
     
     
     //Stock's Financial Data start
@@ -336,7 +356,7 @@ class DataHandler{
                         var dateValue = data.1["fiscalEndDate"].stringValue
                         epsValue.fiscalEndDate =  dateValue.formatDateString()
                         epsValue.index =  index
-                        epsValue.estimated =  data.1["estimatedEPS"].doubleValue
+                        epsValue.estimated =  data.1["consensusEPS"].doubleValue
                         if(self.checkTheEPSQValide(value: epsValue)){
                             EPSQLabels.append(epsValue.Q)
                             EPSData.append(epsValue)

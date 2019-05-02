@@ -145,3 +145,21 @@ class TradeVolme{
     var Index:Int?
     var Volume:Int?
 }
+
+
+// New Data Model
+
+struct version1Stats:Decodable{
+    var keystats:String?
+    var yeardiv:String?
+    var eps:String?
+}
+
+typealias Version1YearDiv = [Version1YearDivElement]
+
+struct Version1YearDivElement: Codable {
+    let exDate, paymentDate, recordDate, declaredDate: String
+    let amount: Double
+    let flag, currency, description, frequency: String
+    let date: String
+}

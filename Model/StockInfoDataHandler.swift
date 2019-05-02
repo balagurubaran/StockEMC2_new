@@ -75,10 +75,10 @@ class StockInfoDataHandler{
             return
         }
         var view1 = StockInfoDataModel()
-        let index = EPSData.count - 1
+        let index = 0
     
-        if index >= 0 {
-            view1.label1.key = "Expected ESP"
+        if EPSData.count > 0 {
+            view1.label1.key = "Expected EPS"
             if let value = EPSData[index].estimated {
                 view1.label1.value = "\(value)"
             }else{
@@ -86,7 +86,7 @@ class StockInfoDataHandler{
             }
             
             
-            view1.label2.key = "Actual ESP"
+            view1.label2.key = "Actual EPS"
             if let value = EPSData[index].actual {
                 view1.label2.value = "\(value)"
             }else{
@@ -136,12 +136,12 @@ class StockInfoDataHandler{
         statsBasic.append(view4)
         
         var view2 = StockInfoDataModel()
-        if let value = selectedStockInfo?.sharePriceInfo?.dividendsPrice , let value1 = selectedStockInfo?.sharePriceInfo?.dividendsDate {
+        if let value = DataHandler.yearDividend?[0] {
             view2.label1.key = "Dividend"
-            view2.label1.value = "$\(value)"
+            view2.label1.value = "$\(value.amount)"
             
             view2.label2.key = "Date"
-            view2.label2.value = value1
+            view2.label2.value = value.paymentDate
             statsBasic.append(view2)
         }
     }

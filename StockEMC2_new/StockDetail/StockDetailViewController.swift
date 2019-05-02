@@ -50,9 +50,6 @@ class StockDetailViewController:UIViewController{
             NetworkHandler.loadTheKeyState(dispatch: dispatchGroup, shareName:shareName)
             
             dispatchGroup.enter()
-            NetworkHandler.loadTheEPSGraph(dispatch: dispatchGroup, shareName:shareName)
-            
-            dispatchGroup.enter()
             NetworkHandler.loadTheRevenueGraph(dispatch: dispatchGroup, shareName:shareName)
             
             dispatchGroup.enter()

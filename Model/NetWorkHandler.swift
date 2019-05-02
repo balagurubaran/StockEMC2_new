@@ -13,7 +13,7 @@ class NetworkHandler{
     class func loadTheKeyState(dispatch:DispatchGroup,shareName:String){
         let service = Service()
         service.getKeyState(shareName: shareName) { (data) in
-            DataHandler.parseKeyState(data: data)
+            DataHandler.parseStats(data: data)
             dispatch.leave()
         }
     }
@@ -25,17 +25,7 @@ class NetworkHandler{
             dispatch.leave()
         }
     }
-    
-    class func loadTheEPSGraph(dispatch:DispatchGroup,shareName:String){
-        let service = Service()
-        let url = "https://api.iextrading.com/1.0/stock/\(shareName)/earnings"
-        
-        service.getTheFinancialData(url: url) { (data) in
-            DataHandler.parseTheEPSData(data: data)
-            dispatch.leave()
-        }
-    }
-    
+
     class func loadTheNewsFeed(dispatch:DispatchGroup,shareName:String = "All"){
         let url = "https://rgbtohex.in/pennystock/Version3/newsfeed/getallnews.php"
         Network.init().getData(url) { (data) in
