@@ -62,15 +62,13 @@
 		E9BF1CEA21A1C1B000FA30FE /* MainMenu+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BF1CE921A1C1B000FA30FE /* MainMenu+Extension.swift */; };
 		E9BF1CED21A1CA9A00FA30FE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BF1CEC21A1CA9900FA30FE /* Utility.swift */; };
 		E9C7F65E221851F60063FCE5 /* Admob.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C7F65D221851F60063FCE5 /* Admob.swift */; };
+		E9CCD2CD227B064500BBC649 /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD2C9227B064500BBC649 /* DateValueFormatter.swift */; };
+		E9CCD2CE227B064500BBC649 /* DayAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD2CA227B064500BBC649 /* DayAxisValueFormatter.swift */; };
+		E9CCD2CF227B064500BBC649 /* IntAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD2CB227B064500BBC649 /* IntAxisValueFormatter.swift */; };
+		E9CCD2D0227B064500BBC649 /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CCD2CC227B064500BBC649 /* LargeValueFormatter.swift */; };
 		E9D8A67C21A42C1A00BA0BBA /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67221A42C1A00BA0BBA /* BarView.swift */; };
 		E9D8A67D21A42C1A00BA0BBA /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67321A42C1A00BA0BBA /* ChartColorTemplates.swift */; };
 		E9D8A67E21A42C1A00BA0BBA /* EPSChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67421A42C1A00BA0BBA /* EPSChartData.swift */; };
-		E9D8A67F21A42C1A00BA0BBA /* FinacialDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D8A67521A42C1A00BA0BBA /* FinacialDetail.xib */; };
-		E9D8A68021A42C1A00BA0BBA /* FinancialDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67621A42C1A00BA0BBA /* FinancialDataView.swift */; };
-		E9D8A68121A42C1A00BA0BBA /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67821A42C1A00BA0BBA /* DateValueFormatter.swift */; };
-		E9D8A68221A42C1A00BA0BBA /* DayAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67921A42C1A00BA0BBA /* DayAxisValueFormatter.swift */; };
-		E9D8A68321A42C1A00BA0BBA /* IntAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67A21A42C1A00BA0BBA /* IntAxisValueFormatter.swift */; };
-		E9D8A68421A42C1A00BA0BBA /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A67B21A42C1A00BA0BBA /* LargeValueFormatter.swift */; };
 		E9D8A68721A4D15600BA0BBA /* StockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A68621A4D15600BA0BBA /* StockInfo.swift */; };
 		E9D8A68B21A4D46200BA0BBA /* StockInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D8A68A21A4D46200BA0BBA /* StockInfo.xib */; };
 		E9D8A68D21A4D74800BA0BBA /* StockInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A68C21A4D74800BA0BBA /* StockInfoDataModel.swift */; };
@@ -162,15 +160,13 @@
 		E9BF1CE921A1C1B000FA30FE /* MainMenu+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainMenu+Extension.swift"; sourceTree = "<group>"; };
 		E9BF1CEC21A1CA9900FA30FE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		E9C7F65D221851F60063FCE5 /* Admob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admob.swift; sourceTree = "<group>"; };
+		E9CCD2C9227B064500BBC649 /* DateValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
+		E9CCD2CA227B064500BBC649 /* DayAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAxisValueFormatter.swift; sourceTree = "<group>"; };
+		E9CCD2CB227B064500BBC649 /* IntAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntAxisValueFormatter.swift; sourceTree = "<group>"; };
+		E9CCD2CC227B064500BBC649 /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
 		E9D8A67221A42C1A00BA0BBA /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		E9D8A67321A42C1A00BA0BBA /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		E9D8A67421A42C1A00BA0BBA /* EPSChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPSChartData.swift; sourceTree = "<group>"; };
-		E9D8A67521A42C1A00BA0BBA /* FinacialDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinacialDetail.xib; sourceTree = "<group>"; };
-		E9D8A67621A42C1A00BA0BBA /* FinancialDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinancialDataView.swift; sourceTree = "<group>"; };
-		E9D8A67821A42C1A00BA0BBA /* DateValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
-		E9D8A67921A42C1A00BA0BBA /* DayAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAxisValueFormatter.swift; sourceTree = "<group>"; };
-		E9D8A67A21A42C1A00BA0BBA /* IntAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntAxisValueFormatter.swift; sourceTree = "<group>"; };
-		E9D8A67B21A42C1A00BA0BBA /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeValueFormatter.swift; sourceTree = "<group>"; };
 		E9D8A68621A4D15600BA0BBA /* StockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfo.swift; sourceTree = "<group>"; };
 		E9D8A68A21A4D46200BA0BBA /* StockInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockInfo.xib; sourceTree = "<group>"; };
 		E9D8A68C21A4D74800BA0BBA /* StockInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfoDataModel.swift; sourceTree = "<group>"; };
@@ -368,29 +364,27 @@
 			path = Helper;
 			sourceTree = SOURCE_ROOT;
 		};
-		E9D8A67121A42C1A00BA0BBA /* Chart */ = {
+		E9CCD2C8227B064500BBC649 /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
-				E9D8A67221A42C1A00BA0BBA /* BarView.swift */,
-				E9D8A67321A42C1A00BA0BBA /* ChartColorTemplates.swift */,
-				E9D8A67421A42C1A00BA0BBA /* EPSChartData.swift */,
-				E9D8A67521A42C1A00BA0BBA /* FinacialDetail.xib */,
-				E9D8A67621A42C1A00BA0BBA /* FinancialDataView.swift */,
-				E9D8A67721A42C1A00BA0BBA /* Formatters */,
-			);
-			path = Chart;
-			sourceTree = SOURCE_ROOT;
-		};
-		E9D8A67721A42C1A00BA0BBA /* Formatters */ = {
-			isa = PBXGroup;
-			children = (
-				E9D8A67821A42C1A00BA0BBA /* DateValueFormatter.swift */,
-				E9D8A67921A42C1A00BA0BBA /* DayAxisValueFormatter.swift */,
-				E9D8A67A21A42C1A00BA0BBA /* IntAxisValueFormatter.swift */,
-				E9D8A67B21A42C1A00BA0BBA /* LargeValueFormatter.swift */,
+				E9CCD2C9227B064500BBC649 /* DateValueFormatter.swift */,
+				E9CCD2CA227B064500BBC649 /* DayAxisValueFormatter.swift */,
+				E9CCD2CB227B064500BBC649 /* IntAxisValueFormatter.swift */,
+				E9CCD2CC227B064500BBC649 /* LargeValueFormatter.swift */,
 			);
 			path = Formatters;
 			sourceTree = "<group>";
+		};
+		E9D8A67121A42C1A00BA0BBA /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				E9CCD2C8227B064500BBC649 /* Formatters */,
+				E9D8A67221A42C1A00BA0BBA /* BarView.swift */,
+				E9D8A67321A42C1A00BA0BBA /* ChartColorTemplates.swift */,
+				E9D8A67421A42C1A00BA0BBA /* EPSChartData.swift */,
+			);
+			path = Chart;
+			sourceTree = SOURCE_ROOT;
 		};
 		E9D8A68521A4D14200BA0BBA /* StockInfo */ = {
 			isa = PBXGroup;
@@ -514,7 +508,6 @@
 				E94BB7B021AB06AC00D40544 /* GoogleService-Info.plist in Resources */,
 				E9BF1CD821A1006000FA30FE /* OFL.txt in Resources */,
 				E9BF1CD921A1006000FA30FE /* README.txt in Resources */,
-				E9D8A67F21A42C1A00BA0BBA /* FinacialDetail.xib in Resources */,
 				E9BF1CD021A1006000FA30FE /* Lato-LightItalic.ttf in Resources */,
 				E9BF1CCE21A1006000FA30FE /* Lato-Italic.ttf in Resources */,
 				E9BF1CD421A1006000FA30FE /* Lato-Semibold.ttf in Resources */,
@@ -608,7 +601,6 @@
 				E9D8A67C21A42C1A00BA0BBA /* BarView.swift in Sources */,
 				E91679A221A3A74A0081628C /* StockDetailViewController.swift in Sources */,
 				E9BF1CED21A1CA9A00FA30FE /* Utility.swift in Sources */,
-				E9D8A68321A42C1A00BA0BBA /* IntAxisValueFormatter.swift in Sources */,
 				E9BF1CC021A1006000FA30FE /* FileReader.swift in Sources */,
 				E9D8A69321A5892A00BA0BBA /* TargetPriceView.swift in Sources */,
 				E9BF1CC221A1006000FA30FE /* Service.swift in Sources */,
@@ -617,10 +609,12 @@
 				E9126A2021D2A2FC000CF649 /* ViewController+NewsFeed.swift in Sources */,
 				E9BF1CE721A101E700FA30FE /* UIView+Helper.swift in Sources */,
 				E96565EA219F9FB100036116 /* StockListView.swift in Sources */,
+				E9CCD2CD227B064500BBC649 /* DateValueFormatter.swift in Sources */,
 				E9BF1CDB21A1006000FA30FE /* DataHandler.swift in Sources */,
 				E98922A421B2C83B00A7B062 /* main.swift in Sources */,
 				E9BF1CEA21A1C1B000FA30FE /* MainMenu+Extension.swift in Sources */,
 				E9D8A67E21A42C1A00BA0BBA /* EPSChartData.swift in Sources */,
+				E9CCD2D0227B064500BBC649 /* LargeValueFormatter.swift in Sources */,
 				E99C82AB21AB509C00BDFBDF /* HandleSubscription.swift in Sources */,
 				E98922A221B2C27100A7B062 /* TimeOut.swift in Sources */,
 				E9BF1CE221A1015100FA30FE /* SearchBar.swift in Sources */,
@@ -629,18 +623,16 @@
 				E9D8A68F21A4D7D100BA0BBA /* StockInfoDataHandler.swift in Sources */,
 				E9BF1CBF21A1006000FA30FE /* Constant.swift in Sources */,
 				E92782912199138A00F8F9E7 /* AppDelegate.swift in Sources */,
-				E9D8A68121A42C1A00BA0BBA /* DateValueFormatter.swift in Sources */,
 				E9BF1CC521A1006000FA30FE /* WidgetService.swift in Sources */,
+				E9CCD2CE227B064500BBC649 /* DayAxisValueFormatter.swift in Sources */,
 				E9BF1CC121A1006000FA30FE /* Network.swift in Sources */,
-				E9D8A68421A42C1A00BA0BBA /* LargeValueFormatter.swift in Sources */,
 				E9BF1CDC21A1006000FA30FE /* NetWorkHandler.swift in Sources */,
+				E9CCD2CF227B064500BBC649 /* IntAxisValueFormatter.swift in Sources */,
 				E9BF1CDE21A1006000FA30FE /* WidgetModel.swift in Sources */,
-				E9D8A68021A42C1A00BA0BBA /* FinancialDataView.swift in Sources */,
 				E9BF1C9B21A0FA0A00FA30FE /* Constants.swift in Sources */,
 				E9D8A68721A4D15600BA0BBA /* StockInfo.swift in Sources */,
 				E9F3A18321AE24230043EB67 /* DisclaimerViewController.swift in Sources */,
 				E9D8A67D21A42C1A00BA0BBA /* ChartColorTemplates.swift in Sources */,
-				E9D8A68221A42C1A00BA0BBA /* DayAxisValueFormatter.swift in Sources */,
 				E9BF1CDD21A1006000FA30FE /* sharemodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Charts
 
 class StockDetailViewController:UIViewController{
     
@@ -19,7 +19,6 @@ class StockDetailViewController:UIViewController{
     var utility:Utility = Utility()
     var mainContentView:MainContentView = MainContentView.fromNib()
     var targetMainView:MainContentView = MainContentView.fromNib()
-    var FinanciadetailVIew:FinancialDataView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -196,23 +195,46 @@ class StockDetailViewController:UIViewController{
 //        if(!isValidPurchase){
 //            return
 //        }
+        var padding = Padding()
+        padding.leadingAnchor = 10
+        padding.trailingAnchor = -10
+        padding.heightAnchor = 300.0
+        padding.topAnchor = 10.0
         
-        if(FinanciadetailVIew == nil){
-            FinanciadetailVIew = FinancialDataView.init()
-            FinanciadetailVIew?.translatesAutoresizingMaskIntoConstraints = false
-            if let view = FinanciadetailVIew {
-                var padding = Padding()
-                padding.leadingAnchor = 10
-                padding.trailingAnchor = -10
-                padding.heightAnchor = 950.0
-                padding.topAnchor = 10.0
-                mainContentView.addView(view: view, padding: padding)
-                
-                //FinanciadetailVIew?.heightAnchor.constraint(equalTo: mainView.heightAnchor, multiplier: 920.0/mainView.frame.size.height).isActive = true
-                mainContentView.layoutIfNeeded()
-                FinanciadetailVIew?.loadFinacialData()
-            }
+        if financialData.count > 0{
+            let chartView = getChatBaseView(padding: padding)
+            BarView.init().loadBarCharRevenue_earning(barChart: chartView, revenue_earnigData: financialData)
         }
+        
+        let cosolidatedData = DataHandler.consolidatedTradeVolume()
+        if cosolidatedData.count > 0{
+            let chartView = getChatBaseView(padding: padding)
+            BarView.init().loadVolumeToBarCharView(chartView: chartView, volume: cosolidatedData)
+        }
+        
+        let chartView = getChatBaseView(padding: padding)
+        let EPSData = EPSChartData.init()
+        EPSData.loadEPSBarCHart(chartView: chartView)
     }
+    
+    func getChatBaseView(padding:Padding)->BarChartView {
+        let  chartView = BarChartView.init(frame: CGRect.zero)
+        chartView.translatesAutoresizingMaskIntoConstraints = false
+        mainContentView.addView(view: chartView, padding: padding)
+        return chartView
+    }
+    
+    func setStyle(chartView:BarChartView,padding:Padding){
+        chartView.backgroundColor = UIColor.white
+        chartView.layer.cornerRadius = 10.0
+
+        chartView.layer.shadowColor   = UIColor.black.cgColor
+        chartView.layer.shadowOffset  = CGSize(width: 0, height: 0)
+        chartView.layer.shadowOpacity = 0.5
+        chartView.layer.shadowRadius  = 2
+        chartView.layer.masksToBounds = false
+    }
+    
 }
+
 
