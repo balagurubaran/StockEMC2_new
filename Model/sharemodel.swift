@@ -153,6 +153,8 @@ struct version1Stats:Decodable{
     var keystats:String?
     var yeardiv:String?
     var eps:String?
+    var lastDayTrade:String?
+    var tenyearFinDetail:String?
 }
 
 typealias Version1YearDiv = [Version1YearDivElement]

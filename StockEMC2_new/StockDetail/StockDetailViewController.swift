@@ -48,12 +48,6 @@ class StockDetailViewController:UIViewController{
             dispatchGroup.enter()
             NetworkHandler.loadTheKeyState(dispatch: dispatchGroup, shareName:shareName)
             
-            dispatchGroup.enter()
-            NetworkHandler.loadTheRevenueGraph(dispatch: dispatchGroup, shareName:shareName)
-            
-            dispatchGroup.enter()
-            NetworkHandler.load30DaysData(dispatch: dispatchGroup, shareName:shareName)
-            
             dispatchGroup.notify(queue: .main) {
                 StockInfoDataHandler.setTheLivePriceInfo()
                 StockInfoDataHandler.setTheDayPriceInfo()

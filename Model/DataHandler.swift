@@ -307,6 +307,16 @@ class DataHandler{
                 let data = Data(yeardiv.utf8)
                 parserYearDividend(data: data)
             }
+            
+            if let yeardiv = states.lastDayTrade {
+                let data = Data(yeardiv.utf8)
+                parseThe30Data(data: data)
+            }
+            
+            if let tenyearFinDetail = states.tenyearFinDetail {
+                let data = Data(tenyearFinDetail.utf8)
+                parseTheRevenueData(data: data)
+            }
         }catch let error{
             print(error.localizedDescription)
         }
@@ -412,11 +422,7 @@ class DataHandler{
                         if (value != "id") {
                             var localValue = value
                             let eachYear = revenue_earning(amount:key.stringValue , year: localValue.formatDateString())
-                            if(self.removeTheSameYearfromdata(data: eachYear)){
-                                revenue.append(eachYear)
-                            }
-                            
-                            
+                            revenue.append(eachYear)
                         }
                     }
                     
@@ -425,10 +431,7 @@ class DataHandler{
                         if (value != "id") {
                             var localValue = value
                             let eachYear = revenue_earning(amount:key.stringValue , year: localValue.formatDateString())
-                            if(self.removeTheSameYearfromdata(data: eachYear)){
-                                earning.append(eachYear)
-                            }
-                            
+                            earning.append(eachYear)
                         }
                     }
                     
@@ -441,12 +444,12 @@ class DataHandler{
         }
         revenue = revenue.sorted{($0.year < $1.year)}
         earning = earning.sorted{($0.year < $1.year)}
-        
+
         if (revenue.count > 5){
             revenue = Array(revenue.dropFirst(revenue.count - 5))
             earning = Array(earning.dropFirst(earning.count - 5))
         }
-        
+
         if(revenue.count > 0){
             
             for eachyear in revenue{
@@ -468,11 +471,6 @@ class DataHandler{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = appDateFormat //Your New Date format as per requirement change it own
         let newDate = dateFormatter.date(from: data.year)
-        
-        //let date = newDate?.getdate()
-        //let month = Int((newDate?.getMonth())!)!
-        //let year  = Character((newDate?.getYear())!)
-        
         return true//month > 10 ? true:false
     }
     
