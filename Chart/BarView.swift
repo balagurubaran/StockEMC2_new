@@ -72,7 +72,7 @@ class BarView {
         }
         
         let earningsBarColor = earnings.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? UIColor.stockEmc2GrayAlpha : UIColor.stockEmc2Red
+            return entry.y >= 0 ? UIColor.stockEmc2TealBlue : UIColor.stockEmc2Red
         }
         
 

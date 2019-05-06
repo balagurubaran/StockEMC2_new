@@ -97,11 +97,13 @@ class Utility{
     
     func initloadView(){
         self.loadingView = RSLoadingView(effectType: RSLoadingView.Effect.twins)
-        self.loadingView?.mainColor = UIColor.init(red: 162.0/255.0, green: 17.0/25.0, blue: 17.0/255.0, alpha: 1)
+        self.loadingView?.backgroundColor = UIColor.stockEmc2Pink
+        self.loadingView?.mainColor = UIColor.white
     }
 
     func showLoadingView(view:UIView){
         DispatchQueue.main.async(execute: {
+            view.backgroundColor = UIColor.stockEmc2Pink
             self.loadingView?.show(on: view)
         })
         
@@ -109,6 +111,7 @@ class Utility{
 
     func removeLoading(view:UIView){
         DispatchQueue.main.async(execute: {
+            view.backgroundColor = UIColor.white
             RSLoadingView.hide(from: view)
         })
         
