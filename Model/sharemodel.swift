@@ -29,18 +29,18 @@ class Financial{
     var year:String = String()
 }
 
-class KeyState:Codable{
+struct KeyState: Codable{
     var marketcap:Double?
-    var dividendyield:Float?
+    var dividendYield:Float?
     var beta:Float?
     var shortratio:Float?
     var priceToBook:Float?
-    var ebitda:Double?
+    var EBITDA:Double?
     var ROC:Float?
     var ROA:Float?
-    var grossprofit:Double?
-    var netprofitmargin:Float?
-    var debt:Double?
+    var grossProfit:Double?
+    var profitMargin:Float?
+    var currentDebt:Double?
 }
 
 class dividends{
@@ -74,6 +74,7 @@ class Share{
     
     var isTargetReached : Bool = false
     var addedstockDate:Date?
+    var targetreacheddate:Date?
     
     var isNew:Bool? {
         get {
@@ -94,7 +95,7 @@ class Share{
     var color : UIColor {
         get {
             if(isTargetReached ){
-                return UIColor.init(red: 1/255.0, green: 1/255.0, blue: 1/255.0, alpha: 0.5)
+                return UIColor.init(red: 207/255.0, green: 207/255.0, blue: 142/255.0, alpha: 0.5)
             }else if (Float(targetPrecentage!) < 0.0 ){
                 return UIColor.init(red: 255.0/255.0, green: 38.0/255.0, blue: 0.0, alpha: 1.0)
             }else if Float(targetPrecentage!) < 20.0 {
@@ -102,8 +103,6 @@ class Share{
             }else{
                 return UIColor.init(red: 27.0/255.0, green: 178.0/255.0, blue: 47.0/255.0, alpha: 1.0)
             }
-            
-            
         }
     }
     
@@ -131,18 +130,8 @@ struct Sale {
     var earnings: Double
 }
 
-class priceHistory30Day{
-    var index:Int?
-    var open:Double?
-    var high:Double?
-    var low:Double?
-    var close:Double?
-    var tradeVolume:Int?
-    var timeStamp:String?
-}
-
 class TradeVolme{
-    var Index:Int?
+    var xValue:String?
     var Volume:Int?
 }
 
@@ -164,4 +153,56 @@ struct Version1YearDivElement: Codable {
     let amount: Double
     let flag, currency, description, frequency: String
     let date: String
+}
+
+struct PriceHistory: Codable {
+    let chart: [Chart]
+}
+
+struct Chart: Codable {
+    var date, minute, label: String?
+    var high, low, average: Double?
+    var volume: Int?
+    var notional: Double?
+    var numberOfTrades: Int?
+    var marketHigh, marketLow, marketAverage: Double?
+    var marketVolume: Int?
+    var marketNotional: Double?
+    var marketNumberOfTrades: Int?
+    var chartOpen, close, marketOpen, marketClose: Double?
+    var changeOverTime: Double?
+    var marketChangeOverTime: Double?
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(
+            keyedBy: CodingKeys.self)
+        
+        date = try container.decode(String?.self, forKey: .date)
+        minute = try container.decode(String?.self, forKey: .minute)
+        label = try container.decode(String?.self, forKey: .label)
+        high = try container.decode(Double?.self, forKey: .high)
+        low = try container.decode(Double?.self, forKey: .low)
+        average = try container.decode(Double?.self, forKey: .average)
+        notional = try container.decode(Double?.self, forKey: .notional)
+        numberOfTrades = try container.decode(Int?.self, forKey: .numberOfTrades)
+        marketHigh = try container.decode(Double?.self, forKey: .marketHigh)
+        marketLow = try container.decode(Double?.self, forKey: .marketHigh)
+        marketAverage = try container.decode(Double?.self, forKey: .marketHigh)
+        marketVolume = try container.decode(Int?.self, forKey: .marketVolume)
+        volume = try container.decode(Int?.self, forKey: .volume)
+        marketNotional = try container.decode(Double?.self, forKey: .marketNotional)
+        marketNumberOfTrades = try container.decode(Int?.self, forKey: .marketNumberOfTrades)
+        chartOpen = try container.decode(Double?.self, forKey: .chartOpen)
+        close = try container.decode(Double?.self, forKey: .close)
+        marketOpen = try container.decode(Double?.self, forKey: .marketOpen)
+        marketClose = try container.decode(Double?.self, forKey: .marketClose)
+        changeOverTime = try container.decode(Double?.self, forKey: .changeOverTime)
+        marketChangeOverTime = try container.decode(Double?.self, forKey: .marketChangeOverTime)
+        
+    }
+    enum CodingKeys: String, CodingKey {
+        case date, minute, label, high, low, average, volume, notional, numberOfTrades, marketHigh, marketLow, marketAverage, marketVolume, marketNotional, marketNumberOfTrades
+        case chartOpen = "open"
+        case close, marketOpen, marketClose, changeOverTime, marketChangeOverTime
+    }
 }

@@ -195,20 +195,22 @@ class StockDetailViewController:UIViewController{
         padding.heightAnchor = 300.0
         padding.topAnchor = 10.0
         
+        if let cosolidatedData = DataHandler.consolidatedTradeVolume() {
+            if cosolidatedData.count > 0{
+                let chartView = getChatBaseView(padding: padding)
+                BarView.init().loadVolumeToBarCharView(chartView: chartView, volume: cosolidatedData)
+            }
+        }
+        
         if financialData.count > 0{
             let chartView = getChatBaseView(padding: padding)
             BarView.init().loadBarCharRevenue_earning(barChart: chartView, revenue_earnigData: financialData)
         }
-        
-        let cosolidatedData = DataHandler.consolidatedTradeVolume()
-        if cosolidatedData.count > 0{
+        if(EPSData.count > 0){
             let chartView = getChatBaseView(padding: padding)
-            BarView.init().loadVolumeToBarCharView(chartView: chartView, volume: cosolidatedData)
+            let EPSData = EPSChartData.init()
+            EPSData.loadEPSBarCHart(chartView: chartView)
         }
-        
-        let chartView = getChatBaseView(padding: padding)
-        let EPSData = EPSChartData.init()
-        EPSData.loadEPSBarCHart(chartView: chartView)
     }
     
     func getChatBaseView(padding:Padding)->BarChartView {

@@ -14,19 +14,18 @@ import Firebase
 
 class Utility{
     
-    static let green = UIColor.init(red: 27.0/255.0, green: 178.0/255.0, blue: 47.0/255.0, alpha: 1.0)
-    static let red = UIColor.init(red: 255.0/255.0, green: 38.0/255.0, blue: 0.0, alpha: 1.0)
-    static let yellow = UIColor.init(red:221/255.0, green:203/255.0, blue:35/255.0, alpha: 1.0)
-    static let appColor = UIColor.init(red:86/255.0, green:126/255.0, blue:142/255.0, alpha: 1.0)
+//    static let green = UIColor.init(red: 27.0/255.0, green: 178.0/255.0, blue: 47.0/255.0, alpha: 1.0)
+//    static let red = UIColor.init(red: 255.0/255.0, green: 38.0/255.0, blue: 0.0, alpha: 1.0)
+//    static let yellow = UIColor.init(red:221/255.0, green:203/255.0, blue:35/255.0, alpha: 1.0)
+//    static let appColor = UIColor.init(red:86/255.0, green:126/255.0, blue:142/255.0, alpha: 1.0)
     
     var loadingView:RSLoadingView?
     var isDataLoading = false
 
     class func showMessage(message:String){
-        
         let warning = MessageView.viewFromNib(layout: .cardView)
         warning.configureTheme(.success)
-        warning.backgroundView.backgroundColor = appColor
+        warning.backgroundView.backgroundColor = UIColor.stockEmc2Pink
         warning.configureDropShadow()
         
         

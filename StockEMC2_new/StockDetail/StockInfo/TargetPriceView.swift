@@ -44,6 +44,16 @@ class TargetPriceBaseView:UIView{
         if let margetPrice = selectedStockInfo?.sharePriceInfo?.live?.price {
             targetView.margetPrice.text = "Market price: $\(margetPrice)"
         }
+        
+        if let isTargetReached = selectedStockInfo?.sharePriceInfo?.isTargetReached, let targetReachedDate = selectedStockInfo?.sharePriceInfo?.targetreacheddate {
+            if isTargetReached {
+                targetView.targetReachedOn.text = "Reached on \(targetReachedDate)"
+            }else{
+                targetView.targetReachedOn.text = ""
+            }
+        }else{
+            targetView.targetReachedOn.text = ""
+        }
     }
 }
 
@@ -51,5 +61,6 @@ class TargetPriceView:UIView{
     @IBOutlet weak var targetPrice: UILabel!
     @IBOutlet weak var bestPrice: UILabel!
     @IBOutlet weak var margetPrice: UILabel!
+    @IBOutlet weak var targetReachedOn: UILabel!
     
 }

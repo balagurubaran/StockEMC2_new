@@ -71,10 +71,7 @@ class EPSChartData:NSObject {
     }
     
     func loadEPSBarCHart(chartView:BarChartView){
-        if(EPSData.count <= 0){
-            return
-        }
-        
+       
         barCharSettings(chartView:chartView)
         
         let actualEPSEntry = EPSData.map { (eps) -> BarChartDataEntry in
@@ -85,11 +82,11 @@ class EPSChartData:NSObject {
         }
         
         let actualEPSBarColor = estimatedEPSEntry.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? Utility.green : Utility.red
+            return entry.y >= 0 ? UIColor.stockEmc2Green : UIColor.stockEmc2Red
         }
         
         let estimatedEPSBarColor = estimatedEPSEntry.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? Utility.appColor : Utility.red
+            return entry.y >= 0 ? UIColor.stockEmc2GrayAlpha : UIColor.stockEmc2Red
         }
         
         
@@ -113,7 +110,6 @@ class EPSChartData:NSObject {
         //let barSpace = 0.05 * (4.0/Double(EPSData.count))
             
         chartData.groupBars(fromX: 0, groupSpace: 0.35, barSpace: 0.05)
-    
         //chartData.groupWidth(groupSpace: <#T##Double#>, barSpace: <#T##Double#>)
         
         chartView.data = chartData
@@ -142,7 +138,10 @@ class EPSChartData:NSObject {
         xAxis.labelCount = EPSData.count
         xAxis.centerAxisLabelsEnabled = true
         xAxis.granularity = 1
-       // xAxis.valueFormatter = self
+        let QlabelText:[String] = EPSData.compactMap { (eachEps) -> String in
+            return eachEps.year
+        }
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: QlabelText)
         xAxis.axisMinimum = 0
         
         let minEstimated = EPSData.min(by: { (a, b) -> Bool in
@@ -159,27 +158,11 @@ class EPSChartData:NSObject {
             return false
         })
         
-//        let maxEstimated = EPSData.max(by: { (a, b) -> Bool in
-//
-//            return (a.estimated < b.estimated)
-//        })
-//
-//        let maxActual = EPSData.max(by: { (a, b) -> Bool in
-//
-//            return (a.actual < b.actual)
-//        })
-        
         var min = minActual?.actual
         if((minEstimated?.estimated)! <  (minActual?.actual)!){
             min = minEstimated?.estimated
         }
-//
-//        var max = minActual?.actual
-//        if((maxEstimated?.estimated)! >  (maxEstimated?.actual)!){
-//            max = maxEstimated?.estimated
-//        }
-        
-//        print(max!);
+
         let leftAxis = chartView.leftAxis
         leftAxis.drawLabelsEnabled = true
         leftAxis.spaceTop = 0.25
@@ -192,11 +175,6 @@ class EPSChartData:NSObject {
         if(min! < 0.0){
             leftAxis.axisMinimum = min!  + (min!/4)
         }
-        
-//        if(max! <= 0.0){
-//            leftAxis.axisMaximum = 0;
-//        }
-        
     }
 }
 //

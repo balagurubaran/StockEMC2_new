@@ -68,11 +68,11 @@ class BarView {
         }
         
         let revenueBarColor = revenue.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? Utility.green : Utility.red
+            return entry.y >= 0 ? UIColor.stockEmc2Green : UIColor.stockEmc2Red
         }
         
         let earningsBarColor = earnings.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? Utility.appColor : Utility.red
+            return entry.y >= 0 ? UIColor.stockEmc2GrayAlpha : UIColor.stockEmc2Red
         }
         
 
@@ -177,14 +177,15 @@ class BarView {
         }
         
         let lastValue = volume.last
-        
+        var index = 0
         let revenue = volume.map { (tradeV) -> BarChartDataEntry in
             //let Timestamp     =  price.timeStamp
-            return BarChartDataEntry(x:Double(tradeV.Index!), y:  Double(tradeV.Volume!))
+            index = index + 1
+            return BarChartDataEntry(x:Double(index), y:  Double(tradeV.Volume!))
             
         }
         let chartDataSetRevenue = BarChartDataSet(values: revenue, label: "Day's trade volume")
-        chartDataSetRevenue.colors = [Utility.green]
+        chartDataSetRevenue.colors = [UIColor.stockEmc2Green]
         
         let data = BarChartData(dataSet: chartDataSetRevenue)
         //data.barWidth = 0.25
@@ -195,14 +196,17 @@ class BarView {
         chartView.chartDescription?.text = ""
         chartView.xAxis.labelPosition = .bottom
         
-        chartView.xAxis.axisMaximum = Double((lastValue?.Index)!)
+        //chartView.xAxis.axisMaximum = Double((lastValue?.Index)!)
         //chartView.xAxis.axisMinimum = Double((volume.first?.Index)!)
-        
+        let XlabelText:[String] = volume.compactMap { (each) -> String in
+            return each.xValue ?? ""
+        }
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: XlabelText)
+
         chartView.xAxis.granularity = 1.0
         chartView.fitBars = true
         //chartView.leftAxis.axisMinimum = minValue
         //chartView.leftAxis.axisMaximum = maxValue
-        chartView.leftAxis.valueFormatter = LargeValueFormatter()
         
         chartView.scaleYEnabled = false
         chartView.scaleXEnabled = false

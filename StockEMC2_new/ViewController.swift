@@ -72,18 +72,18 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             let dispatchGroup = DispatchGroup()
             //dispatchGroup.enter()
             //NetworkHandler.loadTheStats(dispatch: dispatchGroup)
-            
+            isValidPurchase = true
             dispatchGroup.enter()
             NetworkHandler.loadTheStockBasicInfo(dispatch: dispatchGroup)
         
-            dispatchGroup.enter()
-            HandleSubscription.shared.loadReceipt(completion: { (status) in
-                isValidPurchase = status
-                #if DEBUG
-                    isValidPurchase = true
-                #endif
-                dispatchGroup.leave()
-            })
+//            dispatchGroup.enter()
+//            HandleSubscription.shared.loadReceipt(completion: { (status) in
+//                isValidPurchase = status
+//                #if DEBUG
+//                    isValidPurchase = true
+//                #endif
+//                dispatchGroup.leave()
+//            })
             //dispatchGroup.enter()
             //NetworkHandler.loadTheNewsFeed(dispatch: dispatchGroup)
             
@@ -98,6 +98,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
                 self.alert = nil
                 
             }
+            Utility.showMessage(message:"Market price is updated hourly once")
         }
     }
     
@@ -124,7 +125,7 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             self.view.layoutIfNeeded()
         }
         loadTheStockList(selectedMenuItem:"All")
-        addsubscriptionButton()
+        //addsubscriptionButton()
     }
     
     func loadTheStockList(selectedMenuItem:String){
@@ -156,6 +157,11 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
             }else{
                 eachStock.backGroundColor = .white
             }
+            if let isTargetReached = eachStock.sharePriceInfo?.isTargetReached,  let color = eachStock.sharePriceInfo?.color {
+                if isTargetReached {
+                    eachStock.backGroundColor = color
+                }
+            }
             stockNode.loadTheData(stockBasicInfo: eachStock)
         }
     }
@@ -165,8 +171,6 @@ class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
         DataHandler.selectedSector = sectorName
         loadTheStockList(selectedMenuItem: "Sector")
         resetAllNode()
-        print("\(sectorName)")
-        
     }
     
     func selectedStock(uniqueID: String) {

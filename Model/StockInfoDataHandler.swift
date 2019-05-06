@@ -80,7 +80,8 @@ class StockInfoDataHandler{
         if EPSData.count > 0 {
             view1.label1.key = "Expected EPS"
             if let value = EPSData[index].estimated {
-                view1.label1.value = "\(value)"
+                
+                view1.label1.value = value.getDoublePrecious
             }else{
                 view1.label1.value = "N/A"
             }
@@ -88,7 +89,7 @@ class StockInfoDataHandler{
             
             view1.label2.key = "Actual EPS"
             if let value = EPSData[index].actual {
-                view1.label2.value = "\(value)"
+                view1.label2.value = value.getDoublePrecious
             }else{
                 view1.label2.value = "N/A"
             }
@@ -101,7 +102,7 @@ class StockInfoDataHandler{
             view3.label1.value = "\(Utility.convertIntToDollar(number: value))"
         }
         
-        if let value = keyState.ebitda {
+        if let value = keyState.EBITDA {
             view3.label2.key = "EBITDA"
             view3.label2.value = "\(Utility.convertIntToDollar(number: value))"
         }
@@ -109,7 +110,7 @@ class StockInfoDataHandler{
         
         var view5 = StockInfoDataModel()
         view5.label1.key = "Dept"
-        if let debt = keyState.debt {
+        if let debt = keyState.currentDebt {
             view5.label1.value = "\(Utility.convertIntToDollar(number: debt))"
         }else{
             view5.label1.value = "N/A"
@@ -121,15 +122,15 @@ class StockInfoDataHandler{
         
         var view4 = StockInfoDataModel()
         view4.label1.key = "Gross profit"
-        if let grossprofit = keyState.grossprofit {
+        if let grossprofit = keyState.grossProfit {
             view4.label1.value = "\(Utility.convertIntToDollar(number: grossprofit))"
         }else{
             view4.label1.value = "N/A"
         }
         
         view4.label2.key = "Profit margin"
-        if let netprofitmargin = keyState.netprofitmargin {
-            view4.label2.value = "\(netprofitmargin)"
+        if let netprofitmargin = keyState.profitMargin {
+            view4.label2.value = "\(netprofitmargin.getDoublePrecious)"
         }else{
             view4.label2.value = "N/A"
         }
@@ -138,7 +139,7 @@ class StockInfoDataHandler{
         var view2 = StockInfoDataModel()
         if let value = DataHandler.yearDividend?[0] {
             view2.label1.key = "Dividend"
-            view2.label1.value = "$\(value.amount)"
+            view2.label1.value = "$\(value.amount.getDoublePrecious)"
             
             view2.label2.key = "Date"
             view2.label2.value = value.paymentDate
@@ -155,14 +156,14 @@ class StockInfoDataHandler{
         var view1 = StockInfoDataModel()
         view1.label1.key = "Beta"
         if let beta = keyState.beta {
-            view1.label1.value = "\(beta)"
+            view1.label1.value = "\(beta.getDoublePrecious)"
         }else{
             view1.label1.value = "N/A"
         }
         
         view1.label2.key = "Price/Book"
         if let priceToBook = keyState.priceToBook {
-            view1.label2.value = "\(priceToBook)"
+            view1.label2.value = "\(priceToBook.getDoublePrecious)"
             view1.label2.symbol = "x"
         }else{
             view1.label2.value = "N/A"
@@ -172,8 +173,8 @@ class StockInfoDataHandler{
         
         var view2 = StockInfoDataModel()
         view2.label1.key = "Div yield"
-        if let dividendyield = keyState.dividendyield {
-            view2.label1.value = "\(dividendyield)"
+        if let dividendyield = keyState.dividendYield {
+            view2.label1.value = "\(dividendyield.getDoublePrecious)"
             view2.label1.symbol = "%"
         }else{
             view2.label1.value = "N/A"
@@ -181,7 +182,7 @@ class StockInfoDataHandler{
         
         view2.label2.key = "Short ratio"
         if let shortratio = keyState.shortratio {
-            view2.label2.value = "\(shortratio)"
+            view2.label2.value = "\(shortratio.getDoublePrecious)"
         }else{
             view2.label2.value = "N/A"
         }
@@ -190,7 +191,7 @@ class StockInfoDataHandler{
         var view3 = StockInfoDataModel()
         view3.label1.key = "ROC"
         if let ROC = keyState.ROC{
-            view3.label1.value = "\(ROC)"
+            view3.label1.value = "\(ROC.getDoublePrecious)"
             view3.label1.symbol = "%"
         }else{
             view3.label1.value = "N/A"
@@ -198,7 +199,7 @@ class StockInfoDataHandler{
         
         view3.label2.key = "ROA"
         if let roa = keyState.ROA{
-            view3.label2.value = "\(roa)"
+            view3.label2.value = "\(roa.getDoublePrecious)"
             view3.label2.symbol = "%"
         }else{
             view3.label2.value = "N/A"
@@ -207,3 +208,21 @@ class StockInfoDataHandler{
     }
 }
 
+extension String {
+    func getDoublePrecious()->String{
+        return String.init(format: "%.2f", self)
+        
+    }
+}
+
+extension Double {
+    var getDoublePrecious:String {
+        return String(format: "%.2f", self)
+    }
+}
+
+extension Float {
+    var getDoublePrecious:String {
+        return String(format: "%.2f", self)
+    }
+}

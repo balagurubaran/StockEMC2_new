@@ -15,7 +15,7 @@ fileprivate var nonFilterStockBasicInfo:[shareBasicInfo] = [shareBasicInfo]()
 //fileprivate let shareDetail =  Share()
 
 var financialData:[Financial] = [Financial]()
-var price30Days:[priceHistory30Day] = [priceHistory30Day]()
+
 var tradeVolumes:[TradeVolme] = [TradeVolme]()
 var sectorDetail:[Sector]?
 
@@ -49,6 +49,7 @@ struct revenue_earning{
 class DataHandler{
     
     static var yearDividend:Version1YearDiv?
+    static var priceHistory:PriceHistory?
     // mainMenuStickInfo Start
     class func parseTheStockBasicDetail(data:Data){
         stockBasicInfo.removeAll()
@@ -308,9 +309,9 @@ class DataHandler{
                 parserYearDividend(data: data)
             }
             
-            if let yeardiv = states.lastDayTrade {
-                let data = Data(yeardiv.utf8)
-                parseThe30Data(data: data)
+            if let lastDayTrade = states.lastDayTrade{
+                //lastDayTrade = lastDayTrade.replacingOccurrences(of: "null", with: "nil")
+                parseThe30Data(data: Data(lastDayTrade.utf8))
             }
             
             if let tenyearFinDetail = states.tenyearFinDetail {
@@ -508,55 +509,34 @@ class DataHandler{
     
     //30 day Data Start
     class func parseThe30Data(data:Data){
-        price30Days.removeAll()
-        
         do{
-            let The30DayData = try JSON(data: data)
-            var index = 0;
-            for eachShare in The30DayData {
-                let data = priceHistory30Day()
-                let history = eachShare.1
-                data.open = history["open"].doubleValue
-                data.high = history["high"].doubleValue
-                data.low = history["low"].doubleValue
-                data.close = history["close"].doubleValue
-                data.tradeVolume = history["marketVolume"].intValue
-                data.timeStamp = history["minute"].stringValue
-                index = index + 1
-                data.index = index
-                price30Days.append(data)
-                //print("History", history["open"].stringValue)
-            }
-            
+            priceHistory = try JSONDecoder.init().decode(PriceHistory.self, from: data)
         }catch let error{
             print(error.localizedDescription)
         }
-        
     }
     
-    class func getThe30DayPrice()->[priceHistory30Day]{
-        return price30Days.filter({$0.index! % 60 == 0});
-    }
-    
-    class func consolidatedTradeVolume()->[TradeVolme]{
+    class func consolidatedTradeVolume()->[TradeVolme]?{
+        var sumOfTrade = 0
         tradeVolumes.removeAll()
-        for i in 0..<price30Days.filter({$0.index! % 60 == 0}).count {
-            let array = price30Days.getFirstElements(from: i * 60, upTo: (i * 60) + 60)
-            let volume = array.reduce(0,{$0 + $1.tradeVolume!})
-            let TV = TradeVolme()
-            TV.Index = (i + 9)
-            TV.Volume = volume
-            tradeVolumes.append(TV)
+        guard let chartValue = priceHistory?.chart else{
+            return tradeVolumes
+        }
+        for (index,value) in chartValue.enumerated() {
+            if index % 30 == 0 && index > 0{
+                let TV = TradeVolme()
+                TV.xValue = value.minute
+                TV.Volume = sumOfTrade
+                tradeVolumes.append(TV)
+                sumOfTrade = 0
+                print(TV.xValue);
+            }else if let volume = value.volume {
+                sumOfTrade = sumOfTrade + volume
+            }
         }
         return tradeVolumes
     }
-    
-    class func getTrdeVolmeForDay()->String{
-        let tradeVolume = self.consolidatedTradeVolume()
-        let volume = tradeVolume.reduce(0,{$0 + $1.Volume!})
-        
-        return String(describing: volume)
-    }
+
     //30 day data END
     
     // Sectore Information start
