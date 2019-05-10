@@ -33,7 +33,7 @@ var searchString = ""
 
 
 // NewsFeed
-var allNewsFeed = [NewsCardDataModel]()
+//var allNewsFeed = [NewsCardDataModel]()
 
 struct Sector{
     var sectorName:String?
@@ -83,21 +83,6 @@ class DataHandler{
     }
     
     class func getTheMainStockDetail()->[shareBasicInfo] {
-//        if(SearchBar.isSearchBarLifeTime){
-//            var filterted = isWatchList ?  DataHandler().frameWatchList() : stockBasicInfo
-//            
-//            filterted = filterted.filter{ ($0.shareName?.contains(getSearchString()))!}
-//            if(filterted.count == 0){
-//                //isSearchFailed = true
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateTheWatchListStatus"), object: nil, userInfo: nil)
-//                isWatchList = false
-//                SearchBar.isSearchBarLifeTime = false
-//                Utility.showMessage(message: "Stock not listed")
-//            }
-//            return filterted.count > 0 ? filterted:stockBasicInfo
-//        }else if isWatchList{
-//            return DataHandler().frameWatchList()
-//        }
         return stockBasicInfo;
     }
     
@@ -529,7 +514,6 @@ class DataHandler{
                 TV.Volume = sumOfTrade
                 tradeVolumes.append(TV)
                 sumOfTrade = 0
-                print(TV.xValue);
             }else if let volume = value.volume {
                 sumOfTrade = sumOfTrade + volume
             }
@@ -593,12 +577,12 @@ class DataHandler{
     // News Feed
     
     class func parseTheMarketNews(data:Data){
-        do {
-            let decoder = JSONDecoder()
-            allNewsFeed = try decoder.decode([NewsCardDataModel].self, from: data)
-        }catch let error{
-            print("error")
-        }
+//        do {
+//            let decoder = JSONDecoder()
+//            allNewsFeed = try decoder.decode([NewsCardDataModel].self, from: data)
+//        }catch let error{
+//            print("error")
+//        }
     }
 }
 

@@ -32,7 +32,7 @@ extension ViewController {
         loadTheMainMenu()
         menuContentView.addTitle(title: "Sector")
         loadSectorView()
-        renderTheNewsFeed()
+        //renderTheNewsFeed()
         
         var padding = Padding.init()
         padding.leadingAnchor = 10

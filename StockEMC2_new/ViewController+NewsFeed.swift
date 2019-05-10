@@ -12,16 +12,16 @@ import iAppsUtilities
 import SectorCard
 
 extension ViewController {
-    func renderTheNewsFeed(){
-        if allNewsFeed.count == 0 {
-            return
-        }
-        menuContentView.addTitle(title: "News")
-        
-        let newsCardBaseView = NewsCardBaseView.init()
-        var padding = Padding.init()
-        padding.heightAnchor = 100.0
-        menuContentView.addView(view: newsCardBaseView, padding: padding)
-        newsCardBaseView.LoadTheData(newsDataModel: allNewsFeed)
-    }
+//    func renderTheNewsFeed(){
+//        if allNewsFeed.count == 0 {
+//            return
+//        }
+//        menuContentView.addTitle(title: "News")
+//        
+//        let newsCardBaseView = NewsCardBaseView.init()
+//        var padding = Padding.init()
+//        padding.heightAnchor = 100.0
+//        menuContentView.addView(view: newsCardBaseView, padding: padding)
+//        newsCardBaseView.LoadTheData(newsDataModel: allNewsFeed)
+//    }
 }
