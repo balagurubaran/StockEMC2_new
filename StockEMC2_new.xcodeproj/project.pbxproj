@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C00F345E59CA2FED32F23BE4 /* Pods_StockEMC2_new.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */; };
-		E9126A2021D2A2FC000CF649 /* ViewController+NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9126A1F21D2A2FC000CF649 /* ViewController+NewsFeed.swift */; };
 		E91679A221A3A74A0081628C /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91679A121A3A74A0081628C /* StockDetailViewController.swift */; };
 		E92782912199138A00F8F9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92782902199138A00F8F9E7 /* AppDelegate.swift */; };
 		E92782932199138A00F8F9E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92782922199138A00F8F9E7 /* ViewController.swift */; };
@@ -79,8 +78,6 @@
 		E9F3A18321AE24230043EB67 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */; };
 		E9FBDAA2219D0EA500600091 /* iAppsUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; };
 		E9FBDAA3219D0EA500600091 /* iAppsUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E9FBDAA4219D0EA500600091 /* SectorCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9F219D0C4000600091 /* SectorCard.framework */; };
-		E9FBDAA5219D0EA500600091 /* SectorCard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9F219D0C4000600091 /* SectorCard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9FBDAA9219D0F5000600091 /* MainContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FBDAA7219D0F5000600091 /* MainContentView.xib */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +88,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9FBDAA5219D0EA500600091 /* SectorCard.framework in Embed Frameworks */,
 				E9FBDAA3219D0EA500600091 /* iAppsUtilities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -104,7 +100,6 @@
 		55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockEMC2_new.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCAE9A0177F6C7CC24AE3DC /* Pods-StockEMC2_new.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockEMC2_new.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockEMC2_new/Pods-StockEMC2_new.debug.xcconfig"; sourceTree = "<group>"; };
 		E908261D21AE1B5400EE52DD /* StockEMC2_new.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockEMC2_new.entitlements; sourceTree = "<group>"; };
-		E9126A1F21D2A2FC000CF649 /* ViewController+NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NewsFeed.swift"; sourceTree = "<group>"; };
 		E91679A121A3A74A0081628C /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		E927828D2199138A00F8F9E7 /* StockEMC2_new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockEMC2_new.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92782902199138A00F8F9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +171,6 @@
 		E9F3A17E21AE1B8F0043EB67 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iAppsUtilities.framework; sourceTree = "<group>"; };
-		E9FBDA9F219D0C4000600091 /* SectorCard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SectorCard.framework; sourceTree = "<group>"; };
 		E9FBDAA8219D0F5000600091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainContentView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,7 +181,6 @@
 			files = (
 				C00F345E59CA2FED32F23BE4 /* Pods_StockEMC2_new.framework in Frameworks */,
 				E9FBDAA2219D0EA500600091 /* iAppsUtilities.framework in Frameworks */,
-				E9FBDAA4219D0EA500600091 /* SectorCard.framework in Frameworks */,
 				E9F3A17F21AE1B8F0043EB67 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +251,6 @@
 				E9BF1C9A21A0FA0A00FA30FE /* Constants.swift */,
 				E92782902199138A00F8F9E7 /* AppDelegate.swift */,
 				E92782922199138A00F8F9E7 /* ViewController.swift */,
-				E9126A1F21D2A2FC000CF649 /* ViewController+NewsFeed.swift */,
 				E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */,
 				E9BF1CE821A1C18800FA30FE /* ViewControllerExt */,
 				E96565E9219F9FB100036116 /* StockListView.swift */,
@@ -401,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */,
-				E9FBDA9F219D0C4000600091 /* SectorCard.framework */,
 			);
 			path = Framework;
 			sourceTree = SOURCE_ROOT;
@@ -606,7 +597,6 @@
 				E9BF1CC221A1006000FA30FE /* Service.swift in Sources */,
 				E9D8A68D21A4D74800BA0BBA /* StockInfoDataModel.swift in Sources */,
 				E9BF1CE521A1018800FA30FE /* String+helper.swift in Sources */,
-				E9126A2021D2A2FC000CF649 /* ViewController+NewsFeed.swift in Sources */,
 				E9BF1CE721A101E700FA30FE /* UIView+Helper.swift in Sources */,
 				E96565EA219F9FB100036116 /* StockListView.swift in Sources */,
 				E9CCD2CD227B064500BBC649 /* DateValueFormatter.swift in Sources */,
@@ -725,6 +715,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -779,6 +770,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

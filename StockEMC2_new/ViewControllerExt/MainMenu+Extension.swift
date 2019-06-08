@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Magnetic
 import iAppsUtilities
-import SectorCard
+//import SectorCard
 import DropDown
 import GoogleMobileAds
 
@@ -30,9 +30,9 @@ extension ViewController {
 
         menuContentView.addTitle(title: "Menu")
         loadTheMainMenu()
-        menuContentView.addTitle(title: "Sector")
-        loadSectorView()
-        renderTheNewsFeed()
+//        menuContentView.addTitle(title: "Sector")
+//        loadSectorView()
+//        //renderTheNewsFeed()
         
         var padding = Padding.init()
         padding.leadingAnchor = 10
@@ -87,28 +87,29 @@ extension ViewController {
     }
     
     func loadSectorView(){
-        let sectorBaseView = SectorCardBaseView.init()
-        sectorBaseView.sectorCardDelegate = self
-        var padding = Padding.init()
-        padding.leadingAnchor = 10
-        padding.trailingAnchor = -10
-        padding.heightAnchor = 100
-        menuContentView.addView(view: sectorBaseView, padding: padding)
-        
-        var allSectorData = [SectorCardDataModel]()
-        if let localSectorCopy = sectorDetail{
-            for (index,eachSector) in localSectorCopy.enumerated(){
-                var sectorData = SectorCardDataModel()
-                sectorData.sectorName = eachSector.sectorName ?? ""
-                let APL = DataHandler.getAPLForStock(sectorName: sectorData.sectorName)
-                sectorData.sectorFirstValue = APL.All
-                sectorData.sectorSecoundValue = APL.Profit
-                sectorData.sectorThirdValue = APL.Loss
-                sectorData.uniqueID = index
-                allSectorData.append(sectorData)
-            }
-            sectorBaseView.LoadTheDataToScroll(sectorDataModel: allSectorData)
-        }
+//        let sectorBaseView = SectorCardBaseView.init()
+//
+//        sectorBaseView.delegate = self
+//        var padding = Padding.init()
+//        padding.leadingAnchor = 10
+//        padding.trailingAnchor = -10
+//        padding.heightAnchor = 100
+//        menuContentView.addView(view: sectorBaseView, padding: padding)
+//
+//        var allSectorData = [SectorCardDataModel]()
+//        if let localSectorCopy = sectorDetail{
+//            for (index,eachSector) in localSectorCopy.enumerated(){
+//                var sectorData = SectorCardDataModel()
+//                sectorData.sectorName = eachSector.sectorName ?? ""
+//                let APL = DataHandler.getAPLForStock(sectorName: sectorData.sectorName)
+//                sectorData.sectorFirstValue = APL.All
+//                sectorData.sectorSecoundValue = APL.Profit
+//                sectorData.sectorThirdValue = APL.Loss
+//                sectorData.uniqueID = index
+//                allSectorData.append(sectorData)
+//            }
+//            sectorBaseView.loadTheDataToScroll(allSectorData: allSectorData)
+//        }
     }
 }
 //Mark : - Admob delegates
@@ -165,13 +166,13 @@ extension ViewController: MagneticDelegate {
                 loadTheStockList(selectedMenuItem: selectedMenu[0])
             }
         }
-        for view in menuContentView.contentView.subviews {
-            if view.isKind(of: SectorCardBaseView.self){
-                if let sectorBaseView = view as? SectorCardBaseView {
-                    sectorBaseView.removeTheUnderLine()
-                }
-            }
-        }
+//        for view in menuContentView.contentView.subviews {
+//            if view.isKind(of: SectorCardBaseView.self){
+//                if let sectorBaseView = view as? SectorCardBaseView {
+//                    //sectorBaseView.removeTheUnderLine()
+//                }
+//            }
+//        }
     }
     
     func magnetic(_ magnetic: Magnetic, didDeselect node: Node) {

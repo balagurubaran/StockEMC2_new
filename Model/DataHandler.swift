@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftyJSON
-import SectorCard
+//import SectorCard
 
 fileprivate var stockBasicInfo:[shareBasicInfo] = [shareBasicInfo]()
 fileprivate var nonFilterStockBasicInfo:[shareBasicInfo] = [shareBasicInfo]()
@@ -17,7 +17,7 @@ fileprivate var nonFilterStockBasicInfo:[shareBasicInfo] = [shareBasicInfo]()
 var financialData:[Financial] = [Financial]()
 
 var tradeVolumes:[TradeVolme] = [TradeVolme]()
-var sectorDetail:[Sector]?
+//var sectorDetail:[Sector]?
 
 var appStatsModel = AppStatsModel()
 
@@ -33,14 +33,15 @@ var searchString = ""
 
 
 // NewsFeed
-var allNewsFeed = [NewsCardDataModel]()
+//var allNewsFeed = [NewsCardDataModel]()
 
-struct Sector{
-    var sectorName:String?
-    var allStockCount:String?
-    var profitStockCount:String?
-    var lossStockCount:String?
-}
+//struct Sector{
+//    var sectorName:String?
+//    var allStockCount:String?
+//    var profitStockCount:String?
+//    var lossStockCount:String?
+//}
+
 struct revenue_earning{
     var amount:String
     var year:String
@@ -211,7 +212,7 @@ class DataHandler{
                 
                 shareDetail.weekslow_52 = eachShare["weeklow_52"].floatValue
                 shareDetail.isTargetReached = eachShare["isTargetReached"].boolValue
-                shareDetail.lastUpdatedDate =  shareDetail.live?.lastUpdatedDate?.formatDateString()
+                shareDetail.lastUpdatedDate =  shareDetail.live?.lastUpdatedDate//?.formatDateString()
                 
                 shareDetail.watchListCount =  eachShare["watchlistCount"].intValue
                 
@@ -276,7 +277,7 @@ class DataHandler{
         history.open = value["open"]?.floatValue
         history.priceDifference = value["priceDifference"]?.floatValue
         var dateValue = value["lastPriceUpdated"]?.string
-        history.lastUpdatedDate = dateValue?.formatDateString()
+        history.lastUpdatedDate = dateValue//?.formatDateString()
         // print(history.open!);
         //history.precentage =  ((currentPrice-history.open!) / history.open!) * 100.0
         return history
@@ -542,22 +543,22 @@ class DataHandler{
     // Sectore Information start
     
     class func setAllSectorDetails(){
-        var sectorList = stockBasicInfo.compactMap{
-            $0.sharePriceInfo?.shareSector
-        }
-        sectorList.removeDuplicates()
-        sectorList = sectorList.filter{$0.count > 0}
-        sectorList = sectorList.sorted{$0 > $1}
-        
-        for eachSector in sectorList {
-            var sector = Sector()
-            sector.sectorName = eachSector
-            if sectorDetail == nil {
-                sectorDetail = [sector]
-            }else{
-                sectorDetail?.append(sector)
-            }
-        }
+//        var sectorList = stockBasicInfo.compactMap{
+//            $0.sharePriceInfo?.shareSector
+//        }
+//        sectorList.removeDuplicates()
+//        sectorList = sectorList.filter{$0.count > 0}
+//        sectorList = sectorList.sorted{$0 > $1}
+//        
+//        for eachSector in sectorList {
+//            var sector = Sector()
+//            sector.sectorName = eachSector
+//            if sectorDetail == nil {
+//                sectorDetail = [sector]
+//            }else{
+//                sectorDetail?.append(sector)
+//            }
+//        }
     }
     
     //Sector Information End
@@ -593,12 +594,12 @@ class DataHandler{
     // News Feed
     
     class func parseTheMarketNews(data:Data){
-        do {
-            let decoder = JSONDecoder()
-            allNewsFeed = try decoder.decode([NewsCardDataModel].self, from: data)
-        }catch let error{
-            print("error")
-        }
+//        do {
+//            let decoder = JSONDecoder()
+//            allNewsFeed = try decoder.decode([NewsCardDataModel].self, from: data)
+//        }catch let error{
+//            print("error")
+//        }
     }
 }
 

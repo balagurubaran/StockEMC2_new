@@ -9,8 +9,8 @@
 import Foundation
 
 
-let baseURL = "https://rgbtohex.in/pennystock"
-let newURL  = "https://rgbtohex.in/stockemc2/version1"
+let baseURL = ""
+let newURL  = ""
 //let baseURL = "http://localhost:8888/pennystock/"
 var isFreeSubcription = false
 var userDefaults:UserDefaults = UserDefaults.init(suiteName: "group.com.iappscrazy.bricksbreak2048")!

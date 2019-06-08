@@ -9,10 +9,10 @@
 import UIKit
 import Magnetic
 import iAppsUtilities
-import SectorCard
+//import SectorCard
 import DropDown
 
-class ViewController: UIViewController,SectorCardDelegate,StockCardDelegate {
+class ViewController: UIViewController,StockCardDelegate {
 
     var mainContentView:MainContentView = MainContentView.fromNib()
     var menuContentView:MainContentView = MainContentView.fromNib()

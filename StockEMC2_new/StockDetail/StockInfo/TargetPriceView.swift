@@ -44,16 +44,21 @@ class TargetPriceBaseView:UIView{
         if let margetPrice = selectedStockInfo?.sharePriceInfo?.live?.price {
             targetView.margetPrice.text = "Market price: $\(margetPrice)"
         }
-        
-        if let isTargetReached = selectedStockInfo?.sharePriceInfo?.isTargetReached, let targetReachedDate = selectedStockInfo?.sharePriceInfo?.targetreacheddate {
-            if isTargetReached {
-                targetView.targetReachedOn.text = "Reached on \(targetReachedDate)"
-            }else{
-                targetView.targetReachedOn.text = ""
-            }
+        if let lastUpdatedDate = selectedStockInfo?.sharePriceInfo?.lastUpdatedDate {
+            targetView.targetReachedOn.text = "\(lastUpdatedDate)"
         }else{
             targetView.targetReachedOn.text = ""
         }
+        
+//        if let isTargetReached = selectedStockInfo?.sharePriceInfo?.isTargetReached, let targetReachedDate = selectedStockInfo?.sharePriceInfo?.targetreacheddate {
+//            if isTargetReached {
+//                targetView.targetReachedOn.text = "Reached on \(targetReachedDate)"
+//            }else{
+//                targetView.targetReachedOn.text = ""
+//            }
+//        }else{
+//            targetView.targetReachedOn.text = ""
+//        }
     }
 }
 
