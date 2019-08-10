@@ -24,10 +24,10 @@ class TargetPriceBaseView:UIView{
     
     public func renderTheView(){
         self.addSubview(targetView)
-        targetView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        targetView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
-        targetView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        targetView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        targetView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive              = true
+        targetView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive      = true
+        targetView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive    = true
+        targetView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive        = true
         self.layoutIfNeeded()
     }
     
@@ -36,8 +36,10 @@ class TargetPriceBaseView:UIView{
     }
     
     func loadData(detail:Share?){
-        if let actualPrice = detail?.actualPrice , let targetPrice = detail?.targetPrice{
-            targetView.bestPrice.text = "Best price: $\(actualPrice)"
+        if let bestPrice = detail?.bestPrice{
+            targetView.bestPrice.text   = "Best price: $\(bestPrice)"
+        }
+        if let targetPrice = detail?.targetPrice{ 
             targetView.targetPrice.text = "$\(targetPrice)"
         }
         

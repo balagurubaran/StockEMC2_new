@@ -19,13 +19,13 @@ var statsBasic1:[StockInfoDataModel]?
 enum MenuListEnum:String {
     case all = "All"
     //case watchList = "Watchlist"
-    case dividend  = "Dividend"
+    case dividend  = "Div"
     case profit = "Profit"
     case loss   = "Loss"
     case search = "Search"
     case sector = "Sector"
 }
-let mainMenuItems = ["All","Dividend","Profit","Loss","Search"]
+let mainMenuItems = ["All","Div","Profit","Loss","Search"]
 
 enum SecondaryFilter:String {
     case Latest = "Latest"

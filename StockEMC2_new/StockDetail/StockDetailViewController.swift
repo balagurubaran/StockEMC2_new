@@ -25,6 +25,7 @@ class StockDetailViewController:UIViewController{
         self.utility.initloadView()
         
         DataHandler.resetDetaViewDataHandler()
+        Utility.setScreenName(screenName: "Detail screen", viewController: "StockDetailViewController")
     }
     
     @IBAction func closeStockDetailView(_ sender: Any) {
@@ -55,14 +56,14 @@ class StockDetailViewController:UIViewController{
                 StockInfoDataHandler.setTheStats1()
                 
                 
-                self.mainContentView.addTitle(title: "Live")
+                
                 self.renderTheLivePriceInfo()
-                //self.mainContentView.addTitle(title: "Day")
-                //self.renderTheDayPriceInfo()
+                
+                self.renderTheDayPriceInfo()
                // self.mainContentView.addTitle(title: "Why?")
                 self.mainContentView.addTitle(title: "Stats")
                 self.renderTheBasicStats()
-                self.mainContentView.addTitle(title: "Day Trade")
+
                 self.loadTheGraph()
                 self.utility.removeLoading(view: self.mainContentView)
             }
@@ -98,7 +99,8 @@ class StockDetailViewController:UIViewController{
             mainContentView.topAnchor.constraint(equalTo: previouslyAddedView.bottomAnchor, constant: 0).isActive = true
             mainContentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
             mainContentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-            mainContentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: (UIDevice.current.userInterfaceIdiom == .pad ? 20 : 0)).isActive = true
+            let bottom = view.window?.safeAreaInsets.bottom ?? 0.0
+            mainContentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant:-bottom).isActive = true
             self.view.layoutIfNeeded()
         }
     }
@@ -124,6 +126,7 @@ class StockDetailViewController:UIViewController{
     
     func renderTheLivePriceInfo(){
         if let local = stockInfoElement_live{
+            self.mainContentView.addTitle(title: "Live")
             for (index,eachInfo) in local.enumerated() {
                 let stockinfo = StockInfoBaseView.init()
                 var padding = Padding.init()
@@ -141,6 +144,7 @@ class StockDetailViewController:UIViewController{
     
     func renderTheDayPriceInfo(){
         if let local = stockInfoElement_Day{
+            self.mainContentView.addTitle(title: "Day")
             for (index,eachInfo) in local.enumerated() {
                 let stockinfo = StockInfoBaseView.init()
                 var padding = Padding.init()
@@ -197,16 +201,19 @@ class StockDetailViewController:UIViewController{
         
         if let cosolidatedData = DataHandler.consolidatedTradeVolume() {
             if cosolidatedData.count > 0{
+                self.mainContentView.addTitle(title: "Day Trade")
                 let chartView = getChatBaseView(padding: padding)
                 BarView.init().loadVolumeToBarCharView(chartView: chartView, volume: cosolidatedData)
             }
         }
         
         if financialData.count > 0{
+            self.mainContentView.addTitle(title: "Revenue")
             let chartView = getChatBaseView(padding: padding)
             BarView.init().loadBarCharRevenue_earning(barChart: chartView, revenue_earnigData: financialData)
         }
         if(EPSData.count > 0){
+            self.mainContentView.addTitle(title: "EPS")
             let chartView = getChatBaseView(padding: padding)
             let EPSData = EPSChartData.init()
             EPSData.loadEPSBarCHart(chartView: chartView)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2EA6FB22DA47D6007506F8 /* Robinhood.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC2EA6FA22DA47D6007506F8 /* Robinhood.xib */; };
+		AC2EA6FD22DA4C34007506F8 /* Robinhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2EA6FC22DA4C34007506F8 /* Robinhood.swift */; };
 		C00F345E59CA2FED32F23BE4 /* Pods_StockEMC2_new.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */; };
 		E91679A221A3A74A0081628C /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91679A121A3A74A0081628C /* StockDetailViewController.swift */; };
 		E92782912199138A00F8F9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92782902199138A00F8F9E7 /* AppDelegate.swift */; };
@@ -99,6 +101,8 @@
 		22A0934AD3A1CD70BE13E620 /* Pods-StockEMC2_new.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockEMC2_new.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockEMC2_new/Pods-StockEMC2_new.release.xcconfig"; sourceTree = "<group>"; };
 		55B0077CFC3BC5B412A721D4 /* Pods_StockEMC2_new.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockEMC2_new.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCAE9A0177F6C7CC24AE3DC /* Pods-StockEMC2_new.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockEMC2_new.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockEMC2_new/Pods-StockEMC2_new.debug.xcconfig"; sourceTree = "<group>"; };
+		AC2EA6FA22DA47D6007506F8 /* Robinhood.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Robinhood.xib; sourceTree = "<group>"; };
+		AC2EA6FC22DA4C34007506F8 /* Robinhood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robinhood.swift; sourceTree = "<group>"; };
 		E908261D21AE1B5400EE52DD /* StockEMC2_new.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockEMC2_new.entitlements; sourceTree = "<group>"; };
 		E91679A121A3A74A0081628C /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		E927828D2199138A00F8F9E7 /* StockEMC2_new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockEMC2_new.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC2EA6F922DA47A9007506F8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AC2EA6FA22DA47D6007506F8 /* Robinhood.xib */,
+				AC2EA6FC22DA4C34007506F8 /* Robinhood.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		E91679A021A3A7260081628C /* StockDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +250,7 @@
 		E927828F2199138A00F8F9E7 /* StockEMC2_new */ = {
 			isa = PBXGroup;
 			children = (
+				AC2EA6F922DA47A9007506F8 /* Support */,
 				E908261D21AE1B5400EE52DD /* StockEMC2_new.entitlements */,
 				E92740FF21AB4F24007E1530 /* Subscription */,
 				E94BB7AE21AB069800D40544 /* Google */,
@@ -502,6 +516,7 @@
 				E9BF1CD021A1006000FA30FE /* Lato-LightItalic.ttf in Resources */,
 				E9BF1CCE21A1006000FA30FE /* Lato-Italic.ttf in Resources */,
 				E9BF1CD421A1006000FA30FE /* Lato-Semibold.ttf in Resources */,
+				AC2EA6FB22DA47D6007506F8 /* Robinhood.xib in Resources */,
 				E9BF1CE321A1015100FA30FE /* SearchBar.xib in Resources */,
 				E9BF1CCC21A1006000FA30FE /* Lato-Heavy.ttf in Resources */,
 				E9BF1CD121A1006000FA30FE /* Lato-Medium.ttf in Resources */,
@@ -623,6 +638,7 @@
 				E9D8A68721A4D15600BA0BBA /* StockInfo.swift in Sources */,
 				E9F3A18321AE24230043EB67 /* DisclaimerViewController.swift in Sources */,
 				E9D8A67D21A42C1A00BA0BBA /* ChartColorTemplates.swift in Sources */,
+				AC2EA6FD22DA4C34007506F8 /* Robinhood.swift in Sources */,
 				E9BF1CDD21A1006000FA30FE /* sharemodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,7 +805,7 @@
 					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = StockEMC2_new/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -815,7 +831,7 @@
 					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = StockEMC2_new/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

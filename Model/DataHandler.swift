@@ -205,6 +205,7 @@ class DataHandler{
                 shareDetail.currentPrice = currentPrice
                 
                 shareDetail.actualPrice = eachShare["actualPrice"].floatValue
+                shareDetail.bestPrice = eachShare["bestPrice"].floatValue
              
    
                 shareDetail.avgActualEPS = eachShare["avgActualEPS"].floatValue
@@ -276,7 +277,7 @@ class DataHandler{
         history.price = value["price"]?.floatValue
         history.open = value["open"]?.floatValue
         history.priceDifference = value["priceDifference"]?.floatValue
-        var dateValue = value["lastPriceUpdated"]?.string
+        let dateValue = value["lastPriceUpdated"]?.string
         history.lastUpdatedDate = dateValue//?.formatDateString()
         // print(history.open!);
         //history.precentage =  ((currentPrice-history.open!) / history.open!) * 100.0

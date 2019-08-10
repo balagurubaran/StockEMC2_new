@@ -125,6 +125,10 @@ class Utility{
         ])
     }
     
+    class func setScreenName(screenName:String,viewController:String){
+        Analytics.setScreenName(screenName, screenClass: viewController)
+    }
+    
 //    class func filterShareTargetReached(){
 //        mainPageShareDetail?.removeAll()
 //        mainPageShareDetail = perManentmainPageShareDetail?.filter { ($0.isTargetReached) }

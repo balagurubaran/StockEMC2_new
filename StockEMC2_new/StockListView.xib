@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-BoldItalic.ttf">
+            <string>Lato-BoldItalic</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StockListView" customModule="StockEMC2_new" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtx-6s-opQ">
-                    <rect key="frame" x="8" y="29" width="262.5" height="20"/>
+                    <rect key="frame" x="8" y="29" width="225" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Ztq-TG-b8F"/>
                     </constraints>
@@ -37,24 +42,37 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$15.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD8-wL-OcQ">
-                    <rect key="frame" x="292" y="8" width="75" height="39"/>
+                    <rect key="frame" x="285" y="8" width="75" height="39"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                     <color key="textColor" red="0.16078431369999999" green="0.74117647060000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyP-Ng-hA2">
+                    <rect key="frame" x="350" y="-5" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5M7-Ux-cMe"/>
+                        <constraint firstAttribute="width" constant="30" id="nOw-Hm-cBv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-BoldItalic" family="Lato" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="dtx-6s-opQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="4DC-IT-AQ3"/>
+                <constraint firstItem="dtx-6s-opQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="4DC-IT-AQ3"/>
+                <constraint firstItem="GyP-Ng-hA2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-5" id="8fs-E8-El6"/>
                 <constraint firstItem="1hi-Nt-H5r" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="D0Z-DT-Exf"/>
                 <constraint firstItem="XD8-wL-OcQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.2" id="DxM-Hb-aKm"/>
+                <constraint firstItem="GyP-Ng-hA2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="5" id="Kde-3t-wYm"/>
                 <constraint firstItem="1hi-Nt-H5r" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Mk7-jr-OJf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XD8-wL-OcQ" secondAttribute="bottom" constant="8" id="aL7-Xd-4zq"/>
                 <constraint firstItem="dtx-6s-opQ" firstAttribute="leading" secondItem="1hi-Nt-H5r" secondAttribute="leading" id="cQx-nB-oOD"/>
                 <constraint firstItem="XD8-wL-OcQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="dD9-5B-itk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dtx-6s-opQ" secondAttribute="bottom" constant="6" id="ddB-g8-yrQ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XD8-wL-OcQ" secondAttribute="trailing" constant="8" id="rcb-Md-I7o"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XD8-wL-OcQ" secondAttribute="trailing" constant="15" id="rcb-Md-I7o"/>
                 <constraint firstItem="dtx-6s-opQ" firstAttribute="top" secondItem="1hi-Nt-H5r" secondAttribute="bottom" id="wKu-ex-txT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -66,6 +84,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="companyName" destination="dtx-6s-opQ" id="fn2-tG-IgZ"/>
+                <outlet property="dividendSymbolIcon" destination="GyP-Ng-hA2" id="hWa-UA-pSe"/>
                 <outlet property="marketPrice" destination="XD8-wL-OcQ" id="d8V-lG-M2d"/>
                 <outlet property="stockName" destination="1hi-Nt-H5r" id="yPv-Q1-Szi"/>
             </connections>

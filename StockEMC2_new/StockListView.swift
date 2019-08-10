@@ -47,6 +47,11 @@ class StockListViewBase:UIView,StockCardDelegate{
             stockListView.marketPrice.text = currentPrice.dollarString
             stockListView.backgroundColor = stockBasicInfo.backGroundColor
             stockListView.marketPrice.textColor = priceDifference >= 0 ? UIColor.colors[3] : UIColor.colors[4]
+            if  priceInfo.dividendsDate != nil && priceInfo.dividendsPrice != nil {
+                stockListView.dividendSymbolIcon.isHidden = false
+            }else{
+                stockListView.dividendSymbolIcon.isHidden = true
+        }
         }  
     }
     
@@ -60,6 +65,7 @@ class StockListView: UIView {
     @IBOutlet weak var stockName: UILabel!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var marketPrice: UILabel!
+    @IBOutlet weak var dividendSymbolIcon: UILabel!
     public weak var delegate:StockCardDelegate?
     /*
     // Only override draw() if you perform custom drawing.
@@ -71,6 +77,7 @@ class StockListView: UIView {
     override func awakeFromNib() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(StockListView.stockSelected))
         self.addGestureRecognizer(gestureRecognizer)
+        dividendSymbolIcon.layer.cornerRadius = dividendSymbolIcon.frame.size.height/2
     }
 
     @objc func stockSelected() {

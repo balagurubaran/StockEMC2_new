@@ -126,13 +126,13 @@ class EPSChartData:NSObject {
         chartView.chartDescription?.text = "Earning per Share"
         
         
-        chartView.rightAxis.enabled = false
+        chartView.rightAxis.enabled = true
         chartView.animate(yAxisDuration: 1.5)
         chartView.fitBars = true
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = .systemFont(ofSize: 13)
+        xAxis.labelFont = .systemFont(ofSize: 10)
         xAxis.drawAxisLineEnabled = false
         xAxis.labelTextColor = .lightGray
         xAxis.labelCount = EPSData.count
@@ -162,16 +162,33 @@ class EPSChartData:NSObject {
         if((minEstimated?.estimated)! <  (minActual?.actual)!){
             min = minEstimated?.estimated
         }
-
+        
         let leftAxis = chartView.leftAxis
-        leftAxis.drawLabelsEnabled = true
-        leftAxis.spaceTop = 0.25
-        leftAxis.spaceBottom = 0.25
-        leftAxis.drawAxisLineEnabled = false
-        leftAxis.drawZeroLineEnabled = false
-        leftAxis.zeroLineColor = .gray
-        leftAxis.zeroLineWidth = 0.7
-        leftAxis.axisMinimum = 0.0
+        leftAxis.labelFont = .systemFont(ofSize: 10)
+        leftAxis.labelCount = 8
+        //leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
+        leftAxis.labelPosition = .outsideChart
+        leftAxis.spaceTop = 0.15
+        leftAxis.axisMinimum = 0 // FIXME: HUH?? this replaces startAtZero = YES
+        
+        let rightAxis = chartView.rightAxis
+        rightAxis.enabled = true
+        rightAxis.labelFont = .systemFont(ofSize: 10)
+        rightAxis.labelCount = 8
+        rightAxis.valueFormatter = leftAxis.valueFormatter
+        rightAxis.spaceTop = 0.15
+        rightAxis.axisMinimum = 0
+        
+        let l = chartView.legend
+        l.horizontalAlignment = .left
+        l.verticalAlignment = .bottom
+        l.orientation = .horizontal
+        l.drawInside = false
+        l.form = .circle
+        l.formSize = 9
+        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
+        l.xEntrySpace = 4
+    
         if(min! < 0.0){
             leftAxis.axisMinimum = min!  + (min!/4)
         }

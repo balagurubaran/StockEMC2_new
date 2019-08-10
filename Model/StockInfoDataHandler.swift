@@ -14,28 +14,32 @@ class StockInfoDataHandler{
         stockInfoElement_live?.removeAll()
         var view1 = StockInfoDataModel()
         if let open = selectedStockInfo?.sharePriceInfo?.live?.open , let close = selectedStockInfo?.sharePriceInfo?.live?.price {
-            view1.label1.key = "Open"
-            view1.label1.value = "$\(open)"
-            
-            view1.label2.key = "Close"
-            view1.label2.value = "$\(close)"
-            stockInfoElement_live = [view1]
-            
-            if (open < close){
-                view1.label2.color = UIColor.stockEmc2Green
-            }else{
-                view1.label2.color = UIColor.stockEmc2Red
+            if open > 0.0  && close > 0.0 {
+                view1.label1.key = "Open"
+                view1.label1.value = "$\(open)"
+                
+                view1.label2.key = "Close"
+                view1.label2.value = "$\(close)"
+                stockInfoElement_live = [view1]
+                
+                if (open < close){
+                    view1.label2.color = UIColor.stockEmc2Green
+                }else{
+                    view1.label2.color = UIColor.stockEmc2Red
+                }
             }
         }
         
         var view2 = StockInfoDataModel()
         if let high = selectedStockInfo?.sharePriceInfo?.live?.high , let low = selectedStockInfo?.sharePriceInfo?.live?.low {
-            view2.label1.key = "Low"
-            view2.label1.value = "$\(low)"
-            
-            view2.label2.key = "High"
-            view2.label2.value = "$\(high)"
-            stockInfoElement_live?.append(view2)
+            if high > 0.0 && low > 0.0 {
+                view2.label1.key = "Low"
+                view2.label1.value = "$\(low)"
+                
+                view2.label2.key = "High"
+                view2.label2.value = "$\(high)"
+                stockInfoElement_live?.append(view2)
+            }
         }
     }
     
@@ -43,28 +47,32 @@ class StockInfoDataHandler{
         stockInfoElement_Day?.removeAll()
         var view1 = StockInfoDataModel()
         if let open = selectedStockInfo?.sharePriceInfo?.day?.open , let close = selectedStockInfo?.sharePriceInfo?.day?.price {
-            view1.label1.key = "Open"
-            view1.label1.value = "$\(open)"
-            
-            view1.label2.key = "Close"
-            view1.label2.value = "$\(close)"
-            stockInfoElement_Day = [view1]
-            
-            if (open < close){
-                view1.label2.color = UIColor.stockEmc2Green
-            }else{
-                view1.label2.color = UIColor.stockEmc2Red
+            if open > 0.0  && close > 0.0 {
+                view1.label1.key = "Open"
+                view1.label1.value = "$\(open)"
+                
+                view1.label2.key = "Close"
+                view1.label2.value = "$\(close)"
+                stockInfoElement_Day = [view1]
+                
+                if (open < close){
+                    view1.label2.color = UIColor.stockEmc2Green
+                }else{
+                    view1.label2.color = UIColor.stockEmc2Red
+                }
             }
         }
         
         var view2 = StockInfoDataModel()
         if let high = selectedStockInfo?.sharePriceInfo?.day?.high , let low = selectedStockInfo?.sharePriceInfo?.day?.low {
-            view2.label1.key = "Low"
-            view2.label1.value = "$\(low)"
-            
-            view2.label2.key = "High"
-            view2.label2.value = "$\(high)"
-            stockInfoElement_Day?.append(view2)
+            if high > 0.0 && low > 0.0 {
+                view2.label1.key = "Low"
+                view2.label1.value = "$\(low)"
+                
+                view2.label2.key = "High"
+                view2.label2.value = "$\(high)"
+                stockInfoElement_Day?.append(view2)
+            }
         }
     }
     
@@ -76,7 +84,7 @@ class StockInfoDataHandler{
         }
         var view1 = StockInfoDataModel()
         let index = 0
-    
+        
         if EPSData.count > 0 {
             view1.label1.key = "Expected EPS"
             if let value = EPSData[index].estimated {
@@ -174,7 +182,7 @@ class StockInfoDataHandler{
         var view2 = StockInfoDataModel()
         view2.label1.key = "Div yield"
         if let dividendyield = keyState.dividendYield {
-            view2.label1.value = "\(dividendyield.getDoublePrecious)"
+            view2.label1.value = "\((dividendyield * 100).getDoublePrecious)"
             view2.label1.symbol = "%"
         }else{
             view2.label1.value = "N/A"
@@ -226,3 +234,4 @@ extension Float {
         return String(format: "%.2f", self)
     }
 }
+

@@ -33,16 +33,17 @@ extension ViewController {
 //        menuContentView.addTitle(title: "Sector")
 //        loadSectorView()
 //        //renderTheNewsFeed()
-        
+       
         var padding = Padding.init()
         padding.leadingAnchor = 10
         padding.trailingAnchor = -10
         padding.heightAnchor = 0.0
         padding.topAnchor = 10
-        
+
         let bannerView = Admob.init().createAds(rootViewController: self)
         self.menuContentView.addView(view: bannerView, padding: padding)
         
+         loadTheRobinHoodView()
     
         menuContentView.addView(view: titleWithLeftButton(labelText: "Stocks", buttonTitle: "Latest"), padding: padding)
         if let previouslyAddedView = menuContentView.contentView.subviews.last {
@@ -84,6 +85,17 @@ extension ViewController {
             magnetic.addChild(node)
         }
         magneticView.layoutIfNeeded()
+    }
+    
+    func loadTheRobinHoodView(){
+        var padding = Padding.init()
+        padding.leadingAnchor = 10
+        padding.trailingAnchor = -10
+        padding.topAnchor = 10
+       
+        let view:Robinhood = Robinhood.fromNib()
+        menuContentView.addView(view: view, padding: padding)
+        
     }
     
     func loadSectorView(){

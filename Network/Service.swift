@@ -23,6 +23,7 @@ class Service{
     
     func getshareBasicDetail(completion:@escaping (_ Data:Data) -> Void){
         Network.init().getData( newURL + "/getbasicinfo.php?count=100") { (data) in
+           
             completion(data)
         }
     }

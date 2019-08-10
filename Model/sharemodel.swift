@@ -58,6 +58,7 @@ class shareBasicInfo {
 class Share{
     var shareSector:String = ""
     var currentPrice:Float?
+    var bestPrice:Float?
     var targetPrice:Float?
     var targetPrecentage:Float?
     var dividendsDate:String?

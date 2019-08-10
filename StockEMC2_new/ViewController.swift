@@ -98,7 +98,7 @@ class ViewController: UIViewController,StockCardDelegate {
                 self.alert = nil
                 
             }
-            Utility.showMessage(message:"Market price is updated hourly once")
+            Utility.showMessage(message:"Market price is updated hourly once, Due to some technical issue we cannot able to show the latest price")
         }
     }
     
@@ -157,11 +157,11 @@ class ViewController: UIViewController,StockCardDelegate {
             }else{
                 eachStock.backGroundColor = .white
             }
-            if let isTargetReached = eachStock.sharePriceInfo?.isTargetReached,  let color = eachStock.sharePriceInfo?.color {
-                if isTargetReached {
-                    eachStock.backGroundColor = color
-                }
-            }
+//            if let isTargetReached = eachStock.sharePriceInfo?.isTargetReached,  let color = eachStock.sharePriceInfo?.color {
+//                if isTargetReached {
+//                    eachStock.backGroundColor = color
+//                }
+//            }
             stockNode.loadTheData(stockBasicInfo: eachStock)
         }
     }

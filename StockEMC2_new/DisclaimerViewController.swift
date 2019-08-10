@@ -20,6 +20,7 @@ class DisclaimerViewController: UIViewController {
            let content = "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style> { font-size: 20px; } </style></head> <body>" + tc + "</body></html>"
             webView.loadHTMLString(content, baseURL: nil)
         }
+        Utility.setScreenName(screenName: "Disclaimer", viewController: "DisclaimerViewController")
     }
     
     @IBAction func declineDisclamier(_ sender: Any) {
