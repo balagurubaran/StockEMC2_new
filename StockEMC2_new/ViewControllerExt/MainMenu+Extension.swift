@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Magnetic
-import iAppsUtilities
+//import iAppsUtilities
 //import SectorCard
 import DropDown
 import GoogleMobileAds
@@ -221,7 +221,7 @@ extension ViewController: MagneticDelegate {
         
         secondaryFilter.frame = buttonSize
         secondaryFilter.titleLabel?.font = UIFont.init(name: "Lato-Light", size: 16)
-        secondaryFilter.backgroundColor = UIColor.stockEmc2GrayAlpha
+        secondaryFilter.backgroundColor = UIColor.stockEmc2GrayAlpha()
         secondaryFilter.layer.cornerRadius = buttonSize.size.height / 2
         secondaryFilter.contentVerticalAlignment = .center
         secondaryFilter.setTitle(title, for: .normal)
@@ -250,7 +250,7 @@ extension ViewController: MagneticDelegate {
     
     @objc func addsubscriptionButton(){
         
-        if let currentViewController = UIApplication.shared.topMostViewController() {
+        if let currentViewController = UIApplication.topViewController() {
             if subscriptionButton == nil {
                 subscriptionButton = CustomButton.init(frame: CGRect.zero)
                 subscriptionButton?.buttonProperty(title: "Subscribe")
@@ -276,12 +276,12 @@ extension ViewController: MagneticDelegate {
 class CustomButton:UIButton {
 
     func buttonProperty(title:String){
-        if let currentViewController = UIApplication.shared.topMostViewController() {
+        if let currentViewController = UIApplication.topViewController() {
             let size = currentViewController.view.frame.size
             self.frame = CGRect.init(x: (size.width - 200) / 2 , y: size.height + 55, width: 200, height: 50)
             self.layer.cornerRadius = self.frame.size.height / 2
             self.setTitle(title, for: .normal)
-            self.backgroundColor = UIColor.stockEmc2Pink
+            self.backgroundColor = UIColor.stockEmc2Pink()
         }
     }
     
@@ -289,7 +289,7 @@ class CustomButton:UIButton {
         if !self.isHidden {
             return
         }
-        if let currentViewController = UIApplication.shared.topMostViewController() {
+        if let currentViewController = UIApplication.topViewController() {
             self.isHidden = false
             let size = currentViewController.view.frame.size
             UIView.animate(withDuration: 1) {
@@ -302,7 +302,7 @@ class CustomButton:UIButton {
     }
     
     func hide(){
-        if let currentViewController = UIApplication.shared.topMostViewController() {
+        if let currentViewController = UIApplication.topViewController() {
             let size = currentViewController.view.frame.size
             UIView.animate(withDuration: 1, animations: {
                 self.frame.origin.y = size.height + 50

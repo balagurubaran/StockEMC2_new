@@ -67,7 +67,6 @@ extension HandleSubscription {
     
     func paymentQueue(_ queue: SKPaymentQueue,
                       updatedTransactions transactions: [SKPaymentTransaction]) {
-        UIApplication.shared.dismissView()
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchasing:

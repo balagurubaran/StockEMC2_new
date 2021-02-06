@@ -33,4 +33,22 @@ extension String {
         let year = array[0]
         return "\(month)-\(day)-\(year)"
     }
+    
+    func StringToDate(withFormat format: String = "yyyy-MM-dd HH:mm:ss")-> Date?{
+
+           let dateFormatter = DateFormatter()
+           dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")
+           dateFormatter.locale = Locale(identifier: "fa-IR")
+           dateFormatter.calendar = Calendar(identifier: .gregorian)
+           dateFormatter.dateFormat = format
+           let date = dateFormatter.date(from: self)
+
+           return date
+
+    }
+    
+    func getDoublePrecious()->String{
+        return String.init(format: "%.2f", self)
+        
+    }
 }

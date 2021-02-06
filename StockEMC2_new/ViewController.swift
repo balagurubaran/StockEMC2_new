@@ -8,7 +8,7 @@
 
 import UIKit
 import Magnetic
-import iAppsUtilities
+//import iAppsUtilities
 //import SectorCard
 import DropDown
 

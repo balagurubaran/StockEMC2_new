@@ -25,7 +25,7 @@ class Utility{
     class func showMessage(message:String){
         let warning = MessageView.viewFromNib(layout: .cardView)
         warning.configureTheme(.success)
-        warning.backgroundView.backgroundColor = UIColor.stockEmc2Pink
+        warning.backgroundView.backgroundColor = UIColor.stockEmc2Pink()
         warning.configureDropShadow()
         
         
@@ -97,13 +97,13 @@ class Utility{
     
     func initloadView(){
         self.loadingView = RSLoadingView(effectType: RSLoadingView.Effect.twins)
-        self.loadingView?.backgroundColor = UIColor.stockEmc2Pink
+        self.loadingView?.backgroundColor = UIColor.stockEmc2Pink()
         self.loadingView?.mainColor = UIColor.white
     }
 
     func showLoadingView(view:UIView){
         DispatchQueue.main.async(execute: {
-            view.backgroundColor = UIColor.stockEmc2Pink
+            view.backgroundColor = UIColor.stockEmc2Pink()
             self.loadingView?.show(on: view)
         })
         

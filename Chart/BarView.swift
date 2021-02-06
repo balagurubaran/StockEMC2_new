@@ -68,11 +68,11 @@ class BarView {
         }
         
         let revenueBarColor = revenue.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? UIColor.stockEmc2Green : UIColor.stockEmc2Red
+            return entry.y >= 0 ? UIColor.stockEmc2Green() : UIColor.stockEmc2Red()
         }
         
         let earningsBarColor = earnings.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? UIColor.stockEmc2TealBlue : UIColor.stockEmc2Red
+            return entry.y >= 0 ? UIColor.stockEmc2TealBlue() : UIColor.stockEmc2Red()
         }
         
 
@@ -185,7 +185,7 @@ class BarView {
             
         }
         let chartDataSetRevenue = BarChartDataSet(values: revenue, label: "Day's trade volume")
-        chartDataSetRevenue.colors = [UIColor.stockEmc2Green]
+        chartDataSetRevenue.colors = [UIColor.stockEmc2Green()]
         
         let data = BarChartData(dataSet: chartDataSetRevenue)
         //data.barWidth = 0.25

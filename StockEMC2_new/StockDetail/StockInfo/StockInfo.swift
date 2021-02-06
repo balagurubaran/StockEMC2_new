@@ -52,7 +52,7 @@ class StockInfoBaseView:UIView {
             }
             if let convertedVlaue = Double(value){
                 if convertedVlaue < 0.0 {
-                    stockInfo.view1Label2.textColor = UIColor.stockEmc2Red
+                    stockInfo.view1Label2.textColor = UIColor.stockEmc2Red()
                 }
             }
             stockInfo.view1Label2.textColor = info.label2.color
@@ -66,7 +66,7 @@ class StockInfoBaseView:UIView {
             }
             if let convertedVlaue = Double(value){
                 if convertedVlaue < 0.0 {
-                    stockInfo.view2Label2.textColor = UIColor.stockEmc2Red
+                    stockInfo.view2Label2.textColor = UIColor.stockEmc2Red()
                 }
             }
         }

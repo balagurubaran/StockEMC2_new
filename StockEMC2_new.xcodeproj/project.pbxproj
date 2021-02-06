@@ -78,24 +78,11 @@
 		E9D8A69321A5892A00BA0BBA /* TargetPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8A69221A5892A00BA0BBA /* TargetPriceView.swift */; };
 		E9F3A17F21AE1B8F0043EB67 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F3A17E21AE1B8F0043EB67 /* StoreKit.framework */; };
 		E9F3A18321AE24230043EB67 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */; };
-		E9FBDAA2219D0EA500600091 /* iAppsUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; };
-		E9FBDAA3219D0EA500600091 /* iAppsUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9FBDAA9219D0F5000600091 /* MainContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FBDAA7219D0F5000600091 /* MainContentView.xib */; };
+		EB07B0E125CE2FA800F87B2B /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB07B0E025CE2FA800F87B2B /* UIColor+Helper.swift */; };
+		EB07B0E325CE31A500F87B2B /* UIApplication+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB07B0E225CE31A500F87B2B /* UIApplication+helper.swift */; };
+		EB07B0E525CE324B00F87B2B /* UILabel+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB07B0E425CE324B00F87B2B /* UILabel+helper.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E9FBDAA6219D0EA500600091 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E9FBDAA3219D0EA500600091 /* iAppsUtilities.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		22A0934AD3A1CD70BE13E620 /* Pods-StockEMC2_new.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockEMC2_new.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockEMC2_new/Pods-StockEMC2_new.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +163,9 @@
 		E9F3A18221AE24230043EB67 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		E9FBDA9E219D0C4000600091 /* iAppsUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iAppsUtilities.framework; sourceTree = "<group>"; };
 		E9FBDAA8219D0F5000600091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainContentView.xib; sourceTree = "<group>"; };
+		EB07B0E025CE2FA800F87B2B /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
+		EB07B0E225CE31A500F87B2B /* UIApplication+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+helper.swift"; sourceTree = "<group>"; };
+		EB07B0E425CE324B00F87B2B /* UILabel+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00F345E59CA2FED32F23BE4 /* Pods_StockEMC2_new.framework in Frameworks */,
-				E9FBDAA2219D0EA500600091 /* iAppsUtilities.framework in Frameworks */,
 				E9F3A17F21AE1B8F0043EB67 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +266,9 @@
 				E927829C2199139A00F8F9E7 /* Info.plist */,
 				E9BF1CE421A1018800FA30FE /* String+helper.swift */,
 				E9BF1CE621A101E700FA30FE /* UIView+Helper.swift */,
+				EB07B0E025CE2FA800F87B2B /* UIColor+Helper.swift */,
+				EB07B0E425CE324B00F87B2B /* UILabel+helper.swift */,
+				EB07B0E225CE31A500F87B2B /* UIApplication+helper.swift */,
 				E98922A321B2C83A00A7B062 /* main.swift */,
 			);
 			path = StockEMC2_new;
@@ -432,7 +424,6 @@
 				E927828A2199138A00F8F9E7 /* Frameworks */,
 				E927828B2199138A00F8F9E7 /* Resources */,
 				2554F0B4BCE55F281800B67A /* [CP] Embed Pods Frameworks */,
-				E9FBDAA6219D0EA500600091 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -450,7 +441,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = iAppsCrazy;
 				TargetAttributes = {
 					E927828C2199138A00F8F9E7 = {
@@ -624,6 +615,8 @@
 				E98922A221B2C27100A7B062 /* TimeOut.swift in Sources */,
 				E9BF1CE221A1015100FA30FE /* SearchBar.swift in Sources */,
 				E92782932199138A00F8F9E7 /* ViewController.swift in Sources */,
+				EB07B0E125CE2FA800F87B2B /* UIColor+Helper.swift in Sources */,
+				EB07B0E325CE31A500F87B2B /* UIApplication+helper.swift in Sources */,
 				E9BF1CDA21A1006000FA30FE /* AppStatsModel.swift in Sources */,
 				E9D8A68F21A4D7D100BA0BBA /* StockInfoDataHandler.swift in Sources */,
 				E9BF1CBF21A1006000FA30FE /* Constant.swift in Sources */,
@@ -635,6 +628,7 @@
 				E9CCD2CF227B064500BBC649 /* IntAxisValueFormatter.swift in Sources */,
 				E9BF1CDE21A1006000FA30FE /* WidgetModel.swift in Sources */,
 				E9BF1C9B21A0FA0A00FA30FE /* Constants.swift in Sources */,
+				EB07B0E525CE324B00F87B2B /* UILabel+helper.swift in Sources */,
 				E9D8A68721A4D15600BA0BBA /* StockInfo.swift in Sources */,
 				E9F3A18321AE24230043EB67 /* DisclaimerViewController.swift in Sources */,
 				E9D8A67D21A42C1A00BA0BBA /* ChartColorTemplates.swift in Sources */,
@@ -699,6 +693,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -724,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -761,6 +756,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -780,7 +776,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -805,14 +801,14 @@
 					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = StockEMC2_new/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iappscrazy.stockemc2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -831,14 +827,14 @@
 					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = StockEMC2_new/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iappscrazy.stockemc2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

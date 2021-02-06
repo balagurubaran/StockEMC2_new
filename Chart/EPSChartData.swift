@@ -82,11 +82,11 @@ class EPSChartData:NSObject {
         }
         
         let actualEPSBarColor = estimatedEPSEntry.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? UIColor.stockEmc2Green : UIColor.stockEmc2Red
+            return entry.y >= 0 ? UIColor.stockEmc2Green() : UIColor.stockEmc2Red()
         }
         
         let estimatedEPSBarColor = estimatedEPSEntry.map { (entry) -> NSUIColor in
-            return entry.y >= 0 ? UIColor.stockEmc2TealBlue : UIColor.stockEmc2Red
+            return entry.y >= 0 ? UIColor.stockEmc2TealBlue() : UIColor.stockEmc2Red()
         }
         
         

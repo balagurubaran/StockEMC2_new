@@ -23,9 +23,9 @@ class StockInfoDataHandler{
                 stockInfoElement_live = [view1]
                 
                 if (open < close){
-                    view1.label2.color = UIColor.stockEmc2Green
+                    view1.label2.color = UIColor.stockEmc2Green()
                 }else{
-                    view1.label2.color = UIColor.stockEmc2Red
+                    view1.label2.color = UIColor.stockEmc2Red()
                 }
             }
         }
@@ -56,9 +56,9 @@ class StockInfoDataHandler{
                 stockInfoElement_Day = [view1]
                 
                 if (open < close){
-                    view1.label2.color = UIColor.stockEmc2Green
+                    view1.label2.color = UIColor.stockEmc2Green()
                 }else{
-                    view1.label2.color = UIColor.stockEmc2Red
+                    view1.label2.color = UIColor.stockEmc2Red()
                 }
             }
         }
@@ -216,12 +216,6 @@ class StockInfoDataHandler{
     }
 }
 
-extension String {
-    func getDoublePrecious()->String{
-        return String.init(format: "%.2f", self)
-        
-    }
-}
 
 extension Double {
     var getDoublePrecious:String {

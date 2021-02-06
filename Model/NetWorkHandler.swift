@@ -27,7 +27,7 @@ class NetworkHandler{
     }
 
     class func loadTheNewsFeed(dispatch:DispatchGroup,shareName:String = "All"){
-        let url = "https://rgbtohex.in/pennystock/Version3/newsfeed/getallnews.php"
+        let url = "https://rgbtohex.in/pennystock/Version30/newsfeed/getallnews.php"
         Network.init().getData(url) { (data) in
             DataHandler.parseTheMarketNews(data: data)
             dispatch.leave()

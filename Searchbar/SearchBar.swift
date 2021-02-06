@@ -113,34 +113,13 @@ class SearchBar: UIView,UISearchBarDelegate {
     
 }
 
-public extension UIView
-{
-    static func loadFromXib<T>(fileName:String, withOwner: Any? = nil, options: [AnyHashable : Any]? = nil) -> T where T: UIView
-    {
-        let bundle = Bundle.main
-        let nib = bundle.loadNibNamed(fileName, owner: withOwner, options: options as? [UINib.OptionsKey : Any])//UINib(nibName: fileName, bundle: bundle)
-        
-        guard let view = nib?.first as? T else {
-            fatalError("Could not load view from nib file.")
-        }
-        return view
-    }
-    
-    static func loadNib(fileName:String) -> UIView {
-        let bundle = Bundle.main
-        //let nibName = type(of: self).description().components(separatedBy: ".").last!
-        let nib = UINib(nibName: fileName, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as! UIView
-    }
-}
-
 extension UIWindow {
     
     
     class func visibleViewController() -> UIViewController? {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        if let rootViewController: UIViewController  = (appDelegate.window?.rootViewController)! {
+        if let rootViewController: UIViewController  = (appDelegate.window?.rootViewController) {
             return UIWindow.getVisibleViewControllerFrom(controller: rootViewController)
         }
         return nil
